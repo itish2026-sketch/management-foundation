@@ -1,0 +1,91 @@
+{% extends "base_d.html" %}
+{% load static %}
+
+{% block title %}{{ event.title }} | Event{% endblock %}
+
+
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'news/news.css' %}">
+
+<article class="nw-detail">
+
+    <a href="{% url 'news:event_list' %}" class="nw-back">
+        <i class="bi bi-arrow-left"></i> All Events
+    </a>
+
+    {% if event.cover_image %}
+        <div class="nw-detail-cover">
+            <img src="{{ event.cover_image.url }}" alt="{{ event.title }}">
+            <span class="ev-status status-{{ event.status }}">
+                {{ event.get_status_display }}
+            </span>
+        </div>
+    {% endif %}
+
+    <header class="nw-detail-head">
+        <h1>{{ event.title }}</h1>
+    </header>
+
+    <!-- Event Info Grid -->
+    <div class="ev-info-grid">
+
+        <div class="ev-info">
+            <i class="bi bi-calendar-event"></i>
+            <div>
+                <span>Start Date</span>
+                <strong>{{ event.start_date|date:"d M, Y — h:i A" }}</strong>
+            </div>
+        </div>
+
+        {% if event.end_date %}
+            <div class="ev-info">
+                <i class="bi bi-calendar-check"></i>
+                <div>
+                    <span>End Date</span>
+                    <strong>{{ event.end_date|date:"d M, Y — h:i A" }}</strong>
+                </div>
+            </div>
+        {% endif %}
+
+        {% if event.venue %}
+            <div class="ev-info">
+                <i class="bi bi-geo-alt"></i>
+                <div>
+                    <span>Venue</span>
+                    <strong>{{ event.venue }}</strong>
+                </div>
+            </div>
+        {% endif %}
+
+        {% if event.organizer %}
+            <div class="ev-info">
+                <i class="bi bi-person-badge"></i>
+                <div>
+                    <span>Organizer</span>
+                    <strong>{{ event.organizer }}</strong>
+                </div>
+            </div>
+        {% endif %}
+
+    </div>
+
+    <p class="nw-lead">{{ event.short_description }}</p>
+
+    {% if event.full_content %}
+        <div class="nw-rich">
+            {{ event.full_content|safe }}
+        </div>
+    {% endif %}
+
+    {% if event.contact %}
+        <div class="ev-contact">
+            <i class="bi bi-telephone"></i>
+            Contact: <strong>{{ event.contact }}</strong>
+        </div>
+    {% endif %}
+
+</article>
+<script src="{% static 'news/news.js' %}"></script>
+
+{% endblock %}

@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Notices | AJKS Foundation{% endblock %}
+
+
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'news/news.css' %}">
+
+<section class="nw-section">
+
+    <div class="nw-heading">
+        <span class="nw-label">NOTICE BOARD</span>
+        <h1>Notices &amp; Announcements</h1>
+        <p>Official notices and announcements from AJKS Foundation.</p>
+    </div>
+
+    <div class="nt-board">
+        {% for notice in notices %}
+
+            <div class="nt-item priority-{{ notice.priority }}
+                {% if notice.is_pinned %}nt-pinned{% endif %}">
+
+                {% if notice.is_pinned %}
+                    <span class="nt-pin">📌 PINNED</span>
+                {% endif %}
+
+                <div class="nt-priority">
+                    {{ notice.get_priority_display }}
+                </div>
+
+                <div class="nt-main">
+                    <div class="nt-dates">
+                        <span class="nt-date">
+                            <i class="bi bi-calendar3"></i>
+                            {{ notice.published_at|date:"d M, Y" }}
+                        </span>
+
+                        {% if notice.deadline %}
+                            <span class="nt-deadline">
+                                <i class="bi bi-alarm"></i>
+                                Deadline: {{ notice.deadline|date:"d M, Y" }}
+                            </span>
+                        {% endif %}
+                    </div>
+
+                    <h3>
+                        <a href="{% url 'news:notice_detail' notice.slug %}">
+                            {{ notice.title }}
+                        </a>
+                    </h3>
+
+                    <p>{{ notice.short_description }}</p>
+
+                    {% if notice.issued_by %}
+                        <span class="nt-issuer">
+                            <i class="bi bi-building"></i> {{ notice.issued_by }}
+                        </span>
+                    {% endif %}
+
+                    <div class="nt-actions">
+                        <a href="{% url 'news:notice_detail' notice.slug %}"
+                           class="nt-btn">
+                            View Notice
+                        </a>
+
+                        {% if notice.attachment_pdf %}
+                            <a href="{{ notice.attachment_pdf.url }}"
+                               target="_blank"
+                               class="nt-btn nt-btn-pdf">
+                                <i class="bi bi-file-earmark-pdf"></i>
+                                Download PDF
+                            </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+        {% empty %}
+            <div class="nw-empty">
+                <i class="bi bi-file-text"></i>
+                <h3>No notices yet</h3>
+            </div>
+        {% endfor %}
+    </div>
+
+</section>
+<script src="{% static 'news/news.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,90 @@
+{% extends "base_d.html" %}
+{% load static %}
+
+{% block title %}Annual Reports | AJKS Foundation{% endblock %}
+
+
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'publications/publications.css' %}">
+
+<section class="pub-section">
+
+    <div class="pub-heading">
+        <span class="pub-label">ANNUAL REPORTS</span>
+        <h1>Yearly Reports</h1>
+        <p>Explore our yearly progress, achievements, and impact reports.</p>
+    </div>
+
+    {% if featured %}
+        <a href="{% url 'publications:report_detail' featured.slug %}"
+           class="pub-featured">
+
+            <div class="pub-featured-img">
+                {% if featured.cover_image %}
+                    <img src="{{ featured.cover_image.url }}" alt="{{ featured.title }}">
+                {% else %}
+                    <div class="pub-no-image"><i class="bi bi-file-earmark-text"></i></div>
+                {% endif %}
+                <span class="pub-featured-badge">★ Latest Report</span>
+            </div>
+
+            <div class="pub-featured-body">
+                <span class="pub-year">{{ featured.year }}</span>
+                <h2>{{ featured.title }}</h2>
+                <p>{{ featured.summary }}</p>
+
+                <div class="pub-featured-meta">
+                    {% if featured.file_size %}
+                        <span><i class="bi bi-hdd"></i> {{ featured.file_size }}</span>
+                    {% endif %}
+                    <span><i class="bi bi-calendar3"></i> {{ featured.published_at|date:"d M, Y" }}</span>
+                </div>
+
+                {% if featured.pdf_file %}
+                    <span class="pub-download-btn">
+                        <i class="bi bi-download"></i> Download PDF
+                    </span>
+                {% endif %}
+            </div>
+        </a>
+    {% endif %}
+
+
+    <div class="pub-report-grid">
+
+        {% for report in reports %}
+            <a href="{% url 'publications:report_detail' report.slug %}"
+               class="pub-report-card">
+
+                <div class="pub-report-cover">
+                    {% if report.cover_image %}
+                        <img src="{{ report.cover_image.url }}" alt="{{ report.title }}">
+                    {% else %}
+                        <div class="pub-no-image"><i class="bi bi-file-earmark-text"></i></div>
+                    {% endif %}
+
+                    <span class="pub-year-badge">{{ report.year }}</span>
+                </div>
+
+                <div class="pub-report-body">
+                    <h3>{{ report.title }}</h3>
+                    <p>{{ report.summary|truncatechars:100 }}</p>
+
+                    <span class="pub-read">
+                        View Report <i class="bi bi-arrow-right"></i>
+                    </span>
+                </div>
+            </a>
+        {% empty %}
+            <div class="pub-empty">
+                <i class="bi bi-file-earmark-text"></i>
+                <h3>No reports yet</h3>
+            </div>
+        {% endfor %}
+
+    </div>
+
+</section>
+<script src="{% static 'publications/publications.js' %}"></script>
+{% endblock %}

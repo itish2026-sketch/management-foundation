@@ -1,0 +1,599 @@
+{% extends "base_d.html" %}
+{% load static %}
+
+{% block title %}
+{{ project.project_name }} | AJKS Foundation
+{% endblock %}
+
+
+
+
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'projects/projects.css' %}">
+
+<article class="prj-detail-section">
+
+    <!-- ============================================
+         COVER
+    ============================================= -->
+    <div class="prj-cover">
+
+        {% if project.cover_image %}
+            <img src="{{ project.cover_image.url }}"
+                 alt="{{ project.project_name }}">
+        {% endif %}
+
+        <div class="prj-cover-overlay"></div>
+
+        <div class="prj-cover-text">
+
+            <div class="prj-cover-badges">
+
+                <span class="prj-status
+                    {% if project.status == 'ongoing' %}status-ongoing
+                    {% elif project.status == 'completed' %}status-completed
+                    {% elif project.status == 'upcoming' %}status-upcoming
+                    {% else %}status-suspended{% endif %}">
+                    {{ project.get_status_display }}
+                </span>
+
+                <span class="prj-category-badge">
+                    {{ project.get_category_display }}
+                </span>
+
+                {% if project.project_code %}
+                    <span class="prj-code-badge">
+                        {{ project.project_code }}
+                    </span>
+                {% endif %}
+
+            </div>
+
+            <h1>{{ project.project_name }}</h1>
+
+            <p class="prj-short">{{ project.short_description }}</p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ============================================
+         QUICK INFO STRIP
+    ============================================= -->
+    <div class="prj-quick-info">
+
+        {% if project.start_date %}
+            <div class="prj-qinfo">
+                <i class="bi bi-calendar-event"></i>
+                <div>
+                    <span>Start Date</span>
+                    <strong>{{ project.start_date|date:"d M, Y" }}</strong>
+                </div>
+            </div>
+        {% endif %}
+
+        {% if project.end_date %}
+            <div class="prj-qinfo">
+                <i class="bi bi-calendar-check"></i>
+                <div>
+                    <span>End Date</span>
+                    <strong>{{ project.end_date|date:"d M, Y" }}</strong>
+                </div>
+            </div>
+        {% endif %}
+
+        {% if project.location %}
+            <div class="prj-qinfo">
+                <i class="bi bi-geo-alt"></i>
+                <div>
+                    <span>Location</span>
+                    <strong>{{ project.location }}</strong>
+                </div>
+            </div>
+        {% endif %}
+
+        {% if project.beneficiary_count %}
+            <div class="prj-qinfo">
+                <i class="bi bi-people"></i>
+                <div>
+                    <span>Beneficiaries</span>
+                    <strong>{{ project.beneficiary_count }}</strong>
+                </div>
+            </div>
+        {% endif %}
+
+    </div>
+
+
+
+    <!-- ============================================
+         MAIN CONTENT GRID
+    ============================================= -->
+    <div class="prj-main-grid">
+
+        <!-- LEFT -->
+        <div class="prj-main-left">
+
+            {% if project.full_description %}
+                <div class="prj-block">
+                    <h2>About This Project</h2>
+                    <div class="prj-rich">
+                        {{ project.full_description|safe }}
+                    </div>
+                </div>
+            {% endif %}
+
+
+            {% if project.objective %}
+                <div class="prj-block">
+                    <h2>Objective</h2>
+                    <p>{{ project.objective }}</p>
+                </div>
+            {% endif %}
+
+
+            {% if project.goal %}
+                <div class="prj-block">
+                    <h2>Goal</h2>
+                    <p>{{ project.goal }}</p>
+                </div>
+            {% endif %}
+
+
+            {% if project.completed_activities %}
+                <div class="prj-block">
+                    <h2>✅ Completed Activities</h2>
+                    <div class="prj-rich">
+                        {{ project.completed_activities|safe }}
+                    </div>
+                </div>
+            {% endif %}
+
+
+            {% if project.ongoing_activities %}
+                <div class="prj-block">
+                    <h2>🔄 Ongoing Activities</h2>
+                    <div class="prj-rich">
+                        {{ project.ongoing_activities|safe }}
+                    </div>
+                </div>
+            {% endif %}
+
+
+            {% if project.upcoming_activities %}
+                <div class="prj-block">
+                    <h2>📅 Upcoming Activities</h2>
+                    <div class="prj-rich">
+                        {{ project.upcoming_activities|safe }}
+                    </div>
+                </div>
+            {% endif %}
+
+
+            {% if project.key_achievements %}
+                <div class="prj-block">
+                    <h2>🏆 Key Achievements</h2>
+                    <div class="prj-rich">
+                        {{ project.key_achievements|safe }}
+                    </div>
+                </div>
+            {% endif %}
+
+
+            {% if project.challenges %}
+                <div class="prj-block">
+                    <h2>⚠️ Challenges</h2>
+                    <div class="prj-rich">
+                        {{ project.challenges|safe }}
+                    </div>
+                </div>
+            {% endif %}
+
+
+            {% if project.solutions %}
+                <div class="prj-block">
+                    <h2>💡 Solutions</h2>
+                    <div class="prj-rich">
+                        {{ project.solutions|safe }}
+                    </div>
+                </div>
+            {% endif %}
+
+
+            {% if project.achievements %}
+                <div class="prj-block">
+                    <h2>Achievements</h2>
+                    <div class="prj-rich">
+                        {{ project.achievements|safe }}
+                    </div>
+                </div>
+            {% endif %}
+
+
+            {% if project.outcome_impact %}
+                <div class="prj-block">
+                    <h2>Outcome &amp; Impact</h2>
+                    <div class="prj-rich">
+                        {{ project.outcome_impact|safe }}
+                    </div>
+                </div>
+            {% endif %}
+
+
+            {% if project.success_story %}
+                <div class="prj-block prj-success">
+                    <h2>🌟 Success Story</h2>
+                    <div class="prj-rich">
+                        {{ project.success_story|safe }}
+                    </div>
+                </div>
+            {% endif %}
+
+        </div>
+
+
+
+        <!-- RIGHT — SIDEBAR -->
+        <aside class="prj-sidebar">
+
+            <!-- PROGRESS -->
+            <div class="prj-widget">
+                <h3>Project Progress</h3>
+
+                <div class="prj-progress-item">
+                    <div class="prj-progress-head">
+                        <span>Overall</span>
+                        <strong>{{ project.overall_progress }}%</strong>
+                    </div>
+                    <div class="prj-progress-bar">
+                        <span style="width: {{ project.overall_progress }}%;"></span>
+                    </div>
+                </div>
+
+                <div class="prj-progress-item">
+                    <div class="prj-progress-head">
+                        <span>Physical</span>
+                        <strong>{{ project.physical_progress }}%</strong>
+                    </div>
+                    <div class="prj-progress-bar">
+                        <span style="width: {{ project.physical_progress }}%;"></span>
+                    </div>
+                </div>
+
+                <div class="prj-progress-item">
+                    <div class="prj-progress-head">
+                        <span>Financial</span>
+                        <strong>{{ project.financial_progress }}%</strong>
+                    </div>
+                    <div class="prj-progress-bar">
+                        <span style="width: {{ project.financial_progress }}%;"></span>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- INFO -->
+            <div class="prj-widget">
+                <h3>Project Info</h3>
+
+                {% if project.project_type %}
+                    <div class="prj-info-row">
+                        <span>Type</span>
+                        <strong>{{ project.get_project_type_display }}</strong>
+                    </div>
+                {% endif %}
+
+                {% if project.duration %}
+                    <div class="prj-info-row">
+                        <span>Duration</span>
+                        <strong>{{ project.duration }}</strong>
+                    </div>
+                {% endif %}
+
+                {% if project.implementing_area %}
+                    <div class="prj-info-row">
+                        <span>Area</span>
+                        <strong>{{ project.implementing_area }}</strong>
+                    </div>
+                {% endif %}
+
+                {% if project.target_beneficiaries %}
+                    <div class="prj-info-row">
+                        <span>Target</span>
+                        <strong>{{ project.target_beneficiaries }}</strong>
+                    </div>
+                {% endif %}
+
+                {% if project.donor_partner %}
+                    <div class="prj-info-row">
+                        <span>Donor</span>
+                        <strong>{{ project.donor_partner }}</strong>
+                    </div>
+                {% endif %}
+
+                {% if project.project_manager %}
+                    <div class="prj-info-row">
+                        <span>Manager</span>
+                        <strong>{{ project.project_manager }}</strong>
+                    </div>
+                {% endif %}
+
+            </div>
+
+
+            <!-- BUDGET -->
+            {% if project.total_budget %}
+                <div class="prj-widget">
+                    <h3>Budget</h3>
+
+                    <div class="prj-info-row">
+                        <span>Total</span>
+                        <strong>৳ {{ project.total_budget|floatformat:0 }}</strong>
+                    </div>
+
+                    {% if project.donor_contribution %}
+                        <div class="prj-info-row">
+                            <span>Donor</span>
+                            <strong>৳ {{ project.donor_contribution|floatformat:0 }}</strong>
+                        </div>
+                    {% endif %}
+
+                    {% if project.organization_contribution %}
+                        <div class="prj-info-row">
+                            <span>Organization</span>
+                            <strong>৳ {{ project.organization_contribution|floatformat:0 }}</strong>
+                        </div>
+                    {% endif %}
+
+                    {% if project.other_funding %}
+                        <div class="prj-info-row">
+                            <span>Other</span>
+                            <strong>৳ {{ project.other_funding|floatformat:0 }}</strong>
+                        </div>
+                    {% endif %}
+                </div>
+            {% endif %}
+
+
+            <!-- DOCUMENTS -->
+            {% if project.documents.all %}
+                <div class="prj-widget">
+                    <h3>Documents</h3>
+
+                    {% for doc in project.documents.all %}
+                        <a href="{{ doc.file.url }}"
+                           target="_blank"
+                           class="prj-doc">
+                            <i class="bi bi-file-earmark-pdf"></i>
+                            {{ doc.title }}
+                        </a>
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+
+            {% if project.final_report_pdf %}
+                <a href="{{ project.final_report_pdf.url }}"
+                   target="_blank"
+                   class="prj-download">
+                    <i class="bi bi-download"></i>
+                    Download Final Report (PDF)
+                </a>
+            {% endif %}
+
+            {% if project.evaluation_report_pdf %}
+                <a href="{{ project.evaluation_report_pdf.url }}"
+                   target="_blank"
+                   class="prj-download">
+                    <i class="bi bi-download"></i>
+                    Download Evaluation Report (PDF)
+                </a>
+            {% endif %}
+
+
+
+                        <!-- ============================================
+                EXTERNAL LINKS
+            ============================================ -->
+            {% if links %}
+                <div class="prj-widget prj-links-widget">
+                    <h3>
+                        <i class="bi bi-link-45deg"></i>
+                        Related Links
+                    </h3>
+
+                    <div class="prj-links-list">
+
+                        {% for link in links %}
+
+                            <a href="{{ link.url }}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="prj-link-card"
+                            style="--link-color: {{ link.get_color }};">
+
+                                <div class="prj-link-icon">
+                                    <i class="bi {{ link.get_icon }}"></i>
+                                </div>
+
+                                <div class="prj-link-body">
+                                    <h4>{{ link.title }}</h4>
+
+                                    {% if link.description %}
+                                        <p>{{ link.description }}</p>
+                                    {% endif %}
+
+                                    <span class="prj-link-type">
+                                        {{ link.get_link_type_display }}
+                                        <i class="bi bi-box-arrow-up-right"></i>
+                                    </span>
+                                </div>
+
+                            </a>
+
+                        {% endfor %}
+
+                    </div>
+                </div>
+            {% endif %}
+
+        </aside>
+
+
+                <!-- ============================================
+            RELATED LINKS (Full Width)
+        ============================================ -->
+        {% if links %}
+            <div class="prj-block prj-links-block">
+
+                <h2>Related Links &amp; Resources</h2>
+
+                <div class="prj-links-grid">
+
+                    {% for link in links %}
+
+                        <a href="{{ link.url }}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="prj-link-tile"
+                        style="--link-color: {{ link.get_color }};">
+
+                            <div class="prj-link-tile-icon">
+                                <i class="bi {{ link.get_icon }}"></i>
+                            </div>
+
+                            <div class="prj-link-tile-body">
+                                <h4>{{ link.title }}</h4>
+                                {% if link.description %}
+                                    <p>{{ link.description }}</p>
+                                {% endif %}
+                                <span>{{ link.get_link_type_display }}</span>
+                            </div>
+
+                            <i class="bi bi-arrow-up-right prj-link-tile-arrow"></i>
+
+                        </a>
+
+                    {% endfor %}
+
+                </div>
+
+            </div>
+        {% endif %}
+
+    </div>
+
+
+
+    <!-- ============================================
+         GALLERY
+    ============================================= -->
+    {% if gallery %}
+        <div class="prj-gallery-section">
+            <h2>Project Gallery</h2>
+
+            <div class="prj-gallery">
+                {% for img in gallery %}
+                    <div class="prj-gallery-item">
+                        <img src="{{ img.image.url }}" alt="{{ img.caption }}">
+                        {% if img.caption %}
+                            <span>{{ img.caption }}</span>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+
+
+
+    <!-- ============================================
+         VIDEOS
+    ============================================= -->
+    {% if project.videos.all %}
+        <div class="prj-videos">
+            <h2>Project Videos</h2>
+
+            <div class="prj-video-grid">
+                {% for video in project.videos.all %}
+                    <div class="prj-video-item">
+                        <h4>{{ video.title }}</h4>
+                        <a href="{{ video.youtube_url }}"
+                           target="_blank"
+                           class="prj-video-link">
+                            <i class="bi bi-play-circle"></i>
+                            Watch on YouTube
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+
+
+
+    <!-- ============================================
+         UPDATES
+    ============================================= -->
+    {% if project.updates.all %}
+        <div class="prj-updates">
+            <h2>Project Updates</h2>
+
+            {% for update in project.updates.all %}
+                <div class="prj-update">
+                    <div class="prj-update-date">
+                        {{ update.date|date:"d M, Y" }}
+                    </div>
+                    <div class="prj-update-body">
+                        <h3>{{ update.title }}</h3>
+                        <div class="prj-rich">
+                            {{ update.content|safe }}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+
+
+    <!-- ============================================
+         BACK + RELATED
+    ============================================= -->
+    <div class="prj-back">
+        <a href="{% url 'projects:list' %}">
+            <i class="bi bi-arrow-left"></i>
+            Back to All Projects
+        </a>
+    </div>
+
+    {% if related %}
+        <div class="prj-related">
+            <h2>Related Projects</h2>
+
+            <div class="prj-related-grid">
+                {% for item in related %}
+                    <a href="{% url 'projects:detail' item.slug %}"
+                       class="prj-related-card">
+
+                        {% if item.cover_image %}
+                            <img src="{{ item.cover_image.url }}"
+                                 alt="{{ item.project_name }}">
+                        {% endif %}
+
+                        <div>
+                            <span>{{ item.get_status_display }}</span>
+                            <h4>{{ item.project_name }}</h4>
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+
+</article>
+
+{% endblock %}

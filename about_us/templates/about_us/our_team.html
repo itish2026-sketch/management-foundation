@@ -1,0 +1,254 @@
+{% extends "base_d.html" %}
+
+{% load static %}
+
+
+{% block title %}
+    Our Team | AJKS Foundation
+{% endblock %}
+
+
+{% block content %}
+
+<link
+    rel="stylesheet"
+    href="{% static 'about_us/css/about_ajks.css' %}"
+>
+
+
+<section class="about-ajks-page">
+
+
+    <!-- PAGE HERO -->
+
+    <div class="about-ajks-hero">
+
+        <div class="about-ajks-container">
+
+            <div class="about-ajks-breadcrumb">
+
+                <a href="/">
+                    Home
+                </a>
+
+                <span>/</span>
+
+                <span>
+                    About Us
+                </span>
+
+                <span>/</span>
+
+                <strong>
+                    Our Team
+                </strong>
+
+            </div>
+
+
+            <div class="about-ajks-heading">
+
+                <div class="about-ajks-heading-line"></div>
+
+                <span class="about-ajks-label">
+                    AJKS FOUNDATION
+                </span>
+
+                <h1>
+                    About Our Team
+                </h1>
+
+                {% comment %} <p>
+                    Meet the people behind AJKS Foundation
+                </p> {% endcomment %}
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- TEAM CONTENT -->
+
+    <div class="about-ajks-container">
+
+
+        {% if team_list %}
+
+
+            {% for team in team_list %}
+
+
+                <div class="about-ajks-portal">
+
+
+                    <!-- HEADER -->
+
+                    <div class="about-ajks-portal-header">
+
+                        <div class="about-ajks-portal-icon">
+
+                            <i class="fas fa-users"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                AJKS FOUNDATION
+                            </span>
+
+                            <h2>
+                                {{ team.title }}
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- BODY -->
+
+                    <div class="about-ajks-portal-body">
+
+
+                        <div class="about-ajks-document-mark">
+
+                            <i class="fas fa-user-group"></i>
+
+                        </div>
+
+
+                        <div class="about-ajks-content">
+
+
+                            {% if team.subtitle %}
+
+                                <div class="about-ajks-content-subtitle">
+
+                                    {{ team.subtitle }}
+
+                                </div>
+
+                            {% endif %}
+
+
+                            <div class="about-ajks-content-text">
+
+                                {{ team.content|safe }}
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- FOOTER -->
+
+                    <div class="about-ajks-portal-footer">
+
+
+                        <div class="about-ajks-status">
+
+                            <span
+                                class="about-ajks-status-dot"
+                            ></span>
+
+                            <span>
+                                Official Information
+                            </span>
+
+                        </div>
+
+
+                        <div class="about-ajks-updated">
+
+                            Last Updated:
+                            {{ team.updated_at|date:"d M Y" }}
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            {% endfor %}
+
+
+        {% else %}
+
+
+            <div class="about-ajks-portal">
+
+
+                <div class="about-ajks-portal-body">
+
+                    <div class="about-ajks-content">
+
+                        <div class="about-ajks-empty">
+
+                            <i class="fas fa-users"></i>
+
+                            <h3>
+                                Our Team information
+                                is not available yet.
+                            </h3>
+
+                            <p>
+                                Please add Our Team information
+                                from the Admin Panel.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        {% endif %}
+
+
+
+        <!-- BACK BUTTON -->
+
+        <div class="about-ajks-back-wrapper">
+
+            <a
+                href="javascript:history.back()"
+                class="about-ajks-back-button"
+            >
+
+                <span class="about-ajks-back-icon">
+
+                    <i class="fas fa-arrow-left"></i>
+
+                </span>
+
+                <span>
+                    Back
+                </span>
+
+            </a>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+{% endblock %}

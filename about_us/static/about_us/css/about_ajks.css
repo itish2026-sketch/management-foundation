@@ -1,0 +1,1442 @@
+/* =========================================================
+   AJKS FOUNDATION
+   ABOUT AJKS PAGE
+   ========================================================= */
+
+
+.about-ajks-page {
+
+    min-height: 100%;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f5faf8 0%,
+            #ffffff 50%,
+            #f7faf9 100%
+        );
+
+    padding-bottom: 70px;
+
+}
+
+
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.about-ajks-container {
+
+    width: 100%;
+
+    max-width: 1180px;
+
+    margin: 0 auto;
+
+    padding-left: 25px;
+
+    padding-right: 25px;
+
+}
+
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.about-ajks-hero {
+
+    position: relative;
+
+    padding:
+        42px 0
+        48px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #00483e,
+            #00695c
+        );
+
+    overflow: hidden;
+
+}
+
+
+
+.about-ajks-hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 330px;
+
+    height: 330px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,0.035);
+
+    right: -120px;
+
+    top: -170px;
+
+}
+
+
+
+.about-ajks-hero::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 240px;
+
+    height: 240px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(245,180,0,0.06);
+
+    left: -110px;
+
+    bottom: -150px;
+
+}
+
+
+
+/* =========================================================
+   BREADCRUMB
+   ========================================================= */
+
+.about-ajks-breadcrumb {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 9px;
+
+    margin-bottom: 28px;
+
+    font-size: 13px;
+
+}
+
+
+
+.about-ajks-breadcrumb a {
+
+    color:
+        rgba(255,255,255,0.70);
+
+    text-decoration: none;
+
+    transition: color .25s ease;
+
+}
+
+
+
+.about-ajks-breadcrumb a:hover {
+
+    color: #f5b400;
+
+}
+
+
+
+.about-ajks-breadcrumb span {
+
+    color:
+        rgba(255,255,255,0.35);
+
+}
+
+
+
+.about-ajks-breadcrumb strong {
+
+    color: #f5b400;
+
+    font-weight: 600;
+
+}
+
+
+
+/* =========================================================
+   HEADING
+   ========================================================= */
+
+.about-ajks-heading {
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+
+.about-ajks-heading-line {
+
+    width: 52px;
+
+    height: 4px;
+
+    background: #f5b400;
+
+    border-radius: 20px;
+
+    margin-bottom: 17px;
+
+}
+
+
+
+.about-ajks-label {
+
+    display: block;
+
+    color:
+        rgba(255,255,255,0.65);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 8px;
+
+}
+
+
+
+.about-ajks-heading h1 {
+
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: clamp(
+        30px,
+        4vw,
+        48px
+    );
+
+    font-weight: 800;
+
+    line-height: 1.15;
+
+}
+
+
+
+.about-ajks-heading p {
+
+    max-width: 760px;
+
+    margin:
+        15px 0
+        0;
+
+    color:
+        rgba(255,255,255,0.78);
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+}
+
+
+
+/* =========================================================
+   PORTAL
+   ========================================================= */
+
+.about-ajks-portal {
+
+    position: relative;
+
+    margin-top: 48px;
+
+    background: #ffffff;
+
+    border:
+        1px solid
+        #e3ece9;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 18px 55px
+        rgba(0,65,55,0.10);
+
+}
+
+
+
+/* =========================================================
+   PORTAL HEADER
+   ========================================================= */
+
+.about-ajks-portal-header {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 17px;
+
+    padding:
+        22px 28px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #00483e,
+            #00695c
+        );
+
+    border-bottom:
+        3px solid
+        #f5b400;
+
+}
+
+
+
+.about-ajks-portal-icon {
+
+    flex-shrink: 0;
+
+    width: 52px;
+
+    height: 52px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 13px;
+
+    color: #f5b400;
+
+    background:
+        rgba(255,255,255,0.10);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.15);
+
+    font-size: 21px;
+
+}
+
+
+
+.about-ajks-portal-header span {
+
+    display: block;
+
+    color:
+        rgba(255,255,255,0.55);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.7px;
+
+    margin-bottom: 3px;
+
+}
+
+
+
+.about-ajks-portal-header h2 {
+
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 21px;
+
+    font-weight: 700;
+
+}
+
+
+
+/* =========================================================
+   PORTAL BODY
+   ========================================================= */
+
+.about-ajks-portal-body {
+
+    display: flex;
+
+    gap: 25px;
+
+    padding:
+        38px 35px
+        42px;
+
+}
+
+
+
+.about-ajks-document-mark {
+
+    flex-shrink: 0;
+
+    width: 46px;
+
+    height: 46px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 11px;
+
+    color: #00695c;
+
+    background: #edf7f4;
+
+    font-size: 18px;
+
+}
+
+
+
+.about-ajks-content {
+
+    flex: 1;
+
+    min-width: 0;
+
+}
+
+
+
+.about-ajks-content-text {
+
+    color: #394b48;
+
+    font-size: 16px;
+
+    line-height: 2;
+
+}
+
+
+
+.about-ajks-content-text p {
+
+    margin-top: 0;
+
+    margin-bottom: 20px;
+
+}
+
+
+
+.about-ajks-content-text p:last-child {
+
+    margin-bottom: 0;
+
+}
+
+
+
+
+
+
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.about-ajks-empty {
+
+    text-align: center;
+
+    padding: 35px 20px;
+
+    color: #60716d;
+
+}
+
+
+
+.about-ajks-empty i {
+
+    color: #f5b400;
+
+    font-size: 35px;
+
+    margin-bottom: 15px;
+
+}
+
+
+
+.about-ajks-empty h3 {
+
+    margin: 0 0 8px;
+
+    color: #24443f;
+
+    font-size: 20px;
+
+}
+
+
+
+.about-ajks-empty p {
+
+    margin: 0;
+
+    font-size: 14px;
+
+}
+
+
+
+/* =========================================================
+   PORTAL FOOTER
+   ========================================================= */
+
+.about-ajks-portal-footer {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding:
+        15px 28px;
+
+    background: #f7faf9;
+
+    border-top:
+        1px solid
+        #e5eeeb;
+
+    color: #71827e;
+
+    font-size: 12px;
+
+}
+
+
+
+.about-ajks-status {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+}
+
+
+
+.about-ajks-status-dot {
+
+    width: 8px;
+
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #25a56a;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(37,165,106,0.10);
+
+}
+
+
+
+.about-ajks-updated {
+
+    color: #82918e;
+
+}
+
+
+
+/* =========================================================
+   BACK BUTTON
+   ========================================================= */
+
+.about-ajks-back-wrapper {
+
+    display: flex;
+
+    justify-content: center;
+
+    padding-top: 32px;
+
+}
+
+
+
+.about-ajks-back-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    min-height: 48px;
+
+    padding:
+        7px 22px
+        7px 9px;
+
+    border-radius: 50px;
+
+    background:
+        #00483e;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    box-shadow:
+        0 8px 20px
+        rgba(0,72,62,0.16);
+
+    transition:
+        transform .25s ease,
+        background .25s ease,
+        box-shadow .25s ease;
+
+}
+
+
+
+.about-ajks-back-icon {
+
+    width: 34px;
+
+    height: 34px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: #00483e;
+
+    background: #f5b400;
+
+}
+
+
+
+.about-ajks-back-button:hover {
+
+    color: #ffffff;
+
+    background: #00695c;
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 12px 25px
+        rgba(0,72,62,0.22);
+
+}
+
+
+
+.about-ajks-back-button:hover
+.about-ajks-back-icon {
+
+    transform:
+        translateX(-2px);
+
+}
+
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .about-ajks-container {
+
+        padding-left: 20px;
+
+        padding-right: 20px;
+
+    }
+
+
+    .about-ajks-hero {
+
+        padding:
+            32px 0
+            38px;
+
+    }
+
+
+    .about-ajks-portal {
+
+        margin-top: 32px;
+
+        border-radius: 15px;
+
+    }
+
+
+    .about-ajks-portal-header {
+
+        padding:
+            19px 22px;
+
+    }
+
+
+    .about-ajks-portal-body {
+
+        gap: 18px;
+
+        padding:
+            30px 24px
+            34px;
+
+    }
+
+
+    .about-ajks-content-text {
+
+        font-size: 15px;
+
+        line-height: 1.9;
+
+    }
+
+}
+
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 576px) {
+
+    .about-ajks-container {
+
+        padding-left: 15px;
+
+        padding-right: 15px;
+
+    }
+
+
+    .about-ajks-hero {
+
+        padding:
+            26px 0
+            32px;
+
+    }
+
+
+    .about-ajks-breadcrumb {
+
+        font-size: 11px;
+
+        gap: 6px;
+
+        margin-bottom: 22px;
+
+    }
+
+
+    .about-ajks-heading-line {
+
+        width: 42px;
+
+        height: 3px;
+
+    }
+
+
+    .about-ajks-label {
+
+        font-size: 10px;
+
+        letter-spacing: 1.4px;
+
+    }
+
+
+    .about-ajks-heading h1 {
+
+        font-size: 30px;
+
+    }
+
+
+    .about-ajks-heading p {
+
+        font-size: 13px;
+
+    }
+
+
+    .about-ajks-portal {
+
+        margin-top: 25px;
+
+        border-radius: 13px;
+
+    }
+
+
+    .about-ajks-portal-header {
+
+        padding:
+            16px;
+
+        gap: 12px;
+
+    }
+
+
+    .about-ajks-portal-icon {
+
+        width: 43px;
+
+        height: 43px;
+
+        font-size: 17px;
+
+        border-radius: 10px;
+
+    }
+
+
+    .about-ajks-portal-header span {
+
+        font-size: 8px;
+
+        letter-spacing: 1.2px;
+
+    }
+
+
+    .about-ajks-portal-header h2 {
+
+        font-size: 18px;
+
+    }
+
+
+    .about-ajks-portal-body {
+
+        display: block;
+
+        padding:
+            25px 19px
+            28px;
+
+    }
+
+
+    .about-ajks-document-mark {
+
+        width: 42px;
+
+        height: 42px;
+
+        margin-bottom: 17px;
+
+    }
+
+
+    .about-ajks-content-text {
+
+        font-size: 14px;
+
+        line-height: 1.85;
+
+    }
+
+
+    .about-ajks-content-text p {
+
+        margin-bottom: 16px;
+
+    }
+
+
+    .about-ajks-portal-footer {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding:
+            13px 17px;
+
+        gap: 7px;
+
+    }
+
+
+    .about-ajks-back-wrapper {
+
+        padding-top: 25px;
+
+    }
+
+}
+
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .about-ajks-heading h1 {
+
+        font-size: 27px;
+
+    }
+
+
+    .about-ajks-portal-header h2 {
+
+        font-size: 17px;
+
+    }
+
+
+    .about-ajks-content-text {
+
+        font-size: 13.5px;
+
+    }
+
+
+    .about-ajks-back-button {
+
+        width: 100%;
+
+        max-width: 180px;
+
+        justify-content: center;
+
+    }
+
+}
+
+
+
+
+
+
+/* =========================================================
+   CONTENT SUBTITLE
+========================================================= */
+
+.about-ajks-content-subtitle {
+
+    width: 100%;
+
+    margin-bottom: 30px;
+
+    padding:
+        0 10px
+        18px;
+
+    text-align: center;
+
+    color: #00695c;
+
+    font-size: 21px;
+
+    font-weight: 700;
+
+    line-height: 1.5;
+
+    position: relative;
+
+}
+
+
+/* Small decorative line */
+
+.about-ajks-content-subtitle::after {
+
+    content: "";
+
+    display: block;
+
+    width: 55px;
+
+    height: 3px;
+
+    margin:
+        12px auto
+        0;
+
+    border-radius: 20px;
+
+    background: #f5b400;
+
+}
+
+
+
+
+@media (max-width: 576px) {
+
+    .about-ajks-content-subtitle {
+
+        font-size: 18px;
+
+        line-height: 1.55;
+
+        padding:
+            0 5px
+            15px;
+
+        margin-bottom: 24px;
+
+    }
+
+}
+
+
+
+
+@media (max-width: 380px) {
+
+    .about-ajks-content-subtitle {
+
+        font-size: 17px;
+
+    }
+
+}
+
+
+
+/* organization structure page css */
+
+/* =========================================================
+   ORGANIZATION STRUCTURE
+========================================================= */
+
+.organization-structure-wrapper {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+
+.organization-card {
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid rgba(7, 84, 71, 0.12);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.organization-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 45px rgba(0, 0, 0, 0.11);
+}
+
+
+.organization-card-header {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    padding: 28px 30px;
+    background: linear-gradient(
+        135deg,
+        #075447,
+        #043d34
+    );
+    color: #ffffff;
+}
+
+
+.organization-icon {
+    width: 76px;
+    height: 76px;
+    min-width: 76px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.12);
+    border: 2px solid rgba(245, 170, 0, 0.8);
+    overflow: hidden;
+    font-size: 28px;
+}
+
+
+.organization-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.organization-heading {
+    flex: 1;
+}
+
+
+.organization-label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    opacity: 0.8;
+}
+
+
+.organization-heading h2 {
+    margin: 0;
+    font-size: 25px;
+    font-weight: 800;
+    line-height: 1.3;
+}
+
+
+.organization-heading p {
+    margin: 8px 0 0;
+    font-size: 15px;
+    opacity: 0.85;
+}
+
+
+.organization-person {
+    padding: 24px 30px 8px;
+}
+
+
+.organization-person h3 {
+    margin: 0;
+    color: #075447;
+    font-size: 23px;
+    font-weight: 800;
+}
+
+
+.organization-person span {
+    display: inline-block;
+    margin-top: 5px;
+    color: #f5aa00;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+
+.organization-department {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin: 15px 30px;
+    padding: 9px 15px;
+    border-radius: 30px;
+    background: rgba(7, 84, 71, 0.07);
+    color: #075447;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+.organization-department i {
+    color: #f5aa00;
+}
+
+
+.organization-description {
+    padding: 10px 30px 25px;
+    color: #3f4f4b;
+    font-size: 16px;
+    line-height: 1.85;
+}
+
+
+.organization-description p {
+    margin-bottom: 14px;
+}
+
+
+.organization-description ul,
+.organization-description ol {
+    padding-left: 25px;
+}
+
+
+.organization-contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 0 30px 25px;
+}
+
+
+.organization-contact a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 14px;
+    border-radius: 8px;
+    background: #f5f7f6;
+    color: #075447;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.25s ease;
+}
+
+
+.organization-contact a:hover {
+    background: #075447;
+    color: #ffffff;
+}
+
+
+.organization-contact i {
+    color: #f5aa00;
+}
+
+
+.organization-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 15px 30px;
+    border-top: 1px solid rgba(7, 84, 71, 0.08);
+    background: #fafcfb;
+}
+
+
+.organization-connector {
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.organization-connector span {
+    width: 2px;
+    height: 45px;
+    background: #f5aa00;
+    position: relative;
+}
+
+
+.organization-connector span::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -1px;
+    width: 9px;
+    height: 9px;
+    border-right: 2px solid #f5aa00;
+    border-bottom: 2px solid #f5aa00;
+    transform: translateX(-50%) rotate(45deg);
+}
+
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .organization-card-header {
+        padding: 22px;
+        gap: 16px;
+    }
+
+
+    .organization-icon {
+        width: 62px;
+        height: 62px;
+        min-width: 62px;
+        font-size: 23px;
+    }
+
+
+    .organization-heading h2 {
+        font-size: 20px;
+    }
+
+
+    .organization-heading p {
+        font-size: 14px;
+    }
+
+
+    .organization-person {
+        padding: 20px 22px 5px;
+    }
+
+
+    .organization-person h3 {
+        font-size: 20px;
+    }
+
+
+    .organization-description {
+        padding: 8px 22px 20px;
+        font-size: 15px;
+        line-height: 1.75;
+    }
+
+
+    .organization-contact {
+        padding: 0 22px 20px;
+    }
+
+
+    .organization-card-footer {
+        padding: 13px 22px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .organization-card {
+        border-radius: 14px;
+    }
+
+
+    .organization-card-header {
+        padding: 18px;
+        align-items: flex-start;
+    }
+
+
+    .organization-icon {
+        width: 54px;
+        height: 54px;
+        min-width: 54px;
+        font-size: 20px;
+    }
+
+
+    .organization-label {
+        font-size: 10px;
+    }
+
+
+    .organization-heading h2 {
+        font-size: 18px;
+    }
+
+
+    .organization-heading p {
+        font-size: 13px;
+    }
+
+
+    .organization-person {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+
+    .organization-department {
+        margin-left: 18px;
+        margin-right: 18px;
+    }
+
+
+    .organization-description {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+
+    .organization-contact {
+        padding-left: 18px;
+        padding-right: 18px;
+        flex-direction: column;
+    }
+
+
+    .organization-contact a {
+        width: 100%;
+    }
+
+
+    .organization-card-footer {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+}
+
+
+
+

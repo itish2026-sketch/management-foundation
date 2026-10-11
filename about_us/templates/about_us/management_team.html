@@ -1,0 +1,1174 @@
+{% extends "base_d.html" %}
+{% load static %}
+
+{% block title %}
+    {% if team %}
+        {{ team.title }} | AJKS Foundation
+    {% else %}
+        Management Team | AJKS Foundation
+    {% endif %}
+{% endblock %}
+
+
+
+
+
+{% block content %}
+<link rel="stylesheet"
+      href="{% static 'about_us/css/management_team.css' %}">
+
+<div class="management-page">
+
+    <!-- =====================================================
+         PAGE HERO
+    ====================================================== -->
+
+    <section class="management-hero">
+
+        <div class="management-container">
+
+            <div class="management-hero-content">
+
+                <span class="management-eyebrow">
+                    AJKS FOUNDATION
+                </span>
+
+                <h1>
+                    {% if team %}
+                        {{ team.title }}
+                    {% else %}
+                        Management Team
+                    {% endif %}
+                </h1>
+
+                {% if team and team.subtitle %}
+                    <p>
+                        {{ team.subtitle }}
+                    </p>
+                {% endif %}
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    {% if team %}
+
+    <div class="management-container">
+
+
+        <!-- =================================================
+             COVER PHOTO
+        ================================================== -->
+
+        {% if team.cover_photo %}
+
+        <section class="management-cover-section">
+
+            <div class="management-cover-frame">
+
+                <img
+                    src="{{ team.cover_photo.url }}"
+                    alt="{{ team.title }}"
+                    class="management-cover-image"
+                    loading="lazy"
+                >
+
+            </div>
+
+        </section>
+
+        {% endif %}
+
+
+
+        <!-- =================================================
+             INTRODUCTION
+        ================================================== -->
+
+        {% if team.introduction %}
+
+        <section class="management-introduction">
+
+            <div class="management-section-heading">
+
+                <span class="section-number">
+                    01
+                </span>
+
+                <div>
+                    <span class="section-label">
+                        ABOUT THE TEAM
+                    </span>
+
+                    <h2>
+                        {{ team.title }}
+                    </h2>
+                </div>
+
+            </div>
+
+
+            <div class="management-introduction-content">
+
+                {{ team.introduction|safe }}
+
+            </div>
+
+        </section>
+
+        {% endif %}
+
+
+
+        <!-- =================================================
+             MANAGEMENT STRUCTURE
+        ================================================== -->
+
+        {% if team.structure_image %}
+
+        <section class="management-structure-section">
+
+            <div class="management-section-heading">
+
+                <span class="section-number">
+                    02
+                </span>
+
+                <div>
+
+                    <span class="section-label">
+                        ORGANIZATION
+                    </span>
+
+                    <h2>
+                        {% if team.structure_title %}
+                            {{ team.structure_title }}
+                        {% else %}
+                            Management Team Structure
+                        {% endif %}
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <!-- STRUCTURE TITLE -->
+
+            {% if team.structure_title %}
+
+            <div class="structure-title-box">
+
+                <h3>
+                    {{ team.structure_title }}
+                </h3>
+
+            </div>
+
+            {% endif %}
+
+
+
+            <!-- =================================================
+                 FULL STRUCTURE IMAGE
+            ================================================== -->
+
+            <div class="structure-image-wrapper">
+
+                <div class="structure-image-frame">
+
+                    <img
+                        src="{{ team.structure_image.url }}"
+                        alt="{{ team.structure_title|default:'Management Team Structure' }}"
+                        class="structure-image"
+                        id="managementStructureImage"
+                        loading="lazy"
+                    >
+
+                    <!-- Zoom button -->
+
+                    <button
+                        type="button"
+                        class="structure-zoom-button"
+                        id="openStructureZoom"
+                        aria-label="Zoom Management Structure Image"
+                    >
+
+                        <i class="bi bi-zoom-in"></i>
+
+                        <span>
+                            View &amp; Zoom
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 STRUCTURE DESCRIPTION
+            ================================================== -->
+
+            {% if team.structure_description %}
+
+            <div class="structure-description">
+
+                {{ team.structure_description|safe }}
+
+            </div>
+
+            {% endif %}
+
+        </section>
+
+        {% endif %}
+
+
+
+        <!-- =================================================
+             LEADERSHIP
+        ================================================== -->
+
+        {% if leadership %}
+
+        <section class="management-people-section">
+
+            <div class="management-section-heading">
+
+                <span class="section-number">
+                    03
+                </span>
+
+                <div>
+
+                    <span class="section-label">
+                        LEADERSHIP
+                    </span>
+
+                    <h2>
+                        Leadership Team
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="management-people-grid">
+
+                {% for person in leadership %}
+
+                <article class="management-person-card">
+
+                    {% if person.photo %}
+
+                    <div class="person-image-wrapper">
+
+                        <img
+                            src="{{ person.photo.url }}"
+                            alt="{{ person.name }}"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                    {% endif %}
+
+
+                    <div class="person-content">
+
+                        {% if person.title %}
+
+                        <span class="person-title">
+                            {{ person.title }}
+                        </span>
+
+                        {% endif %}
+
+                        <h3>
+                            {{ person.name }}
+                        </h3>
+
+                        {% if person.designation %}
+
+                        <p class="person-designation">
+                            {{ person.designation }}
+                        </p>
+
+                        {% endif %}
+
+                        {% if person.short_bio %}
+
+                        <p class="person-bio">
+                            {{ person.short_bio }}
+                        </p>
+
+                        {% endif %}
+
+                        {% if person.description %}
+
+                        <div class="person-description">
+                            {{ person.description|safe }}
+                        </div>
+
+                        {% endif %}
+
+
+                        <!-- Contact -->
+
+                        <div class="person-contact">
+
+                            {% if person.email %}
+
+                            <a href="mailto:{{ person.email }}">
+                                <i class="bi bi-envelope"></i>
+                                {{ person.email }}
+                            </a>
+
+                            {% endif %}
+
+
+                            {% if person.phone %}
+
+                            <a href="tel:{{ person.phone }}">
+                                <i class="bi bi-telephone"></i>
+                                {{ person.phone }}
+                            </a>
+
+                            {% endif %}
+
+                        </div>
+
+
+                        <!-- Social -->
+
+                        <div class="person-social">
+
+                            {% if person.linkedin %}
+
+                            <a href="{{ person.linkedin }}"
+                               target="_blank"
+                               rel="noopener"
+                               aria-label="LinkedIn">
+
+                                <i class="bi bi-linkedin"></i>
+
+                            </a>
+
+                            {% endif %}
+
+
+                            {% if person.facebook %}
+
+                            <a href="{{ person.facebook }}"
+                               target="_blank"
+                               rel="noopener"
+                               aria-label="Facebook">
+
+                                <i class="bi bi-facebook"></i>
+
+                            </a>
+
+                            {% endif %}
+
+
+                            {% if person.whatsapp %}
+
+                            <a href="{{ person.whatsapp }}"
+                               target="_blank"
+                               rel="noopener"
+                               aria-label="WhatsApp">
+
+                                <i class="bi bi-whatsapp"></i>
+
+                            </a>
+
+                            {% endif %}
+
+
+                            {% if person.instagram %}
+
+                            <a href="{{ person.instagram }}"
+                               target="_blank"
+                               rel="noopener"
+                               aria-label="Instagram">
+
+                                <i class="bi bi-instagram"></i>
+
+                            </a>
+
+                            {% endif %}
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+                {% endfor %}
+
+            </div>
+
+        </section>
+
+        {% endif %}
+
+
+
+        <!-- =================================================
+             MANAGEMENT MEMBERS
+        ================================================== -->
+
+        {% if members %}
+
+        <section class="management-people-section">
+
+            <div class="management-section-heading">
+
+                <span class="section-number">
+                    04
+                </span>
+
+                <div>
+
+                    <span class="section-label">
+                        MANAGEMENT
+                    </span>
+
+                    <h2>
+                        Management Team
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="management-people-grid">
+
+                {% for person in members %}
+
+                <article class="management-person-card">
+
+                    {% if person.photo %}
+
+                    <div class="person-image-wrapper">
+
+                        <img
+                            src="{{ person.photo.url }}"
+                            alt="{{ person.name }}"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                    {% endif %}
+
+
+                    <div class="person-content">
+
+                        {% if person.title %}
+
+                        <span class="person-title">
+                            {{ person.title }}
+                        </span>
+
+                        {% endif %}
+
+
+                        <h3>
+                            {{ person.name }}
+                        </h3>
+
+
+                        {% if person.designation %}
+
+                        <p class="person-designation">
+                            {{ person.designation }}
+                        </p>
+
+                        {% endif %}
+
+
+                        {% if person.short_bio %}
+
+                        <p class="person-bio">
+                            {{ person.short_bio }}
+                        </p>
+
+                        {% endif %}
+
+
+                        {% if person.description %}
+
+                        <div class="person-description">
+                            {{ person.description|safe }}
+                        </div>
+
+                        {% endif %}
+
+
+                        <div class="person-contact">
+
+                            {% if person.email %}
+
+                            <a href="mailto:{{ person.email }}">
+                                <i class="bi bi-envelope"></i>
+                                {{ person.email }}
+                            </a>
+
+                            {% endif %}
+
+
+                            {% if person.phone %}
+
+                            <a href="tel:{{ person.phone }}">
+                                <i class="bi bi-telephone"></i>
+                                {{ person.phone }}
+                            </a>
+
+                            {% endif %}
+
+                        </div>
+
+
+                        <div class="person-social">
+
+                            {% if person.linkedin %}
+
+                            <a href="{{ person.linkedin }}"
+                               target="_blank"
+                               rel="noopener">
+
+                                <i class="bi bi-linkedin"></i>
+
+                            </a>
+
+                            {% endif %}
+
+
+                            {% if person.facebook %}
+
+                            <a href="{{ person.facebook }}"
+                               target="_blank"
+                               rel="noopener">
+
+                                <i class="bi bi-facebook"></i>
+
+                            </a>
+
+                            {% endif %}
+
+
+                            {% if person.whatsapp %}
+
+                            <a href="{{ person.whatsapp }}"
+                               target="_blank"
+                               rel="noopener">
+
+                                <i class="bi bi-whatsapp"></i>
+
+                            </a>
+
+                            {% endif %}
+
+
+                            {% if person.instagram %}
+
+                            <a href="{{ person.instagram }}"
+                               target="_blank"
+                               rel="noopener">
+
+                                <i class="bi bi-instagram"></i>
+
+                            </a>
+
+                            {% endif %}
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+                {% endfor %}
+
+            </div>
+
+        </section>
+
+        {% endif %}
+
+
+
+        <!-- =================================================
+             PDF DOCUMENT
+        ================================================== -->
+
+        {% if team.pdf_file %}
+
+        <section class="management-pdf-section">
+
+            <div class="management-section-heading">
+
+                <span class="section-number">
+                    05
+                </span>
+
+                <div>
+
+                    <span class="section-label">
+                        DOCUMENT
+                    </span>
+
+                    <h2>
+                        {% if team.pdf_title %}
+                            {{ team.pdf_title }}
+                        {% else %}
+                            Management Team Document
+                        {% endif %}
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <!-- PDF TITLE -->
+
+            {% if team.pdf_title %}
+
+            <div class="pdf-title-box">
+
+                <h3>
+                    {{ team.pdf_title }}
+                </h3>
+
+            </div>
+
+            {% endif %}
+
+
+
+            <!-- =================================================
+                 FULL PDF SCROLL READER
+            ================================================== -->
+
+            <div class="pdf-reader-wrapper">
+
+                <div class="pdf-reader-toolbar">
+
+                    <div class="pdf-reader-info">
+
+                        <i class="bi bi-file-earmark-pdf"></i>
+
+                        <span>
+                            PDF Document
+                        </span>
+
+                    </div>
+
+
+                    <div class="pdf-reader-actions">
+
+                        <a
+                            href="{{ team.pdf_file.url }}"
+                            target="_blank"
+                            class="pdf-action-button"
+                        >
+
+                            <i class="bi bi-arrows-fullscreen"></i>
+
+                            <span>
+                                Full Screen
+                            </span>
+
+                        </a>
+
+
+                        <a
+                            href="{{ team.pdf_file.url }}"
+                            download
+                            class="pdf-action-button"
+                        >
+
+                            <i class="bi bi-download"></i>
+
+                            <span>
+                                Download
+                            </span>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PDF -->
+
+                <div class="pdf-viewer-container">
+
+                    <iframe
+                        src="{{ team.pdf_file.url }}#toolbar=1&navpanes=0&scrollbar=1&view=FitH"
+                        class="management-pdf-viewer"
+                        title="{{ team.pdf_title|default:'Management Team PDF' }}"
+                        loading="lazy"
+                    >
+                    </iframe>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        {% endif %}
+
+
+
+        <!-- =================================================
+             BACK BUTTON
+        ================================================== -->
+
+        <div class="management-back-wrapper">
+
+            <a
+                href="{% url 'about_us:our_team' %}"
+                class="management-back-button"
+            >
+
+                <i class="bi bi-arrow-left"></i>
+
+                <span>
+                    Back to Our Team
+                </span>
+
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+    {% else %}
+
+    <!-- =====================================================
+         EMPTY STATE
+    ====================================================== -->
+
+    <div class="management-container">
+
+        <section class="management-empty">
+
+            <i class="bi bi-people"></i>
+
+            <h2>
+                Management Team Information
+            </h2>
+
+            <p>
+                Management Team information is currently
+                unavailable.
+            </p>
+
+            <a
+                href="{% url 'about_us:our_team' %}"
+                class="management-back-button"
+            >
+
+                <i class="bi bi-arrow-left"></i>
+
+                Back to Our Team
+
+            </a>
+
+        </section>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+
+
+<!-- =========================================================
+     STRUCTURE IMAGE ZOOM MODAL
+========================================================== -->
+
+<div
+    class="structure-lightbox"
+    id="structureLightbox"
+    aria-hidden="true"
+>
+
+    <div class="structure-lightbox-overlay"></div>
+
+
+    <div class="structure-lightbox-content">
+
+        <button
+            type="button"
+            class="lightbox-close"
+            id="closeStructureZoom"
+            aria-label="Close"
+        >
+
+            <i class="bi bi-x-lg"></i>
+
+        </button>
+
+
+        <div class="lightbox-toolbar">
+
+            <button
+                type="button"
+                id="zoomOutStructure"
+                aria-label="Zoom Out"
+            >
+
+                <i class="bi bi-dash"></i>
+
+            </button>
+
+
+            <button
+                type="button"
+                id="zoomResetStructure"
+                aria-label="Reset Zoom"
+            >
+
+                <i class="bi bi-aspect-ratio"></i>
+
+            </button>
+
+
+            <button
+                type="button"
+                id="zoomInStructure"
+                aria-label="Zoom In"
+            >
+
+                <i class="bi bi-plus"></i>
+
+            </button>
+
+        </div>
+
+
+        <div class="lightbox-image-container">
+
+            <img
+                src=""
+                alt="Management Structure"
+                id="lightboxStructureImage"
+            >
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     PAGE JAVASCRIPT
+========================================================== -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+
+    /* =====================================================
+       STRUCTURE IMAGE ZOOM
+    ====================================================== */
+
+    const openButton =
+        document.getElementById(
+            "openStructureZoom"
+        );
+
+    const closeButton =
+        document.getElementById(
+            "closeStructureZoom"
+        );
+
+    const lightbox =
+        document.getElementById(
+            "structureLightbox"
+        );
+
+    const lightboxImage =
+        document.getElementById(
+            "lightboxStructureImage"
+        );
+
+    const originalImage =
+        document.getElementById(
+            "managementStructureImage"
+        );
+
+    const zoomIn =
+        document.getElementById(
+            "zoomInStructure"
+        );
+
+    const zoomOut =
+        document.getElementById(
+            "zoomOutStructure"
+        );
+
+    const zoomReset =
+        document.getElementById(
+            "zoomResetStructure"
+        );
+
+
+    let scale = 1;
+
+
+    function updateZoom() {
+
+        if (!lightboxImage) {
+            return;
+        }
+
+        lightboxImage.style.transform =
+            "scale(" + scale + ")";
+
+    }
+
+
+    function openLightbox() {
+
+        if (
+            !lightbox ||
+            !originalImage ||
+            !lightboxImage
+        ) {
+            return;
+        }
+
+        lightboxImage.src =
+            originalImage.src;
+
+        lightbox.classList.add("active");
+
+        lightbox.setAttribute(
+            "aria-hidden",
+            "false"
+        );
+
+        document.body.classList.add(
+            "structure-lightbox-open"
+        );
+
+        scale = 1;
+
+        updateZoom();
+
+    }
+
+
+    function closeLightbox() {
+
+        if (!lightbox) {
+            return;
+        }
+
+        lightbox.classList.remove(
+            "active"
+        );
+
+        lightbox.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+
+        document.body.classList.remove(
+            "structure-lightbox-open"
+        );
+
+    }
+
+
+    if (openButton) {
+
+        openButton.addEventListener(
+            "click",
+            openLightbox
+        );
+
+    }
+
+
+    if (originalImage) {
+
+        originalImage.addEventListener(
+            "click",
+            openLightbox
+        );
+
+    }
+
+
+    if (closeButton) {
+
+        closeButton.addEventListener(
+            "click",
+            closeLightbox
+        );
+
+    }
+
+
+    const overlay =
+        document.querySelector(
+            ".structure-lightbox-overlay"
+        );
+
+
+    if (overlay) {
+
+        overlay.addEventListener(
+            "click",
+            closeLightbox
+        );
+
+    }
+
+
+    if (zoomIn) {
+
+        zoomIn.addEventListener(
+            "click",
+            function () {
+
+                scale += 0.25;
+
+                if (scale > 4) {
+                    scale = 4;
+                }
+
+                updateZoom();
+
+            }
+        );
+
+    }
+
+
+    if (zoomOut) {
+
+        zoomOut.addEventListener(
+            "click",
+            function () {
+
+                scale -= 0.25;
+
+                if (scale < 0.5) {
+                    scale = 0.5;
+                }
+
+                updateZoom();
+
+            }
+        );
+
+    }
+
+
+    if (zoomReset) {
+
+        zoomReset.addEventListener(
+            "click",
+            function () {
+
+                scale = 1;
+
+                updateZoom();
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       MOUSE WHEEL ZOOM
+    ====================================================== */
+
+    if (lightboxImage) {
+
+        lightboxImage.addEventListener(
+            "wheel",
+            function (event) {
+
+                event.preventDefault();
+
+                if (event.deltaY < 0) {
+
+                    scale += 0.15;
+
+                } else {
+
+                    scale -= 0.15;
+
+                }
+
+                if (scale < 0.5) {
+                    scale = 0.5;
+                }
+
+                if (scale > 4) {
+                    scale = 4;
+                }
+
+                updateZoom();
+
+            },
+            {
+                passive: false
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       ESCAPE KEY
+    ====================================================== */
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (
+                event.key === "Escape" &&
+                lightbox &&
+                lightbox.classList.contains("active")
+            ) {
+
+                closeLightbox();
+
+            }
+
+        }
+    );
+
+
+});
+
+</script>
+
+{% endblock %}

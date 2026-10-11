@@ -1,0 +1,76 @@
+{% extends "base_d.html" %}
+{% load static %}
+
+{% block title %}Latest News | AJKS Foundation{% endblock %}
+
+
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'news/news.css' %}">
+
+<section class="nw-section">
+
+    <div class="nw-heading">
+        <span class="nw-label">LATEST NEWS</span>
+        <h1>News &amp; Stories</h1>
+        <p>Stay updated with the latest from AJKS Foundation.</p>
+    </div>
+
+    {% if featured %}
+        <a href="{% url 'news:news_detail' featured.slug %}"
+           class="nw-featured">
+
+            <div class="nw-featured-img">
+                {% if featured.cover_image %}
+                    <img src="{{ featured.cover_image.url }}" alt="{{ featured.title }}">
+                {% endif %}
+                <span class="nw-featured-badge">★ Featured</span>
+            </div>
+
+            <div class="nw-featured-body">
+                <span class="nw-cat">{{ featured.get_category_display }}</span>
+                <h2>{{ featured.title }}</h2>
+                <p>{{ featured.short_description }}</p>
+                <span class="nw-meta">
+                    <i class="bi bi-calendar3"></i>
+                    {{ featured.published_at|date:"d M, Y" }}
+                </span>
+            </div>
+        </a>
+    {% endif %}
+
+    <div class="nw-grid">
+        {% for item in news %}
+            <a href="{% url 'news:news_detail' item.slug %}" class="nw-card">
+
+                <div class="nw-card-img">
+                    {% if item.cover_image %}
+                        <img src="{{ item.cover_image.url }}" alt="{{ item.title }}">
+                    {% else %}
+                        <div class="nw-no-image"><i class="bi bi-image"></i></div>
+                    {% endif %}
+                    <span class="nw-card-cat">{{ item.get_category_display }}</span>
+                </div>
+
+                <div class="nw-card-body">
+                    <span class="nw-date">
+                        <i class="bi bi-calendar3"></i>
+                        {{ item.published_at|date:"d M, Y" }}
+                    </span>
+                    <h3>{{ item.title }}</h3>
+                    <p>{{ item.short_description }}</p>
+                    <span class="nw-read">Read More <i class="bi bi-arrow-right"></i></span>
+                </div>
+            </a>
+        {% empty %}
+            <div class="nw-empty">
+                <i class="bi bi-newspaper"></i>
+                <h3>No news yet</h3>
+            </div>
+        {% endfor %}
+    </div>
+
+</section>
+<script src="{% static 'news/news.js' %}"></script>
+
+{% endblock %}

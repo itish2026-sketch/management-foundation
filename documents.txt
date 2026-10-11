@@ -1,0 +1,36 @@
+
+
+python -m pip install reportlab
+
+python manage.py makemigrations about_us
+python manage.py makemigrations
+python manage.py migrate
+
+python -m pip freeze > requirements.txt
+
+python manage.py runserver
+
+
+
+
+github
+
+1. git init
+2. git add .
+3. git commit -m "first commit"
+
+
+arpor githut a ja thake 
+
+5. git remote add origin https://github.com/itish2026-sketch/ajks_foundation-.git
+6. git branch -M main
+7. git push -u origin main
+
+
+git status
+
+git remote -v
+
+Remove-Item -Recurse -Force .git
+
+Test-Path .git

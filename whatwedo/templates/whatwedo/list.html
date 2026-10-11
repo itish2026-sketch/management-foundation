@@ -1,0 +1,106 @@
+{% extends "base_d.html" %}
+{% load static %}
+
+{% block title %}
+What We Do | AJKS Foundation
+{% endblock %}
+
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'whatwedo/whatwedo.css' %}">
+
+<section class="wwd-list-section">
+
+    <!-- ============ HERO / HEADING ============ -->
+    <div class="wwd-list-heading">
+
+        <span class="wwd-label">WHAT WE DO</span>
+
+        <h1>Our Programs &amp; Initiatives</h1>
+
+        {% comment %} <p>
+            AJKS Foundation কাজ করে community development,
+            education, health এবং sustainable programs-এ।
+        </p> {% endcomment %}
+
+    </div>
+
+
+    <!-- ============ CATEGORY FILTER ============ -->
+    <div class="wwd-filter">
+
+        <a href="{% url 'whatwedo:list' %}"
+           class="wwd-filter-btn {% if not category %}active{% endif %}">
+            All
+        </a>
+
+        {% for value, label in categories %}
+            <a href="?category={{ value }}"
+               class="wwd-filter-btn {% if category == value %}active{% endif %}">
+                {{ label }}
+            </a>
+        {% endfor %}
+
+    </div>
+
+
+    <!-- ============ POSTS GRID ============ -->
+    {% if posts %}
+
+        <div class="wwd-grid">
+
+            {% for post in posts %}
+
+                <a href="{% url 'whatwedo:detail' post.slug %}"
+                   class="wwd-card">
+
+                    <div class="wwd-card-image">
+
+                        {% if post.cover_image %}
+                            <img src="{{ post.cover_image.url }}"
+                                 alt="{{ post.title }}"
+                                 loading="lazy">
+                        {% else %}
+                            <div class="wwd-no-image">
+                                <i class="bi bi-image"></i>
+                            </div>
+                        {% endif %}
+
+                        <span class="wwd-card-category">
+                            {{ post.get_category_display }}
+                        </span>
+
+                    </div>
+
+                    <div class="wwd-card-body">
+
+                        <h3>{{ post.title }}</h3>
+
+                        <p>{{ post.short_description }}</p>
+
+                        <span class="wwd-card-link">
+                            Read More
+                            <i class="bi bi-arrow-right"></i>
+                        </span>
+
+                    </div>
+
+                </a>
+
+            {% endfor %}
+
+        </div>
+
+    {% else %}
+
+        <div class="wwd-empty">
+            <i class="bi bi-inbox"></i>
+            <h3>কোনো post পাওয়া যায়নি</h3>
+            <p>এই category-তে এখনো কোনো post যোগ করা হয়নি।</p>
+        </div>
+
+    {% endif %}
+
+</section>
+
+{% endblock %}

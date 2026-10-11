@@ -1,0 +1,75 @@
+{% extends "base_d.html" %}
+{% load static %}
+
+{% block title %}{{ notice.title }} | Notices{% endblock %}
+
+
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'news/news.css' %}">
+
+<article class="nw-detail">
+
+    <a href="{% url 'news:notice_list' %}" class="nw-back">
+        <i class="bi bi-arrow-left"></i> All Notices
+    </a>
+
+    <div class="nt-detail-card priority-{{ notice.priority }}">
+
+        <div class="nt-detail-head">
+            <span class="nt-priority big">
+                {{ notice.get_priority_display }}
+            </span>
+
+            {% if notice.is_pinned %}
+                <span class="nt-pin">📌 PINNED</span>
+            {% endif %}
+        </div>
+
+        <h1>{{ notice.title }}</h1>
+
+        <div class="nt-detail-meta">
+
+            <span>
+                <i class="bi bi-calendar3"></i>
+                {{ notice.published_at|date:"d M, Y" }}
+            </span>
+
+            {% if notice.deadline %}
+                <span>
+                    <i class="bi bi-alarm"></i>
+                    Deadline: {{ notice.deadline|date:"d M, Y" }}
+                </span>
+            {% endif %}
+
+            {% if notice.issued_by %}
+                <span>
+                    <i class="bi bi-building"></i>
+                    {{ notice.issued_by }}
+                </span>
+            {% endif %}
+
+        </div>
+
+        <p class="nw-lead">{{ notice.short_description }}</p>
+
+        {% if notice.full_content %}
+            <div class="nw-rich">
+                {{ notice.full_content|safe }}
+            </div>
+        {% endif %}
+
+        {% if notice.attachment_pdf %}
+            <a href="{{ notice.attachment_pdf.url }}"
+               target="_blank"
+               class="nt-download">
+                <i class="bi bi-file-earmark-pdf"></i>
+                Download PDF Attachment
+            </a>
+        {% endif %}
+
+    </div>
+
+</article>
+<script src="{% static 'news/news.js' %}"></script>
+{% endblock %}

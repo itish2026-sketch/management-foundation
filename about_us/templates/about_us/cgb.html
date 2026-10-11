@@ -1,0 +1,395 @@
+{% extends "base_d.html" %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet"
+      href="{% static 'about_us/css/cgb.css' %}">
+
+
+<section class="cgb-page">
+
+    <!-- HERO -->
+
+    <div class="cgb-hero">
+
+        <div class="cgb-hero-number">
+            CGB
+        </div>
+
+        <div>
+            <span class="cgb-eyebrow">
+                GOVERNANCE
+            </span>
+
+            <h1>
+                Consortium Governing Board
+            </h1>
+
+            <p>
+                Leadership, governance and members of AJKS Foundation.
+            </p>
+        </div>
+
+    </div>
+
+
+    <!-- CHAIRMAN -->
+
+    {% if chairman %}
+
+    <section class="cgb-chairman-section">
+
+        <div class="cgb-section-heading">
+
+            <span>01</span>
+
+            <div>
+                <small>
+                    LEADERSHIP
+                </small>
+
+                <h2>
+                    Chairman Profile
+                </h2>
+            </div>
+
+        </div>
+
+
+        <div class="cgb-chairman-card">
+
+            <div class="cgb-chairman-photo">
+
+                {% if chairman.photo %}
+
+                    <img
+                        src="{{ chairman.photo.url }}"
+                        alt="{{ chairman.name }}"
+                    >
+
+                {% else %}
+
+                    <div class="cgb-no-photo">
+                        <i class="bi bi-person"></i>
+                    </div>
+
+                {% endif %}
+
+            </div>
+
+
+            <div class="cgb-chairman-info">
+
+                {% if chairman.title %}
+                    <span class="cgb-profile-label">
+                        {{ chairman.title }}
+                    </span>
+                {% endif %}
+
+                <h2>
+                    {{ chairman.name }}
+                </h2>
+
+
+                <div class="cgb-contact-list">
+
+                    {% if chairman.email %}
+                    <a href="mailto:{{ chairman.email }}">
+                        <i class="bi bi-envelope"></i>
+                        <span>{{ chairman.email }}</span>
+                    </a>
+                    {% endif %}
+
+
+                    {% if chairman.phone %}
+                    <a href="tel:{{ chairman.phone }}">
+                        <i class="bi bi-telephone"></i>
+                        <span>{{ chairman.phone }}</span>
+                    </a>
+                    {% endif %}
+
+                </div>
+
+
+                <div class="cgb-socials">
+
+                    {% if chairman.linkedin %}
+                    <a
+                        href="{{ chairman.linkedin }}"
+                        target="_blank"
+                        rel="noopener"
+                        aria-label="LinkedIn"
+                        class="linkedin"
+                    >
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+                    {% endif %}
+
+
+                    {% if chairman.facebook %}
+                    <a
+                        href="{{ chairman.facebook }}"
+                        target="_blank"
+                        rel="noopener"
+                        aria-label="Facebook"
+                        class="facebook"
+                    >
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                    {% endif %}
+
+
+                    {% if chairman.whatsapp %}
+                    <a
+                        href="{{ chairman.whatsapp }}"
+                        target="_blank"
+                        rel="noopener"
+                        aria-label="WhatsApp"
+                        class="whatsapp"
+                    >
+                        <i class="bi bi-whatsapp"></i>
+                    </a>
+                    {% endif %}
+
+
+                    {% if chairman.instagram %}
+                    <a
+                        href="{{ chairman.instagram }}"
+                        target="_blank"
+                        rel="noopener"
+                        aria-label="Instagram"
+                        class="instagram"
+                    >
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                    {% endif %}
+
+                </div>
+
+
+                {% if chairman.description %}
+
+                <div class="cgb-chairman-description">
+                    {{ chairman.description|safe }}
+                </div>
+
+                {% endif %}
+
+            </div>
+
+        </div>
+
+    </section>
+
+    {% endif %}
+
+
+
+    <!-- MEMBERS -->
+
+    {% if members %}
+
+    <section class="cgb-members-section">
+
+        <div class="cgb-section-heading">
+
+            <span>02</span>
+
+            <div>
+
+                <small>
+                    GOVERNING BODY
+                </small>
+
+                <h2>
+                    CGB Members
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="cgb-members-grid">
+
+            {% for member in members %}
+
+            <article class="cgb-member-card">
+
+                <div class="cgb-member-number">
+
+                    {{ forloop.counter|stringformat:"02d" }}
+
+                </div>
+
+
+                <div class="cgb-member-photo">
+
+                    {% if member.photo %}
+
+                    <img
+                        src="{{ member.photo.url }}"
+                        alt="{{ member.name }}"
+                        loading="lazy"
+                    >
+
+                    {% else %}
+
+                    <div class="cgb-member-placeholder">
+                        <i class="bi bi-person"></i>
+                    </div>
+
+                    {% endif %}
+
+                </div>
+
+
+                <div class="cgb-member-content">
+
+                    {% if member.title %}
+
+                    <span class="cgb-member-title">
+                        {{ member.title }}
+                    </span>
+
+                    {% endif %}
+
+
+                    <h3>
+                        {{ member.name }}
+                    </h3>
+
+
+                    {% if member.designation %}
+
+                    <p class="cgb-designation">
+                        {{ member.designation }}
+                    </p>
+
+                    {% endif %}
+
+
+                    <div class="cgb-member-contact">
+
+                        {% if member.email %}
+
+                        <a href="mailto:{{ member.email }}">
+                            <i class="bi bi-envelope"></i>
+                            {{ member.email }}
+                        </a>
+
+                        {% endif %}
+
+
+                        {% if member.phone %}
+
+                        <a href="tel:{{ member.phone }}">
+                            <i class="bi bi-telephone"></i>
+                            {{ member.phone }}
+                        </a>
+
+                        {% endif %}
+
+                    </div>
+
+
+                    {% if member.description %}
+
+                    <div class="cgb-member-description">
+                        {{ member.description|safe }}
+                    </div>
+
+                    {% endif %}
+
+
+                    <div class="cgb-member-social">
+
+                        {% if member.linkedin %}
+                        <a href="{{ member.linkedin }}"
+                           target="_blank"
+                           rel="noopener">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                        {% endif %}
+
+
+                        {% if member.facebook %}
+                        <a href="{{ member.facebook }}"
+                           target="_blank"
+                           rel="noopener">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        {% endif %}
+
+
+                        {% if member.whatsapp %}
+                        <a href="{{ member.whatsapp }}"
+                           target="_blank"
+                           rel="noopener">
+                            <i class="bi bi-whatsapp"></i>
+                        </a>
+                        {% endif %}
+
+
+                        {% if member.instagram %}
+                        <a href="{{ member.instagram }}"
+                           target="_blank"
+                           rel="noopener">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        {% endif %}
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            {% endfor %}
+
+        </div>
+
+    </section>
+
+    {% endif %}
+
+
+    <!-- EMPTY STATE -->
+
+    {% if not chairman and not members %}
+
+    <div class="cgb-empty">
+
+        <i class="bi bi-people"></i>
+
+        <h3>
+            CGB Information
+        </h3>
+
+        <p>
+            CGB information will be published here.
+        </p>
+
+    </div>
+
+    {% endif %}
+
+
+    <!-- BACK -->
+
+    <div class="cgb-back">
+
+        <a href="{% url 'about_us:our_team' %}">
+
+            <i class="bi bi-arrow-left"></i>
+
+            Back to Our Team
+
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,510 @@
+/* =========================================================
+   AJKS FOUNDATION
+   CHAIRMAN'S MESSAGE
+========================================================= */
+
+.chairman-page {
+    background: #f7faf9;
+    min-height: 100vh;
+    padding-bottom: 80px;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.chairman-hero {
+    position: relative;
+    background: #075447;
+    border-bottom: 4px solid #f5aa00;
+    overflow: hidden;
+}
+
+.chairman-hero::before {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: 50%;
+    top: -90px;
+    right: 8%;
+}
+
+.chairman-hero::after {
+    content: "";
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    border: 1px solid rgba(245,170,0,.35);
+    border-radius: 50%;
+    bottom: -55px;
+    left: 10%;
+}
+
+.chairman-hero-inner {
+    max-width: 1400px;
+    margin: auto;
+    padding: 75px 30px;
+    position: relative;
+    z-index: 2;
+}
+
+.chairman-eyebrow {
+    display: inline-block;
+    color: #f5aa00;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 14px;
+}
+
+.chairman-hero h1 {
+    margin: 0;
+    color: #fff;
+    font-size: clamp(34px, 5vw, 68px);
+    line-height: 1.05;
+    font-weight: 800;
+}
+
+.chairman-hero p {
+    max-width: 680px;
+    margin: 20px 0 0;
+    color: rgba(255,255,255,.78);
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.chairman-container {
+    width: min(1200px, calc(100% - 40px));
+    margin: 55px auto 0;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.chairman-message-card {
+    background: #fff;
+    border: 1px solid #dce9e5;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow:
+        0 18px 50px rgba(4,61,52,.08);
+
+    opacity: 0;
+    transform: translateY(30px);
+
+    transition:
+        opacity .7s ease,
+        transform .7s ease,
+        box-shadow .3s ease;
+}
+
+.chairman-message-card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.chairman-message-card:hover {
+    box-shadow:
+        0 25px 65px rgba(4,61,52,.12);
+}
+
+
+/* =========================================================
+   TOP
+========================================================= */
+
+.chairman-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+
+    padding: 35px 40px;
+
+    border-bottom: 1px solid #e7efec;
+}
+
+.chairman-kicker {
+    display: block;
+    color: #f5aa00;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+    margin-bottom: 8px;
+}
+
+.chairman-card-top h2 {
+    margin: 0;
+    color: #075447;
+    font-size: clamp(25px, 4vw, 42px);
+    font-weight: 800;
+}
+
+.chairman-number {
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #075447;
+    color: #f5aa00;
+
+    font-size: 17px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+.chairman-message {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 15px;
+
+    padding: 45px 50px;
+}
+
+.message-mark {
+    font-size: 110px;
+    line-height: .7;
+    color: #f5aa00;
+    font-family: Georgia, serif;
+}
+
+.message-text {
+    color: #31504a;
+    font-size: 17px;
+    line-height: 1.95;
+}
+
+.message-text p {
+    margin-bottom: 18px;
+}
+
+.message-text h1,
+.message-text h2,
+.message-text h3 {
+    color: #075447;
+    margin-top: 25px;
+}
+
+
+/* =========================================================
+   PDF DOCUMENT
+========================================================= */
+
+.chairman-document {
+    margin: 0 40px 40px;
+    padding: 25px;
+
+    background: #f7faf9;
+    border: 1px solid #dce9e5;
+    border-radius: 18px;
+}
+
+.document-heading {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.document-icon {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: #075447;
+    color: #f5aa00;
+
+    font-size: 22px;
+}
+
+.document-heading span {
+    display: block;
+    color: #758983;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.document-heading h3 {
+    margin: 4px 0 0;
+    color: #075447;
+    font-size: 19px;
+}
+
+
+/* =========================================================
+   PDF READER
+========================================================= */
+
+.pdf-reader {
+    width: 100%;
+    height: 750px;
+
+    overflow: hidden;
+
+    background: #fff;
+
+    border: 1px solid #d8e4e0;
+    border-radius: 12px;
+}
+
+.pdf-reader iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}
+
+
+/* =========================================================
+   PDF BUTTONS
+========================================================= */
+
+.pdf-actions {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    margin-top: 18px;
+}
+
+.pdf-actions a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 12px 18px;
+
+    border-radius: 9px;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    transition:
+        transform .25s ease,
+        background .25s ease;
+}
+
+.pdf-open-btn {
+    background: #075447;
+    color: #fff;
+}
+
+.pdf-download-btn {
+    background: #f5aa00;
+    color: #173b34;
+}
+
+.pdf-actions a:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.chairman-card-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+
+    padding: 18px 40px;
+
+    background: #fbfdfc;
+
+    border-top: 1px solid #e7efec;
+
+    color: #70817d;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   EMPTY
+========================================================= */
+
+.chairman-empty {
+    text-align: center;
+    background: #fff;
+    border: 1px solid #dce9e5;
+    border-radius: 20px;
+    padding: 80px 25px;
+}
+
+.chairman-empty i {
+    font-size: 50px;
+    color: #f5aa00;
+}
+
+.chairman-empty h2 {
+    color: #075447;
+}
+
+.chairman-empty p {
+    color: #71827e;
+}
+
+
+/* =========================================================
+   BACK
+========================================================= */
+
+.chairman-back {
+    margin-top: 30px;
+}
+
+.chairman-back a {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    padding: 12px 20px;
+
+    background: #075447;
+    color: #fff;
+
+    border-radius: 9px;
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+    transition: .25s ease;
+}
+
+.chairman-back a:hover {
+    background: #043d34;
+    transform: translateX(-3px);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .chairman-hero-inner {
+        padding: 55px 22px;
+    }
+
+    .chairman-container {
+        width: min(100% - 28px, 1200px);
+        margin-top: 35px;
+    }
+
+    .chairman-card-top {
+        padding: 27px 24px;
+    }
+
+    .chairman-message {
+        grid-template-columns: 1fr;
+        padding: 32px 25px;
+    }
+
+    .message-mark {
+        font-size: 75px;
+    }
+
+    .chairman-document {
+        margin: 0 20px 25px;
+        padding: 15px;
+    }
+
+    .pdf-reader {
+        height: 600px;
+    }
+
+    .chairman-card-footer {
+        padding: 16px 24px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .chairman-hero-inner {
+        padding: 45px 18px;
+    }
+
+    .chairman-hero p {
+        font-size: 14px;
+    }
+
+    .chairman-card-top {
+        align-items: flex-start;
+        padding: 23px 18px;
+    }
+
+    .chairman-number {
+        width: 48px;
+        height: 48px;
+        font-size: 13px;
+    }
+
+    .chairman-message {
+        padding: 25px 18px;
+    }
+
+    .message-text {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .chairman-document {
+        margin: 0 12px 20px;
+    }
+
+    .pdf-reader {
+        height: 500px;
+    }
+
+    .pdf-actions {
+        flex-direction: column;
+    }
+
+    .pdf-actions a {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .chairman-card-footer {
+        flex-direction: column;
+        padding: 16px 18px;
+    }
+}

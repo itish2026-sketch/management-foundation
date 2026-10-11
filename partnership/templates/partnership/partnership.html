@@ -1,0 +1,416 @@
+{% extends "base_d.html" %}
+{% load static %}
+
+{% block title %}
+Partnership & Membership | AJKS Foundation
+{% endblock %}
+
+
+
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'partnership/partnership.css' %}">
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+<section class="ptn-hero">
+
+    {% if info.background_image %}
+        <div class="ptn-hero-bg">
+            <img src="{{ info.background_image.url }}" alt="">
+        </div>
+    {% endif %}
+
+    <div class="ptn-hero-overlay"></div>
+
+    <div class="ptn-hero-content">
+
+        <span class="ptn-hero-label">PARTNERSHIP</span>
+
+        <h1>{{ info.heading|default:"Partnership & Membership" }}</h1>
+
+        <p>
+            {{ info.sub_heading|default:"Working together for sustainable development" }}
+        </p>
+
+        <a href="#partners" class="ptn-hero-btn">
+            Explore Partners
+            <i class="bi bi-arrow-down"></i>
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     INTRO TEXT
+========================================================= -->
+{% if info.intro_text %}
+    <section class="ptn-intro">
+        <div class="ptn-container">
+            <div class="ptn-intro-inner">
+                {{ info.intro_text|safe }}
+            </div>
+        </div>
+    </section>
+{% endif %}
+
+
+
+<!-- =========================================================
+     STATISTICS
+========================================================= -->
+{% if stats %}
+    <section class="ptn-stats-section">
+        <div class="ptn-container">
+
+            <div class="ptn-stats-grid">
+
+                {% for stat in stats %}
+                    <div class="ptn-stat-card">
+                        <div class="ptn-stat-icon">
+                            <i class="bi {{ stat.icon }}"></i>
+                        </div>
+                        <div class="ptn-stat-value">{{ stat.value }}</div>
+                        <div class="ptn-stat-label">{{ stat.label }}</div>
+                    </div>
+                {% endfor %}
+
+            </div>
+
+        </div>
+    </section>
+{% endif %}
+
+
+
+<!-- =========================================================
+     PARTNERS
+========================================================= -->
+<section class="ptn-partners-section" id="partners">
+
+    <div class="ptn-container">
+
+        <div class="ptn-section-heading">
+            <span class="ptn-label">OUR PARTNERS</span>
+            <h2>Organizations We Work With</h2>
+            <p>
+                AJKS Foundation has been implementing its various development
+                activities with active partnering / membership of the
+                following organizations.
+            </p>
+        </div>
+
+
+        {% if partners %}
+
+            <div class="ptn-grid">
+
+                {% for partner in partners %}
+
+                    <div class="ptn-card
+                        {% if partner.is_featured %}ptn-card-featured{% endif %}">
+
+                        {% if partner.is_featured %}
+                            <span class="ptn-featured-badge">★ Featured</span>
+                        {% endif %}
+
+
+                        <div class="ptn-card-logo">
+
+                            {% if partner.logo %}
+                                <img src="{{ partner.logo.url }}"
+                                     alt="{{ partner.name }}">
+                            {% else %}
+                                <div class="ptn-logo-placeholder">
+                                    {{ partner.name|slice:":1" }}
+                                </div>
+                            {% endif %}
+
+                        </div>
+
+
+                        <div class="ptn-card-body">
+
+                            <span class="ptn-card-category">
+                                {{ partner.get_category_display }}
+                            </span>
+
+                            <h3>{{ partner.name }}</h3>
+
+                            {% if partner.short_description %}
+                                <p>{{ partner.short_description }}</p>
+                            {% endif %}
+
+                            <div class="ptn-card-meta">
+
+                                {% if partner.since_year %}
+                                    <span>
+                                        <i class="bi bi-calendar-check"></i>
+                                        Since {{ partner.since_year }}
+                                    </span>
+                                {% endif %}
+
+                                {% if partner.location %}
+                                    <span>
+                                        <i class="bi bi-geo-alt"></i>
+                                        {{ partner.location }}
+                                    </span>
+                                {% endif %}
+
+                            </div>
+
+                            {% if partner.website %}
+                                <a href="{{ partner.website }}"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   class="ptn-card-link">
+                                    Visit Website
+                                    <i class="bi bi-box-arrow-up-right"></i>
+                                </a>
+                            {% endif %}
+
+                        </div>
+
+                    </div>
+
+                {% endfor %}
+
+            </div>
+
+        {% else %}
+
+            <div class="ptn-empty">
+                <i class="bi bi-people"></i>
+                <h3>No partners added yet</h3>
+                <p>Admin panel থেকে partner যোগ করুন।</p>
+            </div>
+
+        {% endif %}
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     WHY PARTNER WITH US
+========================================================= -->
+{% if benefits %}
+    <section class="ptn-benefits-section">
+
+        <div class="ptn-container">
+
+            <div class="ptn-section-heading">
+                <span class="ptn-label">WHY US</span>
+                <h2>Why Partner With AJKS Foundation</h2>
+                <p>
+                    We believe in transparent, impactful and long-term
+                    partnerships that create measurable change.
+                </p>
+            </div>
+
+
+            <div class="ptn-benefits-grid">
+
+                {% for b in benefits %}
+                    <div class="ptn-benefit">
+
+                        <div class="ptn-benefit-icon">
+                            <i class="bi {{ b.icon }}"></i>
+                        </div>
+
+                        <h3>{{ b.title }}</h3>
+                        <p>{{ b.description }}</p>
+
+                    </div>
+                {% endfor %}
+
+            </div>
+
+        </div>
+
+    </section>
+{% endif %}
+
+
+
+<!-- =========================================================
+     TIMELINE
+========================================================= -->
+{% if timeline %}
+    <section class="ptn-timeline-section">
+
+        <div class="ptn-container">
+
+            <div class="ptn-section-heading">
+                <span class="ptn-label">OUR JOURNEY</span>
+                <h2>Partnership Timeline</h2>
+            </div>
+
+
+            <div class="ptn-timeline">
+
+                {% for t in timeline %}
+                    <div class="ptn-timeline-item">
+
+                        <div class="ptn-timeline-year">
+                            {{ t.year }}
+                        </div>
+
+                        <div class="ptn-timeline-content">
+                            <h3>{{ t.title }}</h3>
+                            {% if t.description %}
+                                <p>{{ t.description }}</p>
+                            {% endif %}
+                        </div>
+
+                    </div>
+                {% endfor %}
+
+            </div>
+
+        </div>
+
+    </section>
+{% endif %}
+
+
+
+<!-- =========================================================
+     CTA — BECOME A PARTNER
+========================================================= -->
+<section class="ptn-cta-section">
+
+    <div class="ptn-container">
+
+        <div class="ptn-cta">
+
+            <div class="ptn-cta-icon">
+                <i class="bi bi-handshake"></i>
+            </div>
+
+            <h2>Become a Partner</h2>
+
+            <p>
+                Join hands with AJKS Foundation to create meaningful,
+                sustainable impact in communities across Bangladesh.
+                Together, we can build a better tomorrow.
+            </p>
+
+            <div class="ptn-cta-buttons">
+
+                <a href="{% url 'contact:contact' %}"
+                   class="ptn-btn-primary">
+                    Contact Us
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+
+                <a href="#partners"
+                   class="ptn-btn-secondary">
+                    View Partners
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+    /* =====================================================
+       SMOOTH SCROLL for anchor links
+    ===================================================== */
+    document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+
+        link.addEventListener("click", function (e) {
+
+            const id = this.getAttribute("href");
+
+            if (id === "#" || id.length < 2) return;
+
+            const target = document.querySelector(id);
+
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                });
+            }
+        });
+    });
+
+
+    /* =====================================================
+       STATS COUNTER ANIMATION
+    ===================================================== */
+    const stats = document.querySelectorAll(".ptn-stat-value");
+
+    if (!stats.length) return;
+
+
+    function animateValue(el) {
+
+        const text = el.textContent.trim();
+
+        // Only animate if value is a number (possibly with + or %)
+        const match = text.match(/^([\d.]+)(.*)$/);
+
+        if (!match) return;
+
+        const target = parseFloat(match[1]);
+        const suffix = match[2] || "";
+
+        let current = 0;
+        const duration = 1600;
+        const step = target / (duration / 16);
+
+        const timer = setInterval(function () {
+
+            current += step;
+
+            if (current >= target) {
+                current = target;
+                clearInterval(timer);
+            }
+
+            el.textContent = Math.floor(current) + suffix;
+
+        }, 16);
+    }
+
+
+    // Trigger on scroll into view
+    const observer = new IntersectionObserver(function (entries) {
+
+        entries.forEach(function (entry) {
+
+            if (entry.isIntersecting) {
+
+                animateValue(entry.target);
+
+                observer.unobserve(entry.target);
+            }
+        });
+
+    }, { threshold: 0.5 });
+
+
+    stats.forEach(function (stat) {
+        observer.observe(stat);
+    });
+
+});
+</script>
+
+{% endblock %}

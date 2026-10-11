@@ -1,0 +1,84 @@
+{% extends "base_d.html" %}
+{% load static %}
+
+{% block title %}Documents | AJKS Foundation{% endblock %}
+
+
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'publications/publications.css' %}">
+
+<section class="pub-section">
+
+    <div class="pub-heading">
+        <span class="pub-label">DOCUMENTS</span>
+        <h1>Downloadable Documents</h1>
+        <p>Policies, guidelines, forms and official documents.</p>
+    </div>
+
+    <div class="pub-filter">
+        <a href="{% url 'publications:document_list' %}"
+           class="pub-filter-btn {% if not category %}active{% endif %}">All</a>
+
+        {% for value, label in categories %}
+            <a href="?category={{ value }}"
+               class="pub-filter-btn {% if category == value %}active{% endif %}">
+                {{ label }}
+            </a>
+        {% endfor %}
+    </div>
+
+    <div class="doc-grid">
+
+        {% for doc in documents %}
+            <div class="doc-card">
+
+                <div class="doc-icon">
+                    {% if doc.file_type == 'PDF' %}
+                        <i class="bi bi-file-earmark-pdf"></i>
+                    {% elif doc.file_type == 'DOCX' %}
+                        <i class="bi bi-file-earmark-word"></i>
+                    {% elif doc.file_type == 'XLSX' %}
+                        <i class="bi bi-file-earmark-excel"></i>
+                    {% else %}
+                        <i class="bi bi-file-earmark-text"></i>
+                    {% endif %}
+                </div>
+
+                <div class="doc-body">
+                    <span class="doc-cat">{{ doc.get_category_display }}</span>
+                    <h3>{{ doc.title }}</h3>
+
+                    {% if doc.short_description %}
+                        <p>{{ doc.short_description|truncatechars:100 }}</p>
+                    {% endif %}
+
+                    <div class="doc-meta">
+                        {% if doc.file_type %}
+                            <span><i class="bi bi-tag"></i> {{ doc.file_type }}</span>
+                        {% endif %}
+                        {% if doc.file_size %}
+                            <span><i class="bi bi-hdd"></i> {{ doc.file_size }}</span>
+                        {% endif %}
+                        <span><i class="bi bi-calendar3"></i> {{ doc.uploaded_at|date:"d M, Y" }}</span>
+                    </div>
+
+                    <a href="{{ doc.file.url }}" target="_blank" class="doc-download">
+                        <i class="bi bi-download"></i> Download
+                    </a>
+                </div>
+
+            </div>
+        {% empty %}
+            <div class="pub-empty">
+                <i class="bi bi-file-earmark-text"></i>
+                <h3>No documents yet</h3>
+            </div>
+        {% endfor %}
+
+    </div>
+
+</section>
+<script src="{% static 'publications/publications.js' %}"></script>
+
+{% endblock %}

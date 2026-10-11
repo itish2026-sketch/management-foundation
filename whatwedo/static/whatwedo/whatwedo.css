@@ -1,0 +1,564 @@
+/* =========================================================
+   WHAT WE DO — AJKS FOUNDATION
+========================================================= */
+
+.wwd-list-section,
+.wwd-detail-section {
+    max-width: 1300px;
+    margin: 40px auto;
+    padding: 0 30px 80px;
+    animation: wwdFade .7s ease;
+}
+
+@keyframes wwdFade {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+
+/* =========================================================
+   LIST HEADING
+========================================================= */
+
+.wwd-list-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.wwd-label {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #d18d00;
+    margin-bottom: 14px;
+}
+
+.wwd-list-heading h1 {
+    font-size: clamp(30px, 4vw, 48px);
+    font-weight: 800;
+    color: #073f36;
+    margin-bottom: 14px;
+    letter-spacing: -.5px;
+}
+
+.wwd-list-heading p {
+    color: #6b7772;
+    font-size: 16px;
+    max-width: 620px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   CATEGORY FILTER
+========================================================= */
+
+.wwd-filter {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 50px;
+}
+
+.wwd-filter-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 22px;
+    border-radius: 30px;
+    background: #f1f5f3;
+    color: #4a5652;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1.5px solid transparent;
+    transition: all .25s ease;
+}
+
+.wwd-filter-btn:hover {
+    background: #e6eeea;
+    color: #075447;
+}
+
+.wwd-filter-btn.active {
+    background: #075447;
+    color: #fff;
+    border-color: #075447;
+    box-shadow: 0 8px 20px rgba(7,84,71,.25);
+}
+
+
+/* =========================================================
+   POST GRID
+========================================================= */
+
+.wwd-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.wwd-card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid #eef2f0;
+    box-shadow: 0 4px 15px rgba(0,0,0,.04);
+    transition: transform .35s ease, box-shadow .35s ease;
+}
+
+.wwd-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(7,84,71,.12);
+}
+
+
+.wwd-card-image {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+    background: #f4f7f6;
+}
+
+.wwd-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .6s ease;
+}
+
+.wwd-card:hover .wwd-card-image img {
+    transform: scale(1.08);
+}
+
+.wwd-no-image {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #b8c4bf;
+    font-size: 40px;
+}
+
+
+.wwd-card-category {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    padding: 6px 14px;
+    background: rgba(7,84,71,.92);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    border-radius: 20px;
+    backdrop-filter: blur(6px);
+}
+
+
+.wwd-card-body {
+    padding: 22px 22px 26px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.wwd-card-body h3 {
+    font-size: 19px;
+    font-weight: 700;
+    color: #073f36;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.wwd-card-body p {
+    color: #6b7772;
+    font-size: 14px;
+    line-height: 1.65;
+    flex: 1;
+    margin-bottom: 16px;
+
+    display: -webkit-box;
+    line-clamp: 3;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.wwd-card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #08705a;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.wwd-card-link i {
+    transition: transform .25s ease;
+}
+
+.wwd-card:hover .wwd-card-link i {
+    transform: translateX(5px);
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.wwd-empty {
+    text-align: center;
+    padding: 80px 20px;
+    color: #8a9691;
+}
+
+.wwd-empty i {
+    font-size: 48px;
+    color: #c8d4cf;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.wwd-empty h3 {
+    color: #4a5652;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+
+/* =========================================================
+   DETAIL PAGE
+========================================================= */
+
+.wwd-cover-photo {
+    position: relative;
+    width: 100%;
+    height: 480px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 45px;
+    box-shadow: 0 20px 50px rgba(0,0,0,.12);
+}
+
+.wwd-cover-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.wwd-cover-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(0,0,0,.05) 0%,
+        rgba(0,0,0,.15) 50%,
+        rgba(0,0,0,.75) 100%
+    );
+}
+
+.wwd-cover-text {
+    position: absolute;
+    left: 50px;
+    right: 50px;
+    bottom: 45px;
+    color: #fff;
+    z-index: 2;
+}
+
+.wwd-cover-category {
+    display: inline-block;
+    padding: 7px 16px;
+    background: #f5aa00;
+    color: #17332d;
+    font-size: 11.5px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-radius: 20px;
+    margin-bottom: 14px;
+}
+
+.wwd-cover-text h1 {
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 800;
+    line-height: 1.15;
+    margin: 0;
+    text-shadow: 0 4px 20px rgba(0,0,0,.4);
+}
+
+
+/* Cover text only (no image) */
+.wwd-cover-text-only {
+    text-align: center;
+    padding: 50px 20px 30px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eef2f0;
+}
+
+.wwd-cover-text-only h1 {
+    font-size: clamp(28px, 4vw, 46px);
+    font-weight: 800;
+    color: #073f36;
+    margin-top: 10px;
+}
+
+
+/* Lead paragraph */
+.wwd-lead {
+    font-size: 18px;
+    line-height: 1.85;
+    color: #4a5652;
+    font-weight: 500;
+    margin-bottom: 40px;
+    padding-left: 22px;
+    border-left: 4px solid #f5aa00;
+}
+
+
+/* Content blocks */
+.wwd-blocks {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.wwd-block-text {
+    font-size: 16.5px;
+    line-height: 1.9;
+    color: #2b3633;
+}
+
+.wwd-block-text p {
+    margin-bottom: 18px;
+}
+
+.wwd-block-image {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,.08);
+}
+
+.wwd-block-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform .6s ease;
+}
+
+.wwd-block-image:hover img {
+    transform: scale(1.02);
+}
+
+
+/* Back button */
+.wwd-back {
+    margin-top: 55px;
+    padding-top: 30px;
+    border-top: 1px solid #eef2f0;
+}
+
+.wwd-back a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #075447;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 12px 22px;
+    border: 1.5px solid #075447;
+    border-radius: 10px;
+    transition: all .25s ease;
+}
+
+.wwd-back a:hover {
+    background: #075447;
+    color: #fff;
+}
+
+.wwd-back a i {
+    transition: transform .25s ease;
+}
+
+.wwd-back a:hover i {
+    transform: translateX(-4px);
+}
+
+
+/* =========================================================
+   RELATED POSTS
+========================================================= */
+
+.wwd-related {
+    margin-top: 70px;
+}
+
+.wwd-related h2 {
+    font-size: 26px;
+    font-weight: 800;
+    color: #073f36;
+    margin-bottom: 25px;
+}
+
+.wwd-related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.wwd-related-card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid #eef2f0;
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.wwd-related-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(7,84,71,.1);
+}
+
+.wwd-related-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.wwd-related-card div {
+    padding: 16px 18px;
+}
+
+.wwd-related-card span {
+    font-size: 11px;
+    color: #d18d00;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.wwd-related-card h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #073f36;
+    margin: 6px 0 0;
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 991px) {
+
+    .wwd-list-section,
+    .wwd-detail-section {
+        padding: 0 22px 60px;
+        margin-top: 30px;
+    }
+
+    .wwd-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 22px;
+    }
+
+    .wwd-cover-photo {
+        height: 380px;
+        border-radius: 16px;
+    }
+
+    .wwd-cover-text {
+        left: 30px;
+        right: 30px;
+        bottom: 30px;
+    }
+
+    .wwd-related-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 640px) {
+
+    .wwd-list-section,
+    .wwd-detail-section {
+        padding: 0 16px 50px;
+    }
+
+    .wwd-list-heading {
+        margin-bottom: 30px;
+    }
+
+    .wwd-filter {
+        margin-bottom: 35px;
+        gap: 8px;
+    }
+
+    .wwd-filter-btn {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+
+    .wwd-grid,
+    .wwd-related-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .wwd-card-image {
+        height: 200px;
+    }
+
+    .wwd-cover-photo {
+        height: 300px;
+        border-radius: 14px;
+    }
+
+    .wwd-cover-text {
+        left: 22px;
+        right: 22px;
+        bottom: 22px;
+    }
+
+    .wwd-cover-category {
+        padding: 5px 12px;
+        font-size: 10px;
+        margin-bottom: 10px;
+    }
+
+    .wwd-lead {
+        font-size: 16px;
+        padding-left: 16px;
+        border-left-width: 3px;
+        margin-bottom: 30px;
+    }
+
+    .wwd-block-text {
+        font-size: 15.5px;
+        line-height: 1.8;
+    }
+
+    .wwd-back {
+        margin-top: 40px;
+    }
+
+    .wwd-back a {
+        font-size: 14px;
+        padding: 10px 18px;
+    }
+}

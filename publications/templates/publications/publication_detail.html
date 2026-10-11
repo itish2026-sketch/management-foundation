@@ -1,0 +1,96 @@
+{% extends "base_d.html" %}
+{% load static %}
+
+{% block title %}{{ pub.title }} | Publication{% endblock %}
+
+
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'publications/publications.css' %}">
+
+<article class="pub-detail">
+
+    <a href="{% url 'publications:publication_list' %}" class="pub-back">
+        <i class="bi bi-arrow-left"></i> All Publications
+    </a>
+
+    <div class="pub-report-detail-grid">
+
+        <div class="pub-detail-cover">
+            {% if pub.cover_image %}
+                <img src="{{ pub.cover_image.url }}" alt="{{ pub.title }}">
+            {% else %}
+                <div class="pub-no-image big"><i class="bi bi-book"></i></div>
+            {% endif %}
+
+            <span class="pub-cat-stamp">{{ pub.get_category_display }}</span>
+        </div>
+
+        <div class="pub-detail-info">
+
+            <span class="pub-label">{{ pub.get_category_display|upper }}</span>
+
+            <h1>{{ pub.title }}</h1>
+
+            <div class="pub-detail-meta">
+                {% if pub.author %}
+                    <span><i class="bi bi-person"></i> {{ pub.author }}</span>
+                {% endif %}
+                {% if pub.pages %}
+                    <span><i class="bi bi-file-text"></i> {{ pub.pages }}</span>
+                {% endif %}
+                {% if pub.file_size %}
+                    <span><i class="bi bi-hdd"></i> {{ pub.file_size }}</span>
+                {% endif %}
+                <span><i class="bi bi-calendar3"></i> {{ pub.published_at|date:"d M, Y" }}</span>
+            </div>
+
+            {% if pub.summary %}
+                <p class="pub-lead">{{ pub.summary }}</p>
+            {% endif %}
+
+            {% if pub.pdf_file %}
+                <a href="{{ pub.pdf_file.url }}" target="_blank" class="pub-download">
+                    <i class="bi bi-file-earmark-pdf"></i>
+                    Download PDF
+                </a>
+            {% endif %}
+
+        </div>
+
+    </div>
+
+    {% if pub.description %}
+        <div class="pub-rich-wrap">
+            <h2>About This Publication</h2>
+            <div class="pub-rich">
+                {{ pub.description|safe }}
+            </div>
+        </div>
+    {% endif %}
+
+
+    {% if related %}
+        <div class="pub-related">
+            <h2>Related Publications</h2>
+
+            <div class="pub-related-grid">
+                {% for r in related %}
+                    <a href="{% url 'publications:publication_detail' r.slug %}"
+                       class="pub-related-card">
+                        {% if r.cover_image %}
+                            <img src="{{ r.cover_image.url }}" alt="{{ r.title }}">
+                        {% endif %}
+                        <div>
+                            <span>{{ r.get_category_display }}</span>
+                            <h4>{{ r.title }}</h4>
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+
+</article>
+<script src="{% static 'publications/publications.js' %}"></script>
+{% endblock %}

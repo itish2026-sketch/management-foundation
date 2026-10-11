@@ -1,0 +1,433 @@
+{% extends "base_d.html" %}
+
+{% load static %}
+
+
+{% block title %}
+    Organization Structure | AJKS Foundation
+{% endblock %}
+
+
+{% block content %}
+
+<link
+    rel="stylesheet"
+    href="{% static 'about_us/css/about_ajks.css' %}"
+>
+
+
+<section class="about-ajks-page">
+
+
+    <!-- ==========================================
+         PAGE HERO
+    =========================================== -->
+
+    <div class="about-ajks-hero">
+
+        <div class="about-ajks-container">
+
+
+            <!-- Breadcrumb -->
+
+            <div class="about-ajks-breadcrumb">
+
+                <a href="/">
+                    Home
+                </a>
+
+                <span>/</span>
+
+                <span>
+                    About Us
+                </span>
+
+                <span>/</span>
+
+                <strong>
+                    Organization Structure
+                </strong>
+
+            </div>
+
+
+            <!-- Heading -->
+
+            <div class="about-ajks-heading">
+
+                <div class="about-ajks-heading-line"></div>
+
+                <span class="about-ajks-label">
+                    AJKS FOUNDATION
+                </span>
+
+                <h1>
+                    Organizational Structure &amp; Management
+                </h1>
+
+                {% comment %} <p>
+                    Organizational Structure 
+                </p> {% endcomment %}
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==========================================
+         ORGANIZATION CONTENT
+    =========================================== -->
+
+    <div class="about-ajks-container">
+
+
+        {% if organization_list %}
+
+
+            <div class="organization-structure-wrapper">
+
+
+                {% for organization in organization_list %}
+
+
+                    <!-- ==================================
+                         ORGANIZATION CARD
+                    =================================== -->
+
+                    <div class="organization-card">
+
+
+                        <!-- Card Top -->
+
+                        <div class="organization-card-header">
+
+
+                            <div class="organization-icon">
+
+                                {% if organization.photo %}
+
+                                    <img
+                                        src="{{ organization.photo.url }}"
+                                        alt="{{ organization.person_name|default:organization.title }}"
+                                    >
+
+                                {% else %}
+
+                                    <i class="fas fa-sitemap"></i>
+
+                                {% endif %}
+
+                            </div>
+
+
+                            <div class="organization-heading">
+
+                                <span class="organization-label">
+                                    AJKS FOUNDATION
+                                </span>
+
+                                <h2>
+                                    {{ organization.title }}
+                                </h2>
+
+
+                                {% if organization.subtitle %}
+
+                                    <p>
+                                        {{ organization.subtitle }}
+                                    </p>
+
+                                {% endif %}
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <!-- ==================================
+                             PERSON INFORMATION
+                        =================================== -->
+
+                        {% if organization.person_name or organization.designation %}
+
+                            <div class="organization-person">
+
+
+                                {% if organization.person_name %}
+
+                                    <h3>
+                                        {{ organization.person_name }}
+                                    </h3>
+
+                                {% endif %}
+
+
+                                {% if organization.designation %}
+
+                                    <span>
+                                        {{ organization.designation }}
+                                    </span>
+
+                                {% endif %}
+
+
+                            </div>
+
+                        {% endif %}
+
+
+
+                        <!-- ==================================
+                             DEPARTMENT
+                        =================================== -->
+
+                        {% if organization.department %}
+
+                            <div class="organization-department">
+
+                                <i class="fas fa-building"></i>
+
+                                <span>
+                                    {{ organization.department }}
+                                </span>
+
+                            </div>
+
+                        {% endif %}
+
+
+
+                        <!-- ==================================
+                             DESCRIPTION
+                        =================================== -->
+
+                        {% if organization.description %}
+
+                            <div class="organization-description">
+
+                                {{ organization.description|safe }}
+
+                            </div>
+
+                        {% endif %}
+
+
+
+                        <!-- ==================================
+                             CONTACT INFORMATION
+                        =================================== -->
+
+                        {% if organization.email or organization.phone %}
+
+                            <div class="organization-contact">
+
+
+                                {% if organization.email %}
+
+                                    <a
+                                        href="mailto:{{ organization.email }}"
+                                    >
+
+                                        <i class="fas fa-envelope"></i>
+
+                                        <span>
+                                            {{ organization.email }}
+                                        </span>
+
+                                    </a>
+
+                                {% endif %}
+
+
+
+                                {% if organization.phone %}
+
+                                    <a
+                                        href="tel:{{ organization.phone }}"
+                                    >
+
+                                        <i class="fas fa-phone"></i>
+
+                                        <span>
+                                            {{ organization.phone }}
+                                        </span>
+
+                                    </a>
+
+                                {% endif %}
+
+
+                            </div>
+
+                        {% endif %}
+
+
+
+                        <!-- ==================================
+                             CARD FOOTER
+                        =================================== -->
+
+                        <div class="organization-card-footer">
+
+
+                            <div class="about-ajks-status">
+
+                                <span
+                                    class="about-ajks-status-dot"
+                                ></span>
+
+                                <span>
+                                    Official Information
+                                </span>
+
+                            </div>
+
+
+                            <div class="about-ajks-updated">
+
+                                Last Updated:
+                                {{ organization.updated_at|date:"d M Y" }}
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                    {% if not forloop.last %}
+
+                        <div class="organization-connector">
+
+                            <span></span>
+
+                        </div>
+
+                    {% endif %}
+
+
+                {% endfor %}
+
+
+            </div>
+
+
+        {% else %}
+
+
+            <!-- ==========================================
+                 EMPTY STATE
+            =========================================== -->
+
+            <div class="about-ajks-portal">
+
+
+                <div class="about-ajks-portal-header">
+
+                    <div class="about-ajks-portal-icon">
+
+                        <i class="fas fa-sitemap"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            AJKS FOUNDATION
+                        </span>
+
+                        <h2>
+                            Organization Structure
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="about-ajks-portal-body">
+
+
+                    <div class="about-ajks-document-mark">
+
+                        <i class="fas fa-sitemap"></i>
+
+                    </div>
+
+
+                    <div class="about-ajks-content">
+
+
+                        <div class="about-ajks-empty">
+
+                            <i class="fas fa-circle-info"></i>
+
+                            <h3>
+                                Organization Structure
+                                information is not available yet.
+                            </h3>
+
+                            <p>
+                                Please add Organization Structure
+                                information from the Admin Panel.
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        {% endif %}
+
+
+
+        <!-- ======================================
+             BACK BUTTON
+        ======================================= -->
+
+        <div class="about-ajks-back-wrapper">
+
+            <a
+                href="javascript:history.back()"
+                class="about-ajks-back-button"
+            >
+
+                <span class="about-ajks-back-icon">
+
+                    <i class="fas fa-arrow-left"></i>
+
+                </span>
+
+                <span>
+                    Back
+                </span>
+
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+{% endblock %}

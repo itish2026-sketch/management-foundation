@@ -1,0 +1,259 @@
+{% extends "base_d.html" %}
+{% load static %}
+
+{% block title %}
+AJKS Foundation | Home
+{% endblock %}
+
+
+{% block content %}
+
+<!-- =========================================================
+     HERO CAROUSEL
+========================================================= -->
+<section class="ajks-hero-section">
+
+    <div class="ajks-hero-carousel">
+
+        <!-- SLIDE 01 -->
+        <div class="ajks-hero-slide active">
+            <img src="{% static 'images/slide-1.png' %}"
+                 alt="AJKS Foundation Community Development"
+                 loading="eager">
+
+            <div class="ajks-hero-overlay"></div>
+
+            <div class="ajks-hero-content">
+                <span class="ajks-hero-label">AJKS FOUNDATION</span>
+
+                <h1>
+                    Empowering Communities,
+                    <span>Creating Opportunities</span>
+                </h1>
+
+                <p>
+                    Working together with communities
+                    to build a more inclusive,
+                    sustainable and prosperous future.
+                </p>
+
+                <div class="ajks-hero-actions">
+                    <a href="#" class="ajks-explore-btn">
+                        Explore Our Work
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                    <a href="#about" class="ajks-learn-btn">Learn More</a>
+                </div>
+            </div>
+
+            <div class="ajks-slide-number">
+                <span>01</span><small>/ 03</small>
+            </div>
+        </div>
+
+
+        <!-- SLIDE 02 -->
+        <div class="ajks-hero-slide">
+            <img src="{% static 'images/slide-2.png' %}"
+                 alt="AJKS Foundation Development Program"
+                 loading="lazy">
+
+            <div class="ajks-hero-overlay"></div>
+
+            <div class="ajks-hero-content">
+                <span class="ajks-hero-label">OUR MISSION</span>
+
+                <h1>
+                    Together We Can
+                    <span>Make a Difference</span>
+                </h1>
+
+                <p>
+                    Supporting people, strengthening
+                    communities and creating pathways
+                    toward sustainable development.
+                </p>
+
+                <div class="ajks-hero-actions">
+                    <a href="#" class="ajks-explore-btn">
+                        Explore Our Work
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                    <a href="#about" class="ajks-learn-btn">Learn More</a>
+                </div>
+            </div>
+
+            <div class="ajks-slide-number">
+                <span>02</span><small>/ 03</small>
+            </div>
+        </div>
+
+
+        <!-- SLIDE 03 -->
+        <div class="ajks-hero-slide">
+            <img src="{% static 'images/slide-3.png' %}"
+                 alt="AJKS Foundation Community"
+                 loading="lazy">
+
+            <div class="ajks-hero-overlay"></div>
+
+            <div class="ajks-hero-content">
+                <span class="ajks-hero-label">OUR VISION</span>
+
+                <h1>
+                    Building a Better
+                    <span>Future Together</span>
+                </h1>
+
+                <p>
+                    Connecting people, ideas and
+                    opportunities for meaningful
+                    and lasting change.
+                </p>
+
+                <div class="ajks-hero-actions">
+                    <a href="#" class="ajks-explore-btn">
+                        Explore Our Work
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                    <a href="#about" class="ajks-learn-btn">Learn More</a>
+                </div>
+            </div>
+
+            <div class="ajks-slide-number">
+                <span>03</span><small>/ 03</small>
+            </div>
+        </div>
+
+
+        <!-- ARROWS -->
+        <button class="ajks-carousel-arrow ajks-prev"
+                type="button" aria-label="Previous slide">
+            <i class="bi bi-arrow-left"></i>
+        </button>
+
+        <button class="ajks-carousel-arrow ajks-next"
+                type="button" aria-label="Next slide">
+            <i class="bi bi-arrow-right"></i>
+        </button>
+
+
+        <!-- DOTS -->
+        <div class="ajks-carousel-dots">
+            <button class="active" data-slide="0" aria-label="Slide 1"></button>
+            <button data-slide="1" aria-label="Slide 2"></button>
+            <button data-slide="2" aria-label="Slide 3"></button>
+        </div>
+
+
+        <!-- PROGRESS -->
+        <div class="ajks-carousel-progress"><span></span></div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     WELCOME / INTRODUCTION
+========================================================= -->
+<section class="ajks-intro-section" id="about">
+
+    <div class="ajks-intro-heading">
+
+        <span class="ajks-section-label">ABOUT AJKS FOUNDATION</span>
+
+        <h2>
+            Working Together for
+            <span>A Better Future</span>
+        </h2>
+
+        <p>
+            AJKS Foundation is committed to working
+            with communities and partners to create
+            meaningful opportunities and sustainable
+            development.
+        </p>
+
+    </div>
+
+
+    <div class="ajks-feature-grid">
+
+        <!-- CARD 01 -->
+        <div class="ajks-feature-card">
+
+            <div class="ajks-feature-icon">
+                <i class="bi bi-people"></i>
+            </div>
+
+            <div>
+                <h3>Community<br>Development</h3>
+
+                <p>
+                    Supporting communities through
+                    participation, partnership and
+                    inclusive development initiatives.
+                </p>
+
+                <a href="#">
+                    Discover More
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+
+        <!-- CARD 02 -->
+        <div class="ajks-feature-card">
+
+            <div class="ajks-feature-icon">
+                <i class="bi bi-lightbulb"></i>
+            </div>
+
+            <div>
+                <h3>Innovation &amp;<br>Opportunity</h3>
+
+                <p>
+                    Creating innovative opportunities
+                    that help people and communities
+                    move forward.
+                </p>
+
+                <a href="#">
+                    Discover More
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+
+        <!-- CARD 03 -->
+        <div class="ajks-feature-card">
+
+            <div class="ajks-feature-icon">
+                <i class="bi bi-bar-chart-line"></i>
+            </div>
+
+            <div>
+                <h3>Sustainable<br>Development</h3>
+
+                <p>
+                    Promoting sustainable approaches
+                    for long-term social and economic
+                    development.
+                </p>
+
+                <a href="#">
+                    Discover More
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

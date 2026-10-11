@@ -1,0 +1,1327 @@
+/* =========================================================
+   MANAGEMENT TEAM PAGE
+   AJKS FOUNDATION
+========================================================= */
+
+.management-page {
+    --mt-green: #075447;
+    --mt-green-dark: #043d34;
+    --mt-green-soft: #edf5f2;
+    --mt-gold: #f5aa00;
+    --mt-gold-dark: #d99400;
+    --mt-text: #063f36;
+    --mt-muted: #667873;
+    --mt-border: #dce8e4;
+    --mt-white: #ffffff;
+    --mt-light: #f7faf9;
+
+    width: 100%;
+    min-height: 100%;
+    background: var(--mt-white);
+    color: var(--mt-text);
+}
+
+
+/* =========================================================
+   COMMON CONTAINER
+========================================================= */
+
+.management-container {
+    width: min(1500px, calc(100% - 40px));
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.management-hero {
+    position: relative;
+    width: 100%;
+    min-height: 280px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: var(--mt-green-dark);
+    border-bottom: 4px solid var(--mt-gold);
+}
+
+.management-hero-content {
+    max-width: 850px;
+    padding: 65px 0;
+}
+
+.management-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--mt-gold);
+}
+
+.management-eyebrow::before {
+    content: "";
+    width: 35px;
+    height: 2px;
+    background: var(--mt-gold);
+}
+
+.management-hero h1 {
+    margin: 0;
+    color: var(--mt-white);
+    font-size: clamp(34px, 5vw, 62px);
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.management-hero p {
+    max-width: 750px;
+    margin: 18px 0 0;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   COVER PHOTO
+========================================================= */
+
+.management-cover-section {
+    padding: 55px 0 20px;
+}
+
+.management-cover-frame {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+    border: 1px solid var(--mt-border);
+    background: var(--mt-light);
+    box-shadow: 0 18px 45px rgba(4, 61, 52, 0.10);
+}
+
+.management-cover-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 600px;
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.management-section-heading {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    margin-bottom: 35px;
+}
+
+.section-number {
+    flex: 0 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 62px;
+    height: 62px;
+
+    border: 1px solid var(--mt-gold);
+    color: var(--mt-gold-dark);
+    background: var(--mt-white);
+
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.section-label {
+    display: block;
+    margin-bottom: 5px;
+
+    color: var(--mt-gold-dark);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+}
+
+.management-section-heading h2 {
+    margin: 0;
+
+    color: var(--mt-green-dark);
+    font-size: clamp(28px, 4vw, 43px);
+    line-height: 1.15;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   INTRODUCTION
+========================================================= */
+
+.management-introduction {
+    padding: 75px 0;
+}
+
+.management-introduction-content {
+    max-width: 1100px;
+    margin-left: 84px;
+
+    color: #40534e;
+    font-size: 17px;
+    line-height: 1.95;
+}
+
+.management-introduction-content p {
+    margin: 0 0 18px;
+}
+
+.management-introduction-content h2,
+.management-introduction-content h3 {
+    color: var(--mt-green);
+    margin-top: 28px;
+}
+
+
+/* =========================================================
+   MANAGEMENT STRUCTURE SECTION
+========================================================= */
+
+.management-structure-section {
+    padding: 75px 0;
+    border-top: 1px solid var(--mt-border);
+}
+
+
+/* =========================================================
+   STRUCTURE TITLE
+========================================================= */
+
+.structure-title-box {
+    margin: 0 auto 30px;
+    max-width: 1000px;
+
+    padding: 22px 30px;
+
+    background: var(--mt-green-soft);
+    border-left: 5px solid var(--mt-gold);
+}
+
+.structure-title-box h3 {
+    margin: 0;
+
+    color: var(--mt-green-dark);
+    font-size: clamp(21px, 3vw, 30px);
+    line-height: 1.35;
+    font-weight: 750;
+}
+
+
+/* =========================================================
+   STRUCTURE IMAGE
+========================================================= */
+
+.structure-image-wrapper {
+    width: 100%;
+    margin: 35px 0;
+}
+
+.structure-image-frame {
+    position: relative;
+
+    width: 100%;
+    overflow: hidden;
+
+    padding: 20px;
+
+    background: #ffffff;
+    border: 1px solid var(--mt-border);
+
+    box-shadow:
+        0 20px 55px rgba(4, 61, 52, 0.12);
+
+    text-align: center;
+}
+
+.structure-image {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    max-width: 100%;
+
+    margin: 0 auto;
+
+    cursor: zoom-in;
+
+    transition:
+        transform 0.35s ease,
+        opacity 0.35s ease;
+}
+
+.structure-image:hover {
+    opacity: 0.96;
+}
+
+
+/* =========================================================
+   ZOOM BUTTON
+========================================================= */
+
+.structure-zoom-button {
+    position: absolute;
+
+    right: 35px;
+    bottom: 35px;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    min-height: 46px;
+    padding: 0 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    background: var(--mt-green-dark);
+    color: #ffffff;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.20);
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.structure-zoom-button:hover {
+    background: var(--mt-gold);
+    color: var(--mt-green-dark);
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   STRUCTURE DESCRIPTION
+========================================================= */
+
+.structure-description {
+    max-width: 1100px;
+
+    margin: 45px auto 0;
+
+    padding: 35px 40px;
+
+    background: var(--mt-light);
+
+    border-left: 4px solid var(--mt-green);
+
+    color: #40534e;
+
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.structure-description p {
+    margin: 0 0 18px;
+}
+
+.structure-description p:last-child {
+    margin-bottom: 0;
+}
+
+.structure-description h2,
+.structure-description h3 {
+    color: var(--mt-green-dark);
+}
+
+
+/* =========================================================
+   PEOPLE SECTION
+========================================================= */
+
+.management-people-section {
+    padding: 75px 0;
+
+    border-top: 1px solid var(--mt-border);
+}
+
+.management-people-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 30px;
+}
+
+
+/* =========================================================
+   PERSON CARD
+========================================================= */
+
+.management-person-card {
+    display: grid;
+
+    grid-template-columns:
+        minmax(190px, 0.75fr)
+        minmax(0, 1.25fr);
+
+    min-width: 0;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid var(--mt-border);
+
+    box-shadow:
+        0 12px 35px rgba(4, 61, 52, 0.08);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.management-person-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 20px 45px rgba(4, 61, 52, 0.13);
+}
+
+
+/* =========================================================
+   PERSON IMAGE
+========================================================= */
+
+.person-image-wrapper {
+    width: 100%;
+    min-height: 300px;
+    overflow: hidden;
+
+    background: var(--mt-green-soft);
+}
+
+.person-image-wrapper img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    min-height: 300px;
+
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+.management-person-card:hover
+.person-image-wrapper img {
+    transform: scale(1.035);
+}
+
+
+/* =========================================================
+   PERSON CONTENT
+========================================================= */
+
+.person-content {
+    min-width: 0;
+
+    padding: 30px;
+}
+
+.person-title {
+    display: inline-block;
+
+    margin-bottom: 8px;
+
+    color: var(--mt-gold-dark);
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+.person-content h3 {
+    margin: 0;
+
+    color: var(--mt-green-dark);
+
+    font-size: 24px;
+    line-height: 1.25;
+
+    font-weight: 800;
+}
+
+.person-designation {
+    margin: 8px 0 0;
+
+    color: var(--mt-green);
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.person-bio {
+    margin: 17px 0 0;
+
+    color: var(--mt-muted);
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.person-description {
+    margin-top: 18px;
+
+    color: #50615d;
+
+    font-size: 14px;
+    line-height: 1.75;
+}
+
+.person-description p {
+    margin: 0 0 12px;
+}
+
+
+/* =========================================================
+   PERSON CONTACT
+========================================================= */
+
+.person-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    margin-top: 20px;
+}
+
+.person-contact a {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+
+    color: #53645f;
+
+    font-size: 13px;
+
+    text-decoration: none;
+
+    overflow-wrap: anywhere;
+
+    transition: color 0.2s ease;
+}
+
+.person-contact a i {
+    flex: 0 0 auto;
+
+    color: var(--mt-gold-dark);
+
+    margin-top: 2px;
+}
+
+.person-contact a:hover {
+    color: var(--mt-green);
+}
+
+
+/* =========================================================
+   SOCIAL
+========================================================= */
+
+.person-social {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    margin-top: 20px;
+}
+
+.person-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 36px;
+    height: 36px;
+
+    border: 1px solid var(--mt-border);
+
+    color: var(--mt-green);
+
+    text-decoration: none;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.person-social a:hover {
+    background: var(--mt-green);
+    border-color: var(--mt-green);
+    color: #ffffff;
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   PDF SECTION
+========================================================= */
+
+.management-pdf-section {
+    padding: 80px 0;
+
+    border-top: 1px solid var(--mt-border);
+}
+
+
+/* =========================================================
+   PDF TITLE
+========================================================= */
+
+.pdf-title-box {
+    margin-bottom: 25px;
+
+    padding: 20px 25px;
+
+    background: var(--mt-green-soft);
+
+    border-left: 5px solid var(--mt-gold);
+}
+
+.pdf-title-box h3 {
+    margin: 0;
+
+    color: var(--mt-green-dark);
+
+    font-size: clamp(20px, 3vw, 28px);
+
+    line-height: 1.35;
+}
+
+
+/* =========================================================
+   PDF READER
+========================================================= */
+
+.pdf-reader-wrapper {
+    width: 100%;
+
+    overflow: hidden;
+
+    background: #f2f5f4;
+
+    border: 1px solid var(--mt-border);
+
+    box-shadow:
+        0 20px 50px rgba(4, 61, 52, 0.10);
+}
+
+
+/* =========================================================
+   PDF TOOLBAR
+========================================================= */
+
+.pdf-reader-toolbar {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    min-height: 64px;
+
+    padding: 10px 18px;
+
+    background: var(--mt-green-dark);
+
+    color: #ffffff;
+}
+
+.pdf-reader-info {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    min-width: 0;
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+.pdf-reader-info i {
+    flex: 0 0 auto;
+
+    color: var(--mt-gold);
+
+    font-size: 21px;
+}
+
+.pdf-reader-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+}
+
+.pdf-action-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    min-height: 40px;
+
+    padding: 0 13px;
+
+    border: 1px solid rgba(255, 255, 255, 0.22);
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.pdf-action-button:hover {
+    background: var(--mt-gold);
+
+    border-color: var(--mt-gold);
+
+    color: var(--mt-green-dark);
+}
+
+
+/* =========================================================
+   PDF VIEWER
+========================================================= */
+
+.pdf-viewer-container {
+    width: 100%;
+
+    height: 900px;
+
+    background: #dfe5e3;
+}
+
+.management-pdf-viewer {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    border: 0;
+
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.management-back-wrapper {
+    display: flex;
+
+    justify-content: center;
+
+    padding: 20px 0 75px;
+}
+
+.management-back-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    min-height: 48px;
+
+    padding: 0 23px;
+
+    border: 1px solid var(--mt-green);
+
+    color: var(--mt-green);
+
+    background: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.management-back-button:hover {
+    background: var(--mt-green);
+
+    color: #ffffff;
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.management-empty {
+    min-height: 450px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 70px 20px;
+}
+
+.management-empty > i {
+    margin-bottom: 20px;
+
+    color: var(--mt-gold);
+
+    font-size: 55px;
+}
+
+.management-empty h2 {
+    margin: 0;
+
+    color: var(--mt-green-dark);
+
+    font-size: 30px;
+}
+
+.management-empty p {
+    margin: 12px 0 25px;
+
+    color: var(--mt-muted);
+}
+
+
+/* =========================================================
+   STRUCTURE LIGHTBOX
+========================================================= */
+
+.structure-lightbox {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 99999;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    background: rgba(3, 25, 21, 0.94);
+}
+
+.structure-lightbox.active {
+    display: flex;
+}
+
+
+/* =========================================================
+   LIGHTBOX CONTENT
+========================================================= */
+
+.structure-lightbox-content {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   LIGHTBOX IMAGE
+========================================================= */
+
+.lightbox-image-container {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: auto;
+
+    padding: 90px 40px 40px;
+}
+
+.lightbox-image-container img {
+    display: block;
+
+    width: auto;
+    height: auto;
+
+    max-width: 100%;
+    max-height: 100%;
+
+    object-fit: contain;
+
+    transform-origin: center center;
+
+    cursor: grab;
+
+    user-select: none;
+
+    transition: transform 0.2s ease;
+}
+
+.lightbox-image-container img:active {
+    cursor: grabbing;
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
+.lightbox-close {
+    position: absolute;
+
+    top: 18px;
+    right: 18px;
+
+    z-index: 5;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 46px;
+    height: 46px;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    background: rgba(0, 0, 0, 0.45);
+
+    color: #ffffff;
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease;
+}
+
+.lightbox-close:hover {
+    background: var(--mt-gold);
+
+    color: var(--mt-green-dark);
+}
+
+
+/* =========================================================
+   LIGHTBOX TOOLBAR
+========================================================= */
+
+.lightbox-toolbar {
+    position: absolute;
+
+    top: 18px;
+    left: 50%;
+
+    z-index: 5;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    transform: translateX(-50%);
+
+    padding: 5px;
+
+    background: rgba(0, 0, 0, 0.45);
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.lightbox-toolbar button {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 38px;
+
+    border: 0;
+
+    background: transparent;
+
+    color: #ffffff;
+
+    cursor: pointer;
+
+    font-size: 17px;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.lightbox-toolbar button:hover {
+    background: var(--mt-gold);
+
+    color: var(--mt-green-dark);
+}
+
+
+/* =========================================================
+   BODY LOCK WHEN LIGHTBOX OPEN
+========================================================= */
+
+body.structure-lightbox-open {
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .management-container {
+        width: min(100% - 30px, 1000px);
+    }
+
+    .management-people-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .management-introduction-content {
+        margin-left: 0;
+    }
+
+    .pdf-viewer-container {
+        height: 750px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .management-container {
+        width: calc(100% - 24px);
+    }
+
+
+    /* HERO */
+
+    .management-hero {
+        min-height: 230px;
+    }
+
+    .management-hero-content {
+        padding: 45px 0;
+    }
+
+    .management-hero h1 {
+        font-size: 34px;
+    }
+
+    .management-hero p {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+
+    /* COVER */
+
+    .management-cover-section {
+        padding-top: 30px;
+    }
+
+
+    /* SECTION HEADING */
+
+    .management-section-heading {
+        align-items: flex-start;
+
+        gap: 15px;
+
+        margin-bottom: 25px;
+    }
+
+    .section-number {
+        width: 48px;
+        height: 48px;
+
+        font-size: 13px;
+    }
+
+    .management-section-heading h2 {
+        font-size: 27px;
+    }
+
+
+    /* INTRODUCTION */
+
+    .management-introduction {
+        padding: 50px 0;
+    }
+
+    .management-introduction-content {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+
+    /* STRUCTURE */
+
+    .management-structure-section {
+        padding: 50px 0;
+    }
+
+    .structure-title-box {
+        padding: 17px 20px;
+    }
+
+    .structure-image-frame {
+        padding: 8px;
+    }
+
+    .structure-zoom-button {
+        right: 18px;
+        bottom: 18px;
+
+        min-height: 42px;
+
+        padding: 0 13px;
+
+        font-size: 11px;
+    }
+
+    .structure-description {
+        margin-top: 30px;
+
+        padding: 25px 22px;
+
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+
+    /* PEOPLE */
+
+    .management-people-section {
+        padding: 50px 0;
+    }
+
+    .management-person-card {
+        display: block;
+    }
+
+    .person-image-wrapper {
+        min-height: 280px;
+        max-height: 420px;
+    }
+
+    .person-image-wrapper img {
+        min-height: 280px;
+    }
+
+    .person-content {
+        padding: 25px 22px;
+    }
+
+
+    /* PDF */
+
+    .management-pdf-section {
+        padding: 55px 0;
+    }
+
+    .pdf-reader-toolbar {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        padding: 14px;
+    }
+
+    .pdf-reader-actions {
+        width: 100%;
+    }
+
+    .pdf-action-button {
+        flex: 1;
+    }
+
+    .pdf-viewer-container {
+        height: 650px;
+    }
+
+
+    /* LIGHTBOX */
+
+    .structure-lightbox {
+        padding: 10px;
+    }
+
+    .lightbox-image-container {
+        padding: 75px 10px 20px;
+    }
+
+    .lightbox-toolbar {
+        left: 10px;
+
+        transform: none;
+    }
+
+    .lightbox-close {
+        top: 10px;
+        right: 10px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .management-container {
+        width: calc(100% - 18px);
+    }
+
+    .management-hero h1 {
+        font-size: 29px;
+    }
+
+    .management-eyebrow {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .management-section-heading {
+        gap: 12px;
+    }
+
+    .section-number {
+        width: 42px;
+        height: 42px;
+
+        font-size: 11px;
+    }
+
+    .management-section-heading h2 {
+        font-size: 23px;
+    }
+
+    .structure-zoom-button span {
+        display: none;
+    }
+
+    .structure-zoom-button {
+        width: 42px;
+        padding: 0;
+
+        justify-content: center;
+    }
+
+    .person-content h3 {
+        font-size: 21px;
+    }
+
+    .pdf-reader-actions {
+        flex-direction: column;
+    }
+
+    .pdf-action-button {
+        width: 100%;
+        flex: none;
+    }
+
+    .pdf-viewer-container {
+        height: 560px;
+    }
+
+    .lightbox-toolbar button {
+        width: 36px;
+        height: 36px;
+    }
+
+}

@@ -1,0 +1,96 @@
+{% extends "base_d.html" %}
+{% load static %}
+
+{% block title %}{{ report.title }} | Annual Report{% endblock %}
+
+
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'publications/publications.css' %}">
+
+<article class="pub-detail">
+
+    <a href="{% url 'publications:report_list' %}" class="pub-back">
+        <i class="bi bi-arrow-left"></i> All Reports
+    </a>
+
+    <div class="pub-report-detail-grid">
+
+        <div class="pub-detail-cover">
+            {% if report.cover_image %}
+                <img src="{{ report.cover_image.url }}" alt="{{ report.title }}">
+            {% else %}
+                <div class="pub-no-image big">
+                    <i class="bi bi-file-earmark-text"></i>
+                </div>
+            {% endif %}
+
+            <span class="pub-year-stamp">{{ report.year }}</span>
+        </div>
+
+        <div class="pub-detail-info">
+
+            <span class="pub-label">ANNUAL REPORT</span>
+
+            <h1>{{ report.title }}</h1>
+
+            <div class="pub-detail-meta">
+                <span><i class="bi bi-calendar3"></i> {{ report.published_at|date:"d M, Y" }}</span>
+                {% if report.file_size %}
+                    <span><i class="bi bi-hdd"></i> {{ report.file_size }}</span>
+                {% endif %}
+            </div>
+
+            {% if report.summary %}
+                <p class="pub-lead">{{ report.summary }}</p>
+            {% endif %}
+
+            {% if report.pdf_file %}
+                <a href="{{ report.pdf_file.url }}"
+                   target="_blank"
+                   class="pub-download">
+                    <i class="bi bi-file-earmark-pdf"></i>
+                    Download Full Report (PDF)
+                </a>
+            {% endif %}
+
+        </div>
+
+    </div>
+
+    {% if report.description %}
+        <div class="pub-rich-wrap">
+            <h2>Report Overview</h2>
+            <div class="pub-rich">
+                {{ report.description|safe }}
+            </div>
+        </div>
+    {% endif %}
+
+
+    {% if related %}
+        <div class="pub-related">
+            <h2>Other Reports</h2>
+
+            <div class="pub-related-grid">
+                {% for r in related %}
+                    <a href="{% url 'publications:report_detail' r.slug %}"
+                       class="pub-related-card">
+
+                        {% if r.cover_image %}
+                            <img src="{{ r.cover_image.url }}" alt="{{ r.title }}">
+                        {% endif %}
+
+                        <div>
+                            <span>{{ r.year }}</span>
+                            <h4>{{ r.title }}</h4>
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+
+</article>
+<script src="{% static 'publications/publications.js' %}"></script>
+{% endblock %}

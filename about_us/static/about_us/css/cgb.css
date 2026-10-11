@@ -1,0 +1,594 @@
+/* =========================================================
+   CGB PAGE
+========================================================= */
+
+.cgb-page {
+    width: min(1400px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 55px 0 80px;
+    color: #063f36;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.cgb-hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    padding: 35px 40px;
+    margin-bottom: 65px;
+    background: #ffffff;
+    border: 1px solid #dce9e5;
+    border-left: 5px solid #075447;
+    box-shadow: 0 15px 45px rgba(4, 61, 52, 0.08);
+    overflow: hidden;
+    animation: cgbFadeUp 0.7s ease both;
+}
+
+.cgb-hero::after {
+    content: "";
+    position: absolute;
+    right: 35px;
+    top: 50%;
+    width: 90px;
+    height: 90px;
+    border: 1px solid rgba(245, 170, 0, 0.35);
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.cgb-hero-number {
+    width: 75px;
+    height: 75px;
+    flex: 0 0 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #075447;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    border-radius: 50%;
+    box-shadow: 0 10px 25px rgba(7, 84, 71, 0.20);
+}
+
+.cgb-eyebrow {
+    display: block;
+    margin-bottom: 7px;
+    color: #f5aa00;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.cgb-hero h1 {
+    margin: 0;
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 800;
+}
+
+.cgb-hero p {
+    margin: 10px 0 0;
+    color: #63736f;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.cgb-section-heading {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 30px;
+}
+
+.cgb-section-heading > span {
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 1px solid #f5aa00;
+    color: #075447;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    border-radius: 50%;
+}
+
+.cgb-section-heading small {
+    display: block;
+    color: #f5aa00;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.cgb-section-heading h2 {
+    margin: 4px 0 0;
+    font-size: clamp(24px, 3vw, 34px);
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   CHAIRMAN
+========================================================= */
+
+.cgb-chairman-section {
+    margin-bottom: 75px;
+}
+
+.cgb-chairman-card {
+    display: grid;
+    grid-template-columns: minmax(280px, 390px) 1fr;
+    min-height: 400px;
+    background: #ffffff;
+    border: 1px solid #dce9e5;
+    box-shadow: 0 20px 55px rgba(4, 61, 52, 0.09);
+    overflow: hidden;
+    animation: cgbFadeUp 0.8s ease both;
+}
+
+.cgb-chairman-photo {
+    min-height: 400px;
+    background: #eef5f2;
+    overflow: hidden;
+}
+
+.cgb-chairman-photo img {
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+}
+
+.cgb-chairman-card:hover .cgb-chairman-photo img {
+    transform: scale(1.035);
+}
+
+.cgb-no-photo {
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #075447;
+    font-size: 85px;
+}
+
+.cgb-chairman-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px;
+}
+
+.cgb-profile-label {
+    display: inline-flex;
+    width: fit-content;
+    padding: 7px 13px;
+    margin-bottom: 14px;
+    background: #eef7f3;
+    color: #075447;
+    border-left: 3px solid #f5aa00;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.cgb-chairman-info h2 {
+    margin: 0 0 22px;
+    color: #043d34;
+    font-size: clamp(30px, 4vw, 46px);
+    line-height: 1.1;
+    font-weight: 800;
+}
+
+.cgb-contact-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.cgb-contact-list a {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 9px 13px;
+    color: #536662;
+    background: #f7faf9;
+    border: 1px solid #e4eeeb;
+    text-decoration: none;
+    transition: 0.25s ease;
+}
+
+.cgb-contact-list a:hover {
+    color: #075447;
+    border-color: #f5aa00;
+    transform: translateY(-2px);
+}
+
+.cgb-contact-list i {
+    color: #075447;
+}
+
+.cgb-socials {
+    display: flex;
+    gap: 9px;
+    margin-bottom: 25px;
+}
+
+.cgb-socials a {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    background: #075447;
+    text-decoration: none;
+    border-radius: 50%;
+    transition: 0.3s ease;
+}
+
+.cgb-socials a:hover {
+    background: #f5aa00;
+    color: #043d34;
+    transform: translateY(-5px) rotate(4deg);
+}
+
+.cgb-chairman-description {
+    padding-top: 20px;
+    border-top: 1px solid #e5eeeb;
+    color: #596b67;
+    line-height: 1.85;
+}
+
+
+/* =========================================================
+   MEMBERS
+========================================================= */
+
+.cgb-members-section {
+    margin-bottom: 55px;
+}
+
+.cgb-members-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+}
+
+.cgb-member-card {
+    position: relative;
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    min-height: 270px;
+    background: #ffffff;
+    border: 1px solid #dce9e5;
+    box-shadow: 0 12px 35px rgba(4, 61, 52, 0.07);
+    overflow: hidden;
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+    animation: cgbFadeUp 0.7s ease both;
+}
+
+.cgb-member-card:hover {
+    transform: translateY(-7px);
+    border-color: #f5aa00;
+    box-shadow: 0 20px 45px rgba(4, 61, 52, 0.13);
+}
+
+.cgb-member-number {
+    position: absolute;
+    z-index: 3;
+    top: 14px;
+    left: 14px;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #075447;
+    color: #ffffff;
+    border: 3px solid #ffffff;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: 800;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.13);
+}
+
+.cgb-member-photo {
+    min-height: 270px;
+    background: #eef5f2;
+    overflow: hidden;
+}
+
+.cgb-member-photo img {
+    width: 100%;
+    height: 100%;
+    min-height: 270px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.55s ease;
+}
+
+.cgb-member-card:hover .cgb-member-photo img {
+    transform: scale(1.04);
+}
+
+.cgb-member-placeholder {
+    height: 100%;
+    min-height: 270px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #075447;
+    font-size: 55px;
+}
+
+.cgb-member-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 28px;
+}
+
+.cgb-member-title {
+    color: #f5aa00;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.cgb-member-content h3 {
+    margin: 7px 0 5px;
+    color: #043d34;
+    font-size: 23px;
+    font-weight: 800;
+}
+
+.cgb-designation {
+    margin: 0 0 15px;
+    color: #6b7976;
+    font-size: 14px;
+}
+
+.cgb-member-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 15px;
+}
+
+.cgb-member-contact a {
+    color: #657470;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.cgb-member-contact a:hover {
+    color: #075447;
+}
+
+.cgb-member-contact i {
+    margin-right: 6px;
+    color: #075447;
+}
+
+.cgb-member-description {
+    margin-top: 10px;
+    padding-top: 12px;
+    border-top: 1px solid #e7efed;
+    color: #63716e;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.cgb-member-social {
+    display: flex;
+    gap: 7px;
+    margin-top: 16px;
+}
+
+.cgb-member-social a {
+    width: 31px;
+    height: 31px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #eef5f2;
+    color: #075447;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: 0.25s ease;
+}
+
+.cgb-member-social a:hover {
+    background: #075447;
+    color: #ffffff;
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   EMPTY
+========================================================= */
+
+.cgb-empty {
+    padding: 70px 20px;
+    text-align: center;
+    border: 1px dashed #cbdcd7;
+    background: #f8fbfa;
+}
+
+.cgb-empty i {
+    font-size: 45px;
+    color: #075447;
+}
+
+.cgb-empty h3 {
+    margin: 15px 0 7px;
+}
+
+.cgb-empty p {
+    margin: 0;
+    color: #72817d;
+}
+
+
+/* =========================================================
+   ANIMATION
+========================================================= */
+
+@keyframes cgbFadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(22px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .cgb-members-grid {
+        gap: 20px;
+    }
+
+    .cgb-member-card {
+        grid-template-columns: 145px 1fr;
+    }
+
+    .cgb-member-content {
+        padding: 22px;
+    }
+
+}
+
+
+@media (max-width: 850px) {
+
+    .cgb-chairman-card {
+        grid-template-columns: 1fr;
+    }
+
+    .cgb-chairman-photo,
+    .cgb-chairman-photo img {
+        min-height: 420px;
+        height: 420px;
+    }
+
+    .cgb-members-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .cgb-page {
+        width: min(100% - 24px, 1400px);
+        padding-top: 30px;
+    }
+
+    .cgb-hero {
+        padding: 25px 20px;
+        gap: 16px;
+    }
+
+    .cgb-hero-number {
+        width: 55px;
+        height: 55px;
+        flex-basis: 55px;
+        font-size: 15px;
+    }
+
+    .cgb-hero::after {
+        display: none;
+    }
+
+    .cgb-chairman-info {
+        padding: 30px 24px;
+    }
+
+    .cgb-chairman-photo,
+    .cgb-chairman-photo img {
+        min-height: 330px;
+        height: 330px;
+    }
+
+    .cgb-contact-list {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .cgb-contact-list a {
+        width: 100%;
+    }
+
+    .cgb-member-card {
+        grid-template-columns: 115px 1fr;
+    }
+
+    .cgb-member-photo,
+    .cgb-member-photo img,
+    .cgb-member-placeholder {
+        min-height: 220px;
+    }
+
+    .cgb-member-content {
+        padding: 20px 15px;
+    }
+
+    .cgb-member-content h3 {
+        font-size: 19px;
+    }
+
+}
+
+
+@media (max-width: 430px) {
+
+    .cgb-member-card {
+        grid-template-columns: 1fr;
+    }
+
+    .cgb-member-photo,
+    .cgb-member-photo img,
+    .cgb-member-placeholder {
+        height: 280px;
+        min-height: 280px;
+    }
+
+    .cgb-member-content {
+        padding: 22px;
+    }
+
+}

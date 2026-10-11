@@ -1,0 +1,80 @@
+{% extends "base_d.html" %}
+{% load static %}
+
+{% block title %}Events | AJKS Foundation{% endblock %}
+
+
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'news/news.css' %}">
+
+<section class="nw-section">
+
+    <div class="nw-heading">
+        <span class="nw-label">EVENTS</span>
+        <h1>Our Events</h1>
+        <p>Workshops, seminars, community programs and more.</p>
+    </div>
+
+    <div class="nw-filter">
+        <a href="{% url 'news:event_list' %}"
+           class="nw-filter-btn {% if not status %}active{% endif %}">All</a>
+
+        {% for value, label in statuses %}
+            <a href="?status={{ value }}"
+               class="nw-filter-btn {% if status == value %}active{% endif %}">
+                {{ label }}
+            </a>
+        {% endfor %}
+    </div>
+
+    <div class="ev-grid">
+        {% for event in events %}
+            <a href="{% url 'news:event_detail' event.slug %}" class="ev-card">
+
+                <div class="ev-card-img">
+                    {% if event.cover_image %}
+                        <img src="{{ event.cover_image.url }}" alt="{{ event.title }}">
+                    {% else %}
+                        <div class="nw-no-image"><i class="bi bi-calendar-event"></i></div>
+                    {% endif %}
+
+                    <div class="ev-date-badge">
+                        <span>{{ event.start_date|date:"d" }}</span>
+                        <strong>{{ event.start_date|date:"M" }}</strong>
+                    </div>
+
+                    <span class="ev-status status-{{ event.status }}">
+                        {{ event.get_status_display }}
+                    </span>
+                </div>
+
+                <div class="ev-card-body">
+                    <h3>{{ event.title }}</h3>
+
+                    {% if event.venue %}
+                        <span class="ev-meta">
+                            <i class="bi bi-geo-alt"></i> {{ event.venue }}
+                        </span>
+                    {% endif %}
+
+                    <span class="ev-meta">
+                        <i class="bi bi-clock"></i>
+                        {{ event.start_date|date:"d M, Y — h:i A" }}
+                    </span>
+
+                    <p>{{ event.short_description }}</p>
+                </div>
+            </a>
+        {% empty %}
+            <div class="nw-empty">
+                <i class="bi bi-calendar-x"></i>
+                <h3>No events found</h3>
+            </div>
+        {% endfor %}
+    </div>
+
+</section>
+<script src="{% static 'news/news.js' %}"></script>
+
+{% endblock %}

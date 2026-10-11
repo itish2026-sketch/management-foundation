@@ -1,0 +1,132 @@
+{% extends "base_d.html" %}
+{% load static %}
+
+{% block title %}
+{{ post.title }} | AJKS Foundation
+{% endblock %}
+
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'whatwedo/whatwedo.css' %}">
+
+<article class="wwd-detail-section">
+
+    <!-- ============ COVER PHOTO ============ -->
+    {% if post.cover_image %}
+
+        <div class="wwd-cover-photo">
+
+            <img src="{{ post.cover_image.url }}"
+                 alt="{{ post.title }}">
+
+            <div class="wwd-cover-overlay"></div>
+
+            <div class="wwd-cover-text">
+
+                <span class="wwd-cover-category">
+                    {{ post.get_category_display }}
+                </span>
+
+                <h1>{{ post.title }}</h1>
+
+            </div>
+
+        </div>
+
+    {% else %}
+
+        <div class="wwd-cover-text-only">
+
+            <span class="wwd-cover-category">
+                {{ post.get_category_display }}
+            </span>
+
+            <h1>{{ post.title }}</h1>
+
+        </div>
+
+    {% endif %}
+
+
+
+    <!-- ============ SHORT DESCRIPTION ============ -->
+    <div class="wwd-lead">
+        <p>{{ post.short_description }}</p>
+    </div>
+
+
+
+    <!-- ============ CONTENT BLOCKS ============ -->
+    <div class="wwd-blocks">
+
+        {% for block in post.blocks.all %}
+
+            {% if block.text %}
+                <div class="wwd-block-text">
+                    {{ block.text|safe }}
+                </div>
+            {% endif %}
+
+            {% if block.image %}
+                <div class="wwd-block-image">
+                    <img src="{{ block.image.url }}"
+                         alt="{{ post.title }} — image"
+                         loading="lazy">
+                </div>
+            {% endif %}
+
+        {% endfor %}
+
+    </div>
+
+
+
+    <!-- ============ BACK BUTTON ============ -->
+    <div class="wwd-back">
+
+        <a href="{% url 'whatwedo:list' %}">
+            <i class="bi bi-arrow-left"></i>
+            Back to All Programs
+        </a>
+
+    </div>
+
+
+
+    <!-- ============ RELATED POSTS ============ -->
+    {% if related %}
+
+        <div class="wwd-related">
+
+            <h2>Related Programs</h2>
+
+            <div class="wwd-related-grid">
+
+                {% for item in related %}
+
+                    <a href="{% url 'whatwedo:detail' item.slug %}"
+                       class="wwd-related-card">
+
+                        {% if item.cover_image %}
+                            <img src="{{ item.cover_image.url }}"
+                                 alt="{{ item.title }}">
+                        {% endif %}
+
+                        <div>
+                            <span>{{ item.get_category_display }}</span>
+                            <h4>{{ item.title }}</h4>
+                        </div>
+
+                    </a>
+
+                {% endfor %}
+
+            </div>
+
+        </div>
+
+    {% endif %}
+
+</article>
+
+{% endblock %}

@@ -1,0 +1,78 @@
+{% extends "base_d.html" %}
+{% load static %}
+
+{% block title %}Publications | AJKS Foundation{% endblock %}
+
+
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'publications/publications.css' %}">
+
+<section class="pub-section">
+
+    <div class="pub-heading">
+        <span class="pub-label">PUBLICATIONS</span>
+        <h1>Our Publications</h1>
+        <p>Newsletters, brochures, research papers and more.</p>
+    </div>
+
+    <div class="pub-filter">
+        <a href="{% url 'publications:publication_list' %}"
+           class="pub-filter-btn {% if not category %}active{% endif %}">All</a>
+
+        {% for value, label in categories %}
+            <a href="?category={{ value }}"
+               class="pub-filter-btn {% if category == value %}active{% endif %}">
+                {{ label }}
+            </a>
+        {% endfor %}
+    </div>
+
+    <div class="pub-grid">
+
+        {% for pub in publications %}
+            <a href="{% url 'publications:publication_detail' pub.slug %}"
+               class="pub-card">
+
+                <div class="pub-card-img">
+                    {% if pub.cover_image %}
+                        <img src="{{ pub.cover_image.url }}" alt="{{ pub.title }}">
+                    {% else %}
+                        <div class="pub-no-image"><i class="bi bi-book"></i></div>
+                    {% endif %}
+                    <span class="pub-cat-badge">{{ pub.get_category_display }}</span>
+                </div>
+
+                <div class="pub-card-body">
+                    <h3>{{ pub.title }}</h3>
+
+                    {% if pub.summary %}
+                        <p>{{ pub.summary|truncatechars:100 }}</p>
+                    {% endif %}
+
+                    <div class="pub-card-meta">
+                        {% if pub.author %}
+                            <span><i class="bi bi-person"></i> {{ pub.author }}</span>
+                        {% endif %}
+                        {% if pub.pages %}
+                            <span><i class="bi bi-file-text"></i> {{ pub.pages }}</span>
+                        {% endif %}
+                    </div>
+
+                    <span class="pub-read">
+                        Read More <i class="bi bi-arrow-right"></i>
+                    </span>
+                </div>
+            </a>
+        {% empty %}
+            <div class="pub-empty">
+                <i class="bi bi-book"></i>
+                <h3>No publications yet</h3>
+            </div>
+        {% endfor %}
+
+    </div>
+
+</section>
+<script src="{% static 'publications/publications.js' %}"></script>
+{% endblock %}

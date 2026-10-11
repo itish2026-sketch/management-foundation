@@ -1,0 +1,271 @@
+{% extends "base_d.html" %}
+{% load static %}
+
+{% block title %}
+Chairman's Message | AJKS Foundation
+{% endblock %}
+
+
+{% block content %}
+<link rel="stylesheet"
+      href="{% static 'about_us/css/chairman_message.css' %}">
+      
+
+<section class="chairman-page">
+
+    <!-- =========================================
+         HERO
+    ========================================== -->
+
+    <div class="chairman-hero">
+
+        <div class="chairman-hero-inner">
+
+            <span class="chairman-eyebrow">
+                AJKS FOUNDATION
+            </span>
+
+            <h1>
+                Chairman's Message
+            </h1>
+
+            <p>
+                Leadership, vision and commitment
+                towards sustainable community development.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================
+         MESSAGE CONTENT
+    ========================================== -->
+
+    <div class="chairman-container">
+
+        {% for item in chairman_messages %}
+
+        <article class="chairman-message-card reveal-item">
+
+            <!-- TOP LINE -->
+
+            <div class="chairman-card-top">
+
+                <div>
+
+                    {% if item.subtitle %}
+                    <span class="chairman-kicker">
+                        {{ item.subtitle }}
+                    </span>
+                    {% endif %}
+
+                    <h2>
+                        {{ item.title }}
+                    </h2>
+
+                </div>
+
+                <div class="chairman-number">
+                    {{ forloop.counter|stringformat:"02d" }}
+                </div>
+
+            </div>
+
+
+            <!-- MESSAGE -->
+
+            <div class="chairman-message">
+
+                <div class="message-mark">
+                    “
+                </div>
+
+                <div class="message-text">
+
+                    {{ item.message|safe }}
+
+                </div>
+
+            </div>
+
+
+            <!-- PDF AREA -->
+
+            {% if item.pdf_file %}
+
+            <div class="chairman-document">
+
+                <div class="document-heading">
+
+                    <div class="document-icon">
+                        <i class="bi bi-file-earmark-pdf-fill"></i>
+                    </div>
+
+                    <div>
+
+                        <span>
+                            OFFICIAL DOCUMENT
+                        </span>
+
+                        <h3>
+                            Chairman's Message PDF
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PDF READER -->
+
+                <div class="pdf-reader">
+
+                    <iframe
+                        src="{{ item.pdf_file.url }}"
+                        title="Chairman's Message PDF"
+                        loading="lazy">
+                    </iframe>
+
+                </div>
+
+
+                <!-- PDF ACTIONS -->
+
+                <div class="pdf-actions">
+
+                    <a
+                        href="{{ item.pdf_file.url }}"
+                        target="_blank"
+                        class="pdf-open-btn">
+
+                        <i class="bi bi-arrows-fullscreen"></i>
+
+                        Read Full PDF
+
+                    </a>
+
+
+                    <a
+                        href="{{ item.pdf_file.url }}"
+                        download
+                        class="pdf-download-btn">
+
+                        <i class="bi bi-download"></i>
+
+                        Download PDF
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            {% endif %}
+
+
+            <!-- BOTTOM -->
+
+            <div class="chairman-card-footer">
+
+                <span>
+                    AJKS Foundation
+                </span>
+
+                <span>
+                    Leadership Message
+                </span>
+
+            </div>
+
+        </article>
+
+        {% empty %}
+
+        <div class="chairman-empty">
+
+            <i class="bi bi-chat-square-text"></i>
+
+            <h2>
+                Chairman's Message
+            </h2>
+
+            <p>
+                The Chairman's message will be published here.
+            </p>
+
+        </div>
+
+        {% endfor %}
+
+
+        <!-- BACK BUTTON -->
+
+        <div class="chairman-back">
+
+            <a href="javascript:history.back();">
+
+                <i class="bi bi-arrow-left"></i>
+
+                Back
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     INLINE JAVASCRIPT
+========================================== -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const items =
+        document.querySelectorAll(".reveal-item");
+
+
+    const observer =
+        new IntersectionObserver(
+            function (entries) {
+
+                entries.forEach(function (entry) {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add(
+                            "is-visible"
+                        );
+
+                        observer.unobserve(
+                            entry.target
+                        );
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.08
+            }
+        );
+
+
+    items.forEach(function (item) {
+
+        observer.observe(item);
+
+    });
+
+});
+
+</script>
+
+{% endblock %}

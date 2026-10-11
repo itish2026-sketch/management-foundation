@@ -1,0 +1,335 @@
+{% extends "base_d.html" %}
+
+{% load static %}
+
+
+{% block title %}
+    About AJKS | AJKS Foundation
+{% endblock %}
+
+
+
+{% block content %}
+
+<link
+    rel="stylesheet"
+    href="{% static 'about_us/css/about_ajks.css' %}"
+>
+
+
+<section class="about-ajks-page">
+
+
+    <!-- ==========================================
+         PAGE HERO
+    =========================================== -->
+
+    <div class="about-ajks-hero">
+
+        <div class="about-ajks-container">
+
+            <div class="about-ajks-breadcrumb">
+
+                <a href="/">
+                    <strong>
+                        Home
+                    </strong>
+                </a>
+
+                <span>/</span>
+
+
+                <a href = "{% url 'about_us:about_ajks' %}">
+                    <strong>
+                        About Us
+                    </strong>
+                </a>
+
+                <span>/</span>
+
+                <a href = "{% url 'about_us:about_ajks' %}">
+                    <strong>
+                        About AJKS
+                    </strong>
+                </a>
+                
+                <a>
+
+            </div>
+
+
+            <div class="about-ajks-heading">
+
+                <div class="about-ajks-heading-line"></div>
+
+                {% comment %} <span class="about-ajks-label">
+                    ABOUT AJKS FOUNDATION
+                </span> {% endcomment %}
+
+
+                <h1>
+                    ABOUT AJKS FOUNDATION
+                </h1>
+
+
+                {% comment %} <p>
+                    AJKS Foundation
+                </p> {% endcomment %}
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==========================================
+         MAIN PORTAL
+    =========================================== -->
+
+    <div class="about-ajks-container">
+
+
+        {% if about_list %}
+
+
+            <!-- ==========================================
+                 LOOP ALL ACTIVE ABOUT AJKS CONTENT
+            =========================================== -->
+
+            {% for about in about_list %}
+
+
+                <div class="about-ajks-portal">
+
+
+                    <!-- ======================================
+                         PORTAL HEADER
+                    ======================================= -->
+
+                    <div class="about-ajks-portal-header">
+
+
+                        <div class="about-ajks-portal-icon">
+
+                            <i class="fas fa-building-columns"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                AJKS FOUNDATION
+                            </span>
+
+                            <h2>
+                                {{ about.title }}
+                            </h2>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- ======================================
+                         PORTAL BODY
+                    ======================================= -->
+
+                    <div class="about-ajks-portal-body">
+
+
+                        <div class="about-ajks-document-mark">
+
+                            <i class="fas fa-file-lines"></i>
+
+                        </div>
+
+
+                        <div class="about-ajks-content">
+
+
+                            <!-- =================================
+                                 SUBTITLE
+                            ================================== -->
+
+                            {% if about.subtitle %}
+
+                                <div class="about-ajks-content-subtitle">
+
+                                    {{ about.subtitle }}
+
+                                </div>
+
+                            {% endif %}
+
+
+
+                            <!-- =================================
+                                 MAIN CONTENT
+                            ================================== -->
+
+                            <div class="about-ajks-content-text">
+
+                                {{ about.content|safe }}
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- ======================================
+                         PORTAL FOOTER
+                    ======================================= -->
+
+                    <div class="about-ajks-portal-footer">
+
+
+                        <div class="about-ajks-status">
+
+                            <span
+                                class="about-ajks-status-dot"
+                            ></span>
+
+                            <span>
+                                Official Information
+                            </span>
+
+                        </div>
+
+
+                        <div class="about-ajks-updated">
+
+                            Last Updated:
+                            {{ about.updated_at|date:"d M Y" }}
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            {% endfor %}
+
+
+
+        {% else %}
+
+
+            <!-- ==========================================
+                 EMPTY STATE
+            =========================================== -->
+
+            <div class="about-ajks-portal">
+
+
+                <div class="about-ajks-portal-header">
+
+                    <div class="about-ajks-portal-icon">
+
+                        <i class="fas fa-building-columns"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            AJKS FOUNDATION
+                        </span>
+
+                        <h2>
+                            About AJKS
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="about-ajks-portal-body">
+
+
+                    <div class="about-ajks-document-mark">
+
+                        <i class="fas fa-file-lines"></i>
+
+                    </div>
+
+
+                    <div class="about-ajks-content">
+
+
+                        <div class="about-ajks-empty">
+
+                            <i class="fas fa-circle-info"></i>
+
+                            <h3>
+                                About AJKS information
+                                is not available yet.
+                            </h3>
+
+                            <p>
+                                Please add the About AJKS
+                                information from the Admin Panel.
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        {% endif %}
+
+
+
+        <!-- ======================================
+             BACK BUTTON
+        ======================================= -->
+
+        <div class="about-ajks-back-wrapper">
+
+            <a
+                href="javascript:history.back()"
+                class="about-ajks-back-button"
+            >
+
+                <span class="about-ajks-back-icon">
+
+                    <i class="fas fa-arrow-left"></i>
+
+                </span>
+
+                <span>
+                    Back
+                </span>
+
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+{% endblock %}

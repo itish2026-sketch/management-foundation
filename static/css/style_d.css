@@ -1,0 +1,3687 @@
+
+/* =====================================================
+   AJKS FOUNDATION HEADER
+===================================================== */
+
+:root {
+    --ajks-green: #075447;
+    --ajks-green-dark: #043d34;
+    --ajks-gold: #f5aa00;
+    --ajks-text: #063f36;
+    --ajks-white: #ffffff;
+}
+
+
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family:
+        "Noto Sans Bengali",
+        Arial,
+        sans-serif;
+
+    background: #f5f7f6;
+    color: #222;
+}
+
+
+/* =====================================================
+   MAIN WEBSITE WIDTH
+===================================================== */
+
+.website-wrapper {
+    width: calc(100% - 0px);
+    max-width: 2000px;
+    margin: 0 auto;
+}
+
+
+/* =====================================================
+   COMPLETE HEADER
+===================================================== */
+
+.ajks-header {
+    width: 100%;
+
+    border: 2px solid var(--ajks-green);
+    border-radius: 2px;
+
+    overflow: visible;
+
+    background: white;
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, .08);
+}
+
+
+/* =====================================================
+   TOP HEADER
+===================================================== */
+
+.ajks-header-top {
+    background:
+        linear-gradient(
+            135deg,
+            #043f36,
+            #07594c
+        );
+
+    color: white;
+}
+
+.ajks-header-inner {
+    min-height: 145px;
+
+    padding: 22px 35px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 30px;
+}
+
+
+/* =====================================================
+   BRAND
+===================================================== */
+
+.ajks-brand {
+    display: flex;
+    align-items: center;
+
+    color: white;
+    text-decoration: none;
+
+    min-width: 450px;
+}
+
+.ajks-logo-box {
+    width: 120px;
+    height: 100px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ajks-logo-box img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+.ajks-brand-info {
+    margin-left: 14px;
+}
+
+.ajks-brand-name {
+    font-size: 38px;
+    font-weight: 800;
+
+    line-height: 1;
+    letter-spacing: 2px;
+}
+
+.ajks-brand-foundation {
+    font-size: 17px;
+    font-weight: 500;
+
+    letter-spacing: 5px;
+    margin-top: 6px;
+}
+
+.ajks-brand-divider {
+    width: 1px;
+    height: 62px;
+
+    background:
+        rgba(255,255,255,.35);
+
+    margin: 0 25px;
+}
+
+.ajks-tagline {
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+
+    font-size: 15px;
+
+    color: #dce9e5;
+    font-style: italic;
+}
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+.ajks-search {
+    flex: 1;
+}
+
+.ajks-search form {
+    width: 100%;
+    height: 52px;
+
+    display: flex;
+}
+
+.ajks-search input {
+    width: 100%;
+    height: 52px;
+
+    padding: 0 22px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.35);
+
+    border-right: none;
+
+    border-radius: 28px 0 0 28px;
+
+    background:
+        rgba(255,255,255,.08);
+
+    color: white;
+
+    outline: none;
+
+    font-size: 16px;
+}
+
+.ajks-search input::placeholder {
+    color: #d5e0dd;
+}
+
+.ajks-search input:focus {
+    border-color:
+        var(--ajks-gold);
+}
+
+.ajks-search button {
+    width: 72px;
+    height: 52px;
+
+    border: none;
+
+    border-radius: 0 28px 28px 0;
+
+    background:
+        var(--ajks-gold);
+
+    color: white;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    transition: .25s;
+    
+}
+
+.ajks-search button:hover {
+    background: #ffbd22;
+}
+
+
+/* =====================================================
+   HEADER SOCIAL
+===================================================== */
+
+.ajks-header-social {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+}
+
+.ajks-header-social a {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(255,255,255,.4);
+
+    color: white;
+
+    font-size: 17px;
+
+    transition: .3s;
+}
+
+.ajks-header-social a:hover {
+    transform:
+        translateY(-4px);
+
+    background:
+        var(--ajks-gold);
+
+    border-color:
+        var(--ajks-gold);
+
+    color: white;
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.ajks-navbar {
+    position: relative;
+
+    background: white;
+
+    border-top:
+        1px solid #e5ebe8;
+
+    border-bottom:
+        3px solid var(--ajks-gold);
+}
+
+.ajks-nav-inner {
+    min-height: 66px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+}
+
+
+/* =====================================================
+   MENU
+===================================================== */
+
+.ajks-nav-menu {
+    list-style: none;
+
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+}
+
+.ajks-nav-menu > li {
+    position: relative;
+}
+
+.ajks-nav-menu > li > a {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 15px 24px;
+
+    color:
+        var(--ajks-text);
+
+    font-size: 15px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    border-radius: 10px;
+
+    transition: .25s;
+}
+
+.ajks-nav-menu > li > a i {
+    font-size: 11px;
+
+    transition: transform .25s ease;
+}
+
+.ajks-nav-menu > li > a:hover {
+    color: white;
+
+    background:
+        var(--ajks-green);
+}
+
+.ajks-nav-menu > li > a.active {
+    color: white;
+
+    background:
+        var(--ajks-green);
+}
+
+
+/* =====================================================
+   DESKTOP DROPDOWN
+===================================================== */
+
+.ajks-dropdown {
+    position: absolute;
+
+    top: calc(100% + 3px);
+    left: 0;
+
+    min-width: 230px;
+
+    padding: 8px;
+    margin: 0;
+
+    list-style: none;
+
+    background: white;
+
+    border-top:
+        3px solid var(--ajks-gold);
+
+    border-radius:
+        0 0 10px 10px;
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.15);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform:
+        translateY(10px);
+
+    transition:
+        opacity .25s ease,
+        visibility .25s ease,
+        transform .25s ease;
+
+    z-index: 9999;
+}
+
+
+/* Desktop hover */
+
+@media (min-width: 992px) {
+
+    .has-dropdown:hover > .ajks-dropdown {
+        opacity: 1;
+        visibility: visible;
+
+        transform:
+            translateY(0);
+    }
+
+    .has-dropdown:hover > a i {
+        transform: rotate(180deg);
+    }
+
+}
+
+
+/* =====================================================
+   DROPDOWN LINKS
+===================================================== */
+
+.ajks-dropdown li a {
+    display: block;
+
+    padding: 10px 14px;
+
+    color: #333;
+
+    font-size: 14px;
+
+    text-decoration: none;
+
+    border-radius: 6px;
+
+    transition: .2s;
+}
+
+.ajks-dropdown li a:hover {
+    background:
+        rgba(7,84,71,.08);
+
+    color:
+        var(--ajks-green);
+
+    padding-left: 19px;
+}
+
+
+/* =====================================================
+   MOBILE BRAND
+===================================================== */
+
+.ajks-mobile-brand {
+    display: none;
+
+    color:
+        var(--ajks-green);
+
+    font-size: 20px;
+    font-weight: 800;
+
+    text-decoration: none;
+}
+
+
+/* =====================================================
+   MOBILE BUTTON
+===================================================== */
+
+.ajks-menu-button {
+    display: none;
+
+    border: none;
+}
+
+
+
+
+
+/* =====================================================
+   LARGE LAPTOP
+===================================================== */
+
+@media (max-width: 1350px) {
+
+    .ajks-header-inner {
+        gap: 20px;
+
+        padding: 20px 25px;
+    }
+
+    .ajks-brand {
+        min-width: 390px;
+    }
+
+    .ajks-brand-name {
+        font-size: 32px;
+    }
+
+    .ajks-brand-divider {
+        margin: 0 15px;
+    }
+
+    .ajks-tagline {
+        font-size: 13px;
+    }
+
+    .ajks-nav-menu > li > a {
+        padding: 14px 17px;
+
+        font-size: 14px;
+    }
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1100px) {
+
+    .website-wrapper {
+        width:
+            calc(100% - 40px);
+    }
+
+    .ajks-header-inner {
+        min-height: auto;
+
+        flex-wrap: wrap;
+    }
+
+    .ajks-brand {
+        min-width: auto;
+
+        flex: 1;
+    }
+
+    .ajks-tagline,
+    .ajks-brand-divider {
+        display: none;
+    }
+
+    .ajks-search {
+        order: 3;
+
+        flex-basis: 100%;
+    }
+
+    .ajks-header-social {
+        display: none;
+    }
+
+    .ajks-nav-menu > li > a {
+        padding:
+            14px 12px;
+
+        font-size: 13px;
+    }
+}
+
+
+/* =====================================================
+   MOBILE NAV
+===================================================== */
+
+/* =========================================================
+   AJKS FOUNDATION
+   TABLET + MOBILE RESPONSIVE NAVIGATION
+========================================================= */
+
+@media (max-width: 991px) {
+
+
+    /* =====================================================
+       WEBSITE WRAPPER
+    ===================================================== */
+
+    .website-wrapper {
+
+        width:
+            calc(100% - 24px);
+
+        margin-top: 12px;
+
+    }
+
+
+
+    /* =====================================================
+       HEADER
+    ===================================================== */
+
+    .ajks-header-inner {
+
+        padding: 16px;
+
+    }
+
+
+    .ajks-logo-box {
+
+        width: 55px;
+
+        height: 55px;
+
+    }
+
+
+    .ajks-brand-name {
+
+        font-size: 25px;
+
+    }
+
+
+    .ajks-brand-foundation {
+
+        font-size: 11px;
+
+        letter-spacing: 3px;
+
+    }
+
+
+
+    /* =====================================================
+       NAVBAR
+    ===================================================== */
+
+    .ajks-navbar {
+
+        position: relative;
+
+        overflow: visible;
+
+        z-index: 1000;
+
+    }
+
+
+    .ajks-nav-inner {
+
+        position: relative;
+
+        display: flex;
+
+        flex-wrap: wrap;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        min-height: 58px;
+
+        padding: 0 15px;
+
+    }
+
+
+
+    /* =====================================================
+       MOBILE BRAND
+    ===================================================== */
+
+    .ajks-mobile-brand {
+
+        display: block;
+
+        order: 1;
+
+        color:
+            var(--ajks-green);
+
+        font-size: 19px;
+
+        font-weight: 800;
+
+        line-height: 1.2;
+
+        text-decoration: none;
+
+    }
+
+
+    .ajks-mobile-brand:hover {
+
+        color:
+            var(--ajks-green);
+
+    }
+
+
+
+    /* =====================================================
+       HAMBURGER BUTTON
+    ===================================================== */
+
+    .ajks-menu-button {
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        order: 2;
+
+        width: 42px;
+
+        height: 42px;
+
+        padding: 0;
+
+        border:
+            1px solid #ddd;
+
+        background:
+            white;
+
+        color:
+            var(--ajks-green);
+
+        border-radius: 8px;
+
+        font-size: 24px;
+
+        cursor: pointer;
+
+        transition:
+            .25s;
+
+        flex-shrink: 0;
+
+    }
+
+
+    .ajks-menu-button:hover {
+
+        background:
+            var(--ajks-green);
+
+        color:
+            white;
+
+        border-color:
+            var(--ajks-green);
+
+    }
+
+
+    .ajks-menu-button:focus {
+
+        outline:
+            2px solid var(--ajks-gold);
+
+        outline-offset:
+            2px;
+
+    }
+
+
+
+    /* =====================================================
+       MOBILE MENU
+
+       IMPORTANT:
+       এখানে position:absolute ব্যবহার করা হয়নি।
+
+       তাই menu খুললে navbar-এর height বাড়বে
+       এবং carousel নিচে push হবে।
+    ===================================================== */
+
+    .ajks-nav-menu {
+
+        display: none;
+
+        position: static;
+
+        order: 3;
+
+        flex-basis: 100%;
+
+        width: 100%;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 0;
+
+        padding: 10px;
+
+        margin: 0;
+
+        background:
+            white;
+
+        border-top:
+            1px solid #eee;
+
+        border-bottom:
+            1px solid #e7ecea;
+
+        box-shadow:
+            0 12px 25px
+            rgba(0, 0, 0, .08);
+
+        z-index: 9999;
+
+        max-height:
+            calc(100vh - 90px);
+
+        overflow-y: auto;
+
+    }
+
+
+
+    /* =====================================================
+       OPEN MOBILE MENU
+
+       আপনার JavaScript "active" class ব্যবহার করছে
+    ===================================================== */
+
+    .ajks-nav-menu.active {
+
+        display: flex;
+
+    }
+
+
+
+    /* =====================================================
+       MOBILE MENU ITEMS
+    ===================================================== */
+
+    .ajks-nav-menu > li {
+
+        width: 100%;
+
+        position: relative;
+
+    }
+
+
+    .ajks-nav-menu > li > a {
+
+        width: 100%;
+
+        min-height: 46px;
+
+        padding:
+            12px 15px;
+
+        border-radius:
+            7px;
+
+        color:
+            var(--ajks-text);
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        font-size: 14px;
+
+        font-weight: 600;
+
+        text-decoration: none;
+
+    }
+
+
+    .ajks-nav-menu > li > a:hover {
+
+        color:
+            white;
+
+        background:
+            var(--ajks-green);
+
+    }
+
+
+    .ajks-nav-menu > li > a.active {
+
+        color:
+            white;
+
+        background:
+            var(--ajks-green);
+
+    }
+
+
+
+    /* =====================================================
+       MOBILE DROPDOWN
+
+       Desktop-এর absolute dropdown
+       এখানে static হবে।
+    ===================================================== */
+
+    .ajks-dropdown {
+
+        position: static;
+
+        display: none;
+
+        width: 100%;
+
+        min-width: 0;
+
+        padding: 5px;
+
+        margin:
+            4px 0 5px;
+
+        opacity: 1;
+
+        visibility: visible;
+
+        transform: none;
+
+        box-shadow: none;
+
+        border:
+            1px solid #e3e9e6;
+
+        border-top:
+            3px solid var(--ajks-gold);
+
+        border-radius:
+            7px;
+
+        background:
+            #f8faf9;
+
+    }
+
+
+
+    /* =====================================================
+       DROPDOWN OPEN
+
+       আপনার JavaScript:
+       .dropdown-open class যোগ করছে
+    ===================================================== */
+
+    .has-dropdown.dropdown-open
+    > .ajks-dropdown {
+
+        display: block;
+
+    }
+
+
+
+    /* =====================================================
+       DROPDOWN ARROW ROTATION
+    ===================================================== */
+
+    .has-dropdown.dropdown-open
+    > a i {
+
+        transform:
+            rotate(180deg);
+
+    }
+
+
+    .has-dropdown > a i {
+
+        transition:
+            transform .25s ease;
+
+    }
+
+
+
+    /* =====================================================
+       DROPDOWN LINKS
+    ===================================================== */
+
+    .ajks-dropdown li {
+
+        width: 100%;
+
+    }
+
+
+    .ajks-dropdown li a {
+
+        display: flex;
+
+        align-items: center;
+
+        width: 100%;
+
+        padding:
+            11px 15px;
+
+        color:
+            #43524e;
+
+        font-size: 13px;
+
+        font-weight: 500;
+
+        text-decoration: none;
+
+        border-radius:
+            5px;
+
+        transition:
+            .2s;
+
+    }
+
+
+    .ajks-dropdown li a:hover {
+
+        padding-left:
+            21px;
+
+        color:
+            var(--ajks-green);
+
+        background:
+            rgba(7, 84, 71, .08);
+
+    }
+
+
+
+    /* =====================================================
+       HERO / CAROUSEL
+
+       Menu খুললে এটি naturally নিচে যাবে।
+    ===================================================== */
+
+    .ajks-hero-section {
+
+        position: relative;
+
+        z-index: 1;
+
+    }
+
+
+
+    /* =====================================================
+       TABLET CAROUSEL
+    ===================================================== */
+
+    .ajks-hero-carousel {
+
+        height: 500px;
+
+    }
+
+
+
+    /* =========================================================
+   MOBILE SUB-DROPDOWN — FIXED
+========================================================= */
+@media (max-width: 991px) {
+
+    /* Mobile dropdown (Level 1) — visible when parent open */
+    .ajks-dropdown {
+        position: static !important;
+        display: none;
+        width: 100%;
+        min-width: 0;
+        padding: 5px;
+        margin: 4px 0 5px;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        box-shadow: none;
+        border: 1px solid #e3e9e6;
+        border-top: 3px solid var(--ajks-gold);
+        border-radius: 7px;
+        background: #f8faf9;
+    }
+
+    .has-dropdown.dropdown-open > .ajks-dropdown {
+        display: block !important;
+    }
+
+
+    /* Mobile sub-dropdown (Level 2) */
+    .ajks-sub-dropdown {
+        position: static !important;
+        display: none;
+        width: 100%;
+        min-width: 0;
+        padding: 5px;
+        margin: 4px 0 4px 10px;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        box-shadow: none;
+        border: 1px solid #e3e9e6;
+        border-left: 3px solid var(--ajks-gold);
+        border-radius: 6px;
+        background: #ffffff;
+    }
+
+    .has-sub-dropdown.sub-dropdown-open > .ajks-sub-dropdown {
+        display: block !important;
+    }
+
+    .has-sub-dropdown.sub-dropdown-open > a i {
+        transform: rotate(90deg);
+    }
+
+    .has-sub-dropdown > a i {
+        font-size: 11px;
+        transition: transform .25s ease;
+    }
+
+    .ajks-sub-dropdown li {
+        list-style: none;
+    }
+
+    .ajks-sub-dropdown li > a {
+        display: block;
+        padding: 9px 15px 9px 25px;
+        color: #5a6b66;
+        font-size: 13px;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: .2s;
+    }
+
+    .ajks-sub-dropdown li > a:hover {
+        color: var(--ajks-green);
+        background: rgba(7, 84, 71, .08);
+        padding-left: 30px;
+    }
+}
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 576px) {
+
+    .ajks-header-inner {
+        padding: 13px;
+    }
+
+    .ajks-logo-box {
+        width: 46px;
+        height: 46px;
+    }
+
+    .ajks-brand-name {
+        font-size: 21px;
+    }
+
+    .ajks-brand-foundation {
+        font-size: 9px;
+    }
+
+
+    /* Search */
+
+    .ajks-search form,
+    .ajks-search input {
+        height: 45px;
+    }
+
+    .ajks-search button {
+        width: 58px;
+        height: 45px;
+    }
+
+    .ajks-search input {
+        font-size: 14px;
+
+        padding:
+            0 15px;
+    }
+
+
+    /* Mobile navigation */
+
+    .ajks-nav-inner {
+        min-height: 54px;
+
+        padding:
+            0 12px;
+    }
+
+    .ajks-mobile-brand {
+        font-size: 18px;
+    }
+
+    .ajks-menu-button {
+        width: 40px;
+        height: 40px;
+
+        font-size: 23px;
+    }
+
+}
+
+
+/* =====================================================
+   VERY SMALL PHONE
+===================================================== */
+
+@media (max-width: 380px) {
+
+    .website-wrapper {
+        width:
+            calc(100% - 14px);
+    }
+
+    .ajks-brand-name {
+        font-size: 19px;
+    }
+
+    .ajks-brand-foundation {
+        letter-spacing: 2px;
+    }
+
+    .ajks-mobile-brand {
+        font-size: 17px;
+    }
+
+}
+
+
+
+
+/* =========================================================
+   AJKS FOUNDATION
+   PREMIUM HERO CAROUSEL
+========================================================= */
+
+.ajks-hero-section {
+
+    margin-top: 18px;
+
+    width: 100%;
+
+}
+
+
+/* =========================================================
+   CAROUSEL CONTAINER
+========================================================= */
+
+.ajks-hero-carousel {
+
+    position: relative;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 4px;
+
+    /* width: 100%; */
+
+    height: 570px;
+
+    overflow: hidden;
+
+    
+
+    background:
+        #063f36;
+
+    box-shadow:
+        0 18px 50px
+        rgba(0, 0, 0, .16);
+
+}
+
+
+/* =========================================================
+   SLIDES
+========================================================= */
+
+.ajks-hero-slide {
+
+    position: absolute;
+
+    inset: 0;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: scale(1.025);
+
+    transition:
+        opacity .8s ease,
+        transform 6s ease;
+
+}
+
+
+.ajks-hero-slide.active {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: scale(1);
+
+}
+
+
+.ajks-hero-slide img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+}
+
+
+/* =========================================================
+   DARK GRADIENT OVERLAY
+========================================================= */
+
+.ajks-hero-overlay {
+
+    position: absolute;
+   
+
+    inset: 0;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(3, 31, 26, .88) 0%,
+            rgba(3, 31, 26, .68) 38%,
+            rgba(3, 31, 26, .25) 75%,
+            rgba(3, 31, 26, .08) 100%
+        );
+
+}
+
+
+/* Bottom subtle gradient */
+
+.ajks-hero-overlay::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    right: 0;
+
+    bottom: 0;
+
+    height: 35%;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(0,0,0,.28)
+        );
+
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.ajks-hero-content {
+
+    position: absolute;
+
+    z-index: 3;
+
+    left: 8%;
+
+    top: 50%;
+
+    transform:
+        translateY(-50%);
+
+    width: min(650px, 70%);
+
+}
+
+
+.ajks-hero-label {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color:
+        #f5aa00;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 18px;
+
+}
+
+
+.ajks-hero-label::before {
+
+    content: "";
+
+    width: 35px;
+
+    height: 2px;
+
+    background:
+        #f5aa00;
+
+}
+
+
+.ajks-hero-content h1 {
+
+    margin: 0;
+
+    color: white;
+
+    font-size:
+        clamp(38px, 4.2vw, 66px);
+
+    font-weight: 800;
+
+    line-height: 1.08;
+
+    letter-spacing: -.5px;
+
+}
+
+
+.ajks-hero-content h1 span {
+
+    display: block;
+
+    color:
+        #f5aa00;
+
+}
+
+
+.ajks-hero-content p {
+
+    max-width: 580px;
+
+    margin:
+        22px 0 0;
+
+    color:
+        rgba(255,255,255,.84);
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.ajks-hero-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin-top: 28px;
+
+}
+
+
+.ajks-explore-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding:
+        13px 22px;
+
+    background:
+        #f5aa00;
+
+    color:
+        #17332d;
+
+    border-radius: 7px;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    text-decoration: none;
+
+    transition:
+        transform .25s ease,
+        background .25s ease,
+        box-shadow .25s ease;
+
+}
+
+
+.ajks-explore-btn i {
+
+    transition:
+        transform .25s ease;
+
+}
+
+
+.ajks-explore-btn:hover {
+
+    background:
+        #ffffff;
+
+    color:
+        #075447;
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(0,0,0,.18);
+
+}
+
+
+.ajks-explore-btn:hover i {
+
+    transform:
+        translateX(4px);
+
+}
+
+
+.ajks-learn-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    padding:
+        12px 20px;
+
+    color: white;
+
+    border:
+        1px solid
+        rgba(255,255,255,.45);
+
+    border-radius: 7px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    backdrop-filter:
+        blur(5px);
+
+    transition: .25s;
+
+}
+
+
+.ajks-learn-btn:hover {
+
+    background:
+        rgba(255,255,255,.12);
+
+    border-color:
+        white;
+
+    color: white;
+
+}
+
+
+/* =========================================================
+   SLIDE NUMBER
+========================================================= */
+
+.ajks-slide-number {
+
+    position: absolute;
+
+    z-index: 5;
+
+    right: 38px;
+
+    top: 35px;
+
+    color: white;
+
+    display: flex;
+
+    align-items: baseline;
+
+    gap: 5px;
+
+}
+
+
+.ajks-slide-number span {
+
+    color:
+        #f5aa00;
+
+    font-size: 24px;
+
+    font-weight: 800;
+
+}
+
+
+.ajks-slide-number small {
+
+    color:
+        rgba(255,255,255,.6);
+
+    font-size: 12px;
+
+}
+
+
+/* =========================================================
+   ARROWS
+========================================================= */
+
+.ajks-carousel-arrow {
+
+    position: absolute;
+
+    z-index: 10;
+
+    top: 50%;
+
+    transform:
+        translateY(-50%);
+
+    width: 48px;
+
+    height: 48px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.35);
+
+    border-radius: 50%;
+
+    background:
+        rgba(0,0,0,.15);
+
+    backdrop-filter:
+        blur(7px);
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition: .3s;
+
+}
+
+
+.ajks-carousel-arrow:hover {
+
+    background:
+        #f5aa00;
+
+    color:
+        #063f36;
+
+    border-color:
+        #f5aa00;
+
+}
+
+
+.ajks-prev {
+
+    left: 25px;
+
+}
+
+
+.ajks-next {
+
+    right: 25px;
+
+}
+
+
+/* =========================================================
+   DOTS
+========================================================= */
+
+.ajks-carousel-dots {
+
+    position: absolute;
+
+    z-index: 10;
+
+    left: 8%;
+
+    bottom: 28px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+}
+
+
+.ajks-carousel-dots button {
+
+    width: 28px;
+
+    height: 4px;
+
+    padding: 0;
+
+    border: none;
+
+    border-radius: 5px;
+
+    background:
+        rgba(255,255,255,.4);
+
+    cursor: pointer;
+
+    transition:
+        width .3s ease,
+        background .3s ease;
+
+}
+
+
+.ajks-carousel-dots button.active {
+
+    width: 52px;
+
+    background:
+        #f5aa00;
+
+}
+
+
+/* =========================================================
+   PROGRESS BAR
+========================================================= */
+
+.ajks-carousel-progress {
+
+    position: absolute;
+
+    z-index: 10;
+
+    left: 0;
+
+    right: 0;
+
+    bottom: 0;
+
+    height: 3px;
+
+    background:
+        rgba(255,255,255,.12);
+
+}
+
+
+.ajks-carousel-progress span {
+
+    display: block;
+
+    width: 0%;
+
+    height: 100%;
+
+    background:
+        #f5aa00;
+
+}
+
+
+/* =========================================================
+   INTRO SECTION
+========================================================= */
+
+.ajks-intro-section {
+
+    margin-top: 35px;
+    margin-left: 10px;
+    margin-right: 10px;
+    
+
+    padding:
+        65px 6%;
+
+    background: white;
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 10px 35px
+        rgba(0,0,0,.06);
+
+}
+
+
+.ajks-intro-heading {
+
+    max-width: 750px;
+
+    margin-bottom: 45px;
+
+}
+
+
+.ajks-section-label {
+
+    color:
+        #d18d00;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 2.5px;
+
+}
+
+
+.ajks-intro-heading h2 {
+
+    margin:
+        10px 0 15px;
+
+    color:
+        #073f36;
+
+    font-size:
+        clamp(30px, 3.5vw, 46px);
+
+    line-height: 1.2;
+
+    font-weight: 800;
+
+}
+
+
+.ajks-intro-heading h2 span {
+
+    color:
+        #0b765f;
+
+}
+
+
+.ajks-intro-heading p {
+
+    color:
+        #697570;
+
+    font-size: 15px;
+
+}
+
+
+/* =========================================================
+   FEATURE CARDS
+========================================================= */
+
+.ajks-feature-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
+
+}
+
+
+.ajks-feature-card {
+
+    display: flex;
+
+    gap: 18px;
+
+    padding: 27px;
+
+    border:
+        1px solid #e6ece9;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #f7faf9
+        );
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        border-color .3s ease;
+
+}
+
+
+.ajks-feature-card:hover {
+
+    transform:
+        translateY(-7px);
+
+    border-color:
+        rgba(11,118,95,.3);
+
+    box-shadow:
+        0 18px 35px
+        rgba(0,0,0,.08);
+
+}
+
+
+.ajks-feature-icon {
+
+    flex-shrink: 0;
+
+    width: 55px;
+
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background:
+        rgba(245,170,0,.13);
+
+    color:
+        #c78900;
+
+    font-size: 24px;
+
+}
+
+
+.ajks-feature-card h3 {
+
+    color:
+        #073f36;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    margin-bottom: 7px;
+
+}
+
+
+.ajks-feature-card p {
+
+    color:
+        #6b7772;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    margin-bottom: 12px;
+
+}
+
+
+.ajks-feature-card a {
+
+    color:
+        #08705a;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+}
+
+
+.ajks-feature-card a i {
+
+    margin-left: 5px;
+
+    transition: .2s;
+
+}
+
+
+.ajks-feature-card a:hover i {
+
+    margin-left: 9px;
+
+}
+
+
+/* =========================================================
+   LARGE LAPTOP
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .ajks-hero-carousel {
+
+        height: 530px;
+
+    }
+
+
+    .ajks-hero-content {
+
+        left: 7%;
+
+    }
+
+
+    .ajks-feature-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+
+    .ajks-hero-carousel {
+
+        height: 500px;
+
+        border-radius: 10px;
+
+    }
+
+
+    .ajks-hero-content {
+
+        left: 7%;
+
+        width: 70%;
+
+    }
+
+
+    .ajks-hero-content h1 {
+
+        font-size:
+            clamp(34px, 5vw, 52px);
+
+    }
+
+
+    .ajks-hero-content p {
+
+        font-size: 15px;
+
+    }
+
+
+    .ajks-carousel-arrow {
+
+        width: 42px;
+
+        height: 42px;
+
+    }
+
+
+    .ajks-prev {
+
+        left: 18px;
+
+    }
+
+
+    .ajks-next {
+
+        right: 18px;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .ajks-hero-section {
+
+        margin-top: 12px;
+
+    }
+
+
+    .ajks-hero-carousel {
+
+        height: 540px;
+
+        border-radius: 9px;
+
+    }
+
+
+    .ajks-hero-content {
+
+        left: 25px;
+
+        right: 25px;
+
+        top: 48%;
+
+        width: auto;
+
+    }
+
+
+    .ajks-hero-content h1 {
+
+        font-size:
+            clamp(30px, 8vw, 40px);
+
+        line-height: 1.12;
+
+    }
+
+
+    .ajks-hero-content p {
+
+        font-size: 14px;
+
+        line-height: 1.65;
+
+        margin-top: 16px;
+
+    }
+
+
+    .ajks-hero-label {
+
+        font-size: 10px;
+
+        letter-spacing: 2px;
+
+        margin-bottom: 12px;
+
+    }
+
+
+    .ajks-hero-label::before {
+
+        width: 22px;
+
+    }
+
+
+    .ajks-hero-actions {
+
+        margin-top: 22px;
+
+        gap: 9px;
+
+        flex-wrap: wrap;
+
+    }
+
+
+    .ajks-explore-btn {
+
+        padding:
+            11px 16px;
+
+        font-size: 12px;
+
+    }
+
+
+    .ajks-learn-btn {
+
+        padding:
+            10px 15px;
+
+        font-size: 12px;
+
+    }
+
+
+    .ajks-slide-number {
+
+        right: 20px;
+
+        top: 20px;
+
+    }
+
+
+    .ajks-carousel-arrow {
+
+        top: auto;
+
+        bottom: 20px;
+
+        transform: none;
+
+        width: 38px;
+
+        height: 38px;
+
+    }
+
+
+    .ajks-prev {
+
+        left: auto;
+
+        right: 70px;
+
+    }
+
+
+    .ajks-next {
+
+        right: 20px;
+
+    }
+
+
+    .ajks-carousel-dots {
+
+        left: 25px;
+
+        bottom: 35px;
+
+    }
+
+
+    .ajks-carousel-dots button {
+
+        width: 20px;
+
+    }
+
+
+    .ajks-carousel-dots button.active {
+
+        width: 38px;
+
+    }
+
+
+    .ajks-intro-section {
+
+        margin-top: 20px;
+
+        padding:
+            42px 22px;
+
+    }
+
+
+    .ajks-feature-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .ajks-feature-card {
+
+        padding: 22px;
+
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .ajks-hero-carousel {
+
+        height: 510px;
+
+    }
+
+
+    .ajks-hero-content {
+
+        left: 20px;
+
+        right: 20px;
+
+    }
+
+
+    .ajks-hero-content h1 {
+
+        font-size:
+            clamp(28px, 8.5vw, 35px);
+
+    }
+
+
+    .ajks-hero-content p {
+
+        font-size: 13px;
+
+    }
+
+
+    .ajks-hero-actions {
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+
+    .ajks-slide-number {
+
+        display: none;
+
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONE
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .ajks-hero-carousel {
+
+        height: 490px;
+
+    }
+
+
+    .ajks-hero-content {
+
+        top: 45%;
+
+    }
+
+
+    .ajks-hero-content h1 {
+
+        font-size: 27px;
+
+    }
+
+
+    .ajks-hero-content p {
+
+        font-size: 12px;
+
+    }
+
+}
+
+
+
+/* footer  */
+
+
+/* =========================================================
+   AJKS FOUNDATION FOOTER
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   PAGE STRUCTURE
+--------------------------------------------------------- */
+
+html,
+body {
+    min-height: 100%;
+}
+
+
+body {
+    margin: 0;
+}
+
+
+.website-wrapper {
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.ajks-main-content {
+    flex: 1;
+}
+
+
+
+/* ---------------------------------------------------------
+   FOOTER
+--------------------------------------------------------- */
+
+.ajks-footer {
+
+    position: relative;
+
+    width: 100%;
+
+    margin-top: auto;
+    margin-top: 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #003f36 0%,
+            #00574c 50%,
+            #003b34 100%
+        );
+
+    color: #ffffff;
+
+    overflow: hidden;
+
+    border-top:
+        1px solid rgba(255,255,255,0.08);
+
+}
+
+
+
+/* Decorative top line */
+
+.ajks-footer-top-line {
+
+    width: 100%;
+
+    height: 4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #f5b400,
+            #ffd45a,
+            #f5b400
+        );
+
+}
+
+
+
+/* ---------------------------------------------------------
+   FOOTER CONTAINER
+--------------------------------------------------------- */
+
+.ajks-footer-container {
+
+    width: 100%;
+
+    max-width: 1400px;
+
+    margin: 0 auto;
+    
+
+    padding:
+        65px 5px
+        55px;
+
+    display: grid;
+
+    grid-template-columns:
+        1.6fr
+        1fr
+        1.15fr
+        1fr;
+
+    gap: 50px;
+
+    position: relative;
+
+}
+
+
+
+/* ---------------------------------------------------------
+   BRAND
+--------------------------------------------------------- */
+
+.ajks-footer-brand {
+
+    padding-right: 25px;
+
+}
+
+
+
+.ajks-footer-logo {
+
+    display: inline-flex;
+
+    width: 85px;
+
+    height: 85px;
+
+    margin-bottom: 15px;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    text-decoration: none;
+
+    background: #ffffff;
+
+    padding: 4px;
+
+    box-shadow:
+        0 10px 25px
+        rgba(0,0,0,0.18);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+}
+
+
+
+.ajks-footer-logo:hover {
+
+    transform:
+        translateY(-5px)
+        scale(1.03);
+
+    box-shadow:
+        0 15px 35px
+        rgba(0,0,0,0.25);
+
+}
+
+
+
+.ajks-footer-logo img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 13px;
+
+}
+
+
+
+/* Brand name */
+
+.ajks-footer-brand-name {
+
+    display: flex;
+
+    flex-direction: column;
+
+    text-decoration: none;
+
+    color: #ffffff;
+
+}
+
+
+
+.ajks-footer-brand-name strong {
+
+    font-size: 27px;
+
+    line-height: 1.1;
+
+    font-weight: 800;
+
+    letter-spacing: 0.3px;
+
+}
+
+
+
+.ajks-footer-brand-name span {
+
+    margin-top: 6px;
+
+    color: #f6c63e;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+
+/* Small gold line */
+
+.ajks-footer-line {
+
+    width: 65px;
+
+    height: 3px;
+
+    background: #f5b400;
+
+    border-radius: 10px;
+
+    margin:
+        22px 0
+        18px;
+
+}
+
+
+
+.ajks-footer-description {
+
+    max-width: 430px;
+
+    margin: 0;
+
+    color:
+        rgba(255,255,255,0.78);
+
+    font-size: 15px;
+
+    line-height: 1.85;
+
+}
+
+
+
+/* ---------------------------------------------------------
+   FOOTER TITLE
+--------------------------------------------------------- */
+
+.ajks-footer-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    margin:
+        3px 0
+        25px;
+
+    color: #ffffff;
+
+    font-size: 19px;
+
+    font-weight: 700;
+
+}
+
+
+
+.ajks-footer-title span {
+
+    display: inline-block;
+
+    width: 38px;
+
+    height: 3px;
+
+    background: #f5b400;
+
+    border-radius: 20px;
+
+}
+
+
+
+/* ---------------------------------------------------------
+   LINKS
+--------------------------------------------------------- */
+
+.ajks-footer-links {
+
+    margin: 0;
+
+    padding: 0;
+
+    list-style: none;
+
+}
+
+
+
+.ajks-footer-links li {
+
+    margin-bottom: 13px;
+
+}
+
+
+
+.ajks-footer-links a {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color:
+        rgba(255,255,255,0.78);
+
+    text-decoration: none;
+
+    font-size: 14.5px;
+
+    line-height: 1.5;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+
+}
+
+
+
+.ajks-footer-links a i {
+
+    color: #f5b400;
+
+    font-size: 13px;
+
+    transition:
+        transform 0.25s ease;
+
+}
+
+
+
+.ajks-footer-links a:hover {
+
+    color: #ffffff;
+
+    transform:
+        translateX(5px);
+
+}
+
+
+
+.ajks-footer-links a:hover i {
+
+    transform:
+        translateX(3px);
+
+}
+
+
+
+/* ---------------------------------------------------------
+   CONTACT
+--------------------------------------------------------- */
+
+.ajks-footer-contact {
+
+    padding-left: 5px;
+
+}
+
+
+
+.ajks-contact-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    margin-bottom: 18px;
+
+}
+
+
+
+.ajks-contact-icon {
+
+    flex-shrink: 0;
+
+    width: 39px;
+
+    height: 39px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,0.10);
+
+    color: #f5b400;
+
+    border:
+        1px solid
+        rgba(245,180,0,0.25);
+
+}
+
+
+
+.ajks-contact-item a {
+
+    color:
+        rgba(255,255,255,0.82);
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    word-break: break-word;
+
+    transition:
+        color 0.25s ease;
+
+}
+
+
+
+.ajks-contact-item a:hover {
+
+    color: #f5b400;
+
+}
+
+
+
+/* ---------------------------------------------------------
+   SLOGAN
+--------------------------------------------------------- */
+
+.ajks-footer-slogan {
+
+    margin-top: 30px;
+
+    padding-left: 8px;
+
+    color:
+        rgba(255,255,255,0.60);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    font-style: italic;
+
+}
+
+
+
+.ajks-footer-slogan strong {
+
+    color: #f5b400;
+
+    font-size: 16px;
+
+}
+
+
+
+/* ---------------------------------------------------------
+   SOCIAL ICONS
+--------------------------------------------------------- */
+
+.ajks-footer-social {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 25px;
+
+}
+
+
+
+.ajks-footer-social a {
+
+    width: 39px;
+
+    height: 39px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    background:
+        rgba(255,255,255,0.09);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.15);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+
+}
+
+
+
+.ajks-footer-social a:hover {
+
+    transform:
+        translateY(-5px);
+
+    background: #f5b400;
+
+    color: #003f36;
+
+    box-shadow:
+        0 8px 20px
+        rgba(0,0,0,0.20);
+
+}
+
+
+
+/* ---------------------------------------------------------
+   FOOTER BOTTOM
+--------------------------------------------------------- */
+
+.ajks-footer-bottom {
+
+    width: 100%;
+
+    background:
+        rgba(0,0,0,0.18);
+
+    border-top:
+        1px solid
+        rgba(255,255,255,0.10);
+
+}
+
+
+
+.ajks-footer-bottom-inner {
+
+    width: 100%;
+
+    max-width: 1400px;
+
+    margin: 0 auto;
+
+    padding:
+        18px 35px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+}
+
+
+
+.ajks-copyright,
+.ajks-designed {
+
+    font-size: 13px;
+
+    color:
+        rgba(255,255,255,0.65);
+
+}
+
+
+
+.ajks-copyright a,
+.ajks-designed a {
+
+    color: #f5b400;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    transition:
+        color 0.25s ease;
+
+}
+
+
+
+.ajks-copyright a:hover,
+.ajks-designed a:hover {
+
+    color: #ffffff;
+
+}
+
+
+
+.ajks-designed {
+
+    text-align: right;
+
+}
+
+
+
+/* =========================================================
+   LARGE TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .ajks-footer-container {
+
+        grid-template-columns:
+            1.5fr
+            1fr
+            1fr;
+
+        gap: 40px;
+
+    }
+
+
+    .ajks-footer-brand {
+
+        grid-column: span 1;
+
+    }
+
+
+    .ajks-footer-contact {
+
+        grid-column: span 1;
+
+    }
+
+}
+
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+    .ajks-footer-container {
+
+        grid-template-columns:
+            1fr 1fr;
+
+        gap: 40px 35px;
+
+        padding:
+            50px 30px;
+
+    }
+
+
+    .ajks-footer-brand {
+
+        grid-column:
+            span 2;
+
+        padding-right: 0;
+
+    }
+
+
+    .ajks-footer-description {
+
+        max-width: 650px;
+
+    }
+
+
+    .ajks-footer-bottom-inner {
+
+        padding:
+            18px 30px;
+
+    }
+
+}
+
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .ajks-footer-container {
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+        padding:
+            45px 22px
+            40px;
+
+    }
+
+
+    .ajks-footer-brand {
+
+        grid-column: auto;
+
+    }
+
+
+    .ajks-footer-contact {
+
+        padding-left: 0;
+
+    }
+
+
+    .ajks-footer-logo {
+
+        width: 75px;
+
+        height: 75px;
+
+    }
+
+
+    .ajks-footer-brand-name strong {
+
+        font-size: 24px;
+
+    }
+
+
+    .ajks-footer-description {
+
+        font-size: 14px;
+
+        line-height: 1.8;
+
+    }
+
+
+    .ajks-footer-title {
+
+        font-size: 18px;
+
+    }
+
+
+    .ajks-footer-bottom-inner {
+
+        flex-direction: column;
+
+        align-items: center;
+
+        justify-content: center;
+
+        text-align: center;
+
+        padding:
+            18px 20px;
+
+        gap: 8px;
+
+    }
+
+
+    .ajks-designed {
+
+        text-align: center;
+
+    }
+
+}
+
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    .ajks-footer-container {
+
+        padding-left: 18px;
+
+        padding-right: 18px;
+
+    }
+
+
+    .ajks-footer-brand-name strong {
+
+        font-size: 22px;
+
+    }
+
+
+    .ajks-footer-social a {
+
+        width: 36px;
+
+        height: 36px;
+
+        font-size: 14px;
+
+    }
+
+
+    .ajks-contact-item {
+
+        gap: 10px;
+
+    }
+
+
+    .ajks-contact-icon {
+
+        width: 36px;
+
+        height: 36px;
+
+    }
+
+
+    .ajks-footer-links a {
+
+        font-size: 14px;
+
+    }
+
+}
+
+
+
+
+/* =========================================================
+   AJKS FOUNDATION
+   FINAL FIXED DROPDOWN + SUB-DROPDOWN (ALL DEVICES)
+========================================================= */
+
+/* ---------- DESKTOP (≥ 992px) ---------- */
+
+@media (min-width: 992px) {
+
+    /* ---- Level 1 Dropdown ---- */
+    .ajks-nav-menu > .has-dropdown {
+        position: relative;
+    }
+
+    .ajks-nav-menu > .has-dropdown > .ajks-dropdown {
+        position: absolute;
+        top: calc(100% + 3px);
+        left: 0;
+
+        min-width: 240px;
+
+        padding: 8px;
+        margin: 0;
+
+        list-style: none;
+
+        background: #fff;
+
+        border-top: 3px solid var(--ajks-gold);
+        border-radius: 0 0 10px 10px;
+
+        box-shadow: 0 15px 35px rgba(0, 0, 0, .15);
+
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+
+        transition:
+            opacity .25s ease,
+            visibility .25s ease,
+            transform .25s ease;
+
+        z-index: 9999;
+    }
+
+    .ajks-nav-menu > .has-dropdown:hover > .ajks-dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .ajks-nav-menu > .has-dropdown:hover > a i {
+        transform: rotate(180deg);
+    }
+
+
+    /* ---- Level 1 links ---- */
+    .ajks-dropdown li {
+        position: relative;
+        list-style: none;
+    }
+
+    .ajks-dropdown li > a {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+
+        padding: 10px 14px;
+
+        color: #333;
+        font-size: 14px;
+        font-weight: 500;
+        text-decoration: none;
+
+        border-radius: 6px;
+        white-space: nowrap;
+
+        transition: .2s;
+    }
+
+    .ajks-dropdown li > a:hover {
+        background: rgba(7, 84, 71, .08);
+        color: var(--ajks-green);
+        padding-left: 19px;
+    }
+
+
+    /* ---- Level 2 Sub-dropdown ---- */
+    .ajks-dropdown .has-sub-dropdown {
+        position: relative;
+    }
+
+    .ajks-dropdown .has-sub-dropdown > .ajks-sub-dropdown {
+        position: absolute;
+        top: 0;
+        left: 100%;
+
+        min-width: 220px;
+
+        padding: 8px;
+        margin: 0 0 0 3px;
+
+        list-style: none;
+
+        background: #fff;
+
+        border-top: 3px solid var(--ajks-gold);
+        border-radius: 0 0 10px 10px;
+
+        box-shadow: 0 15px 35px rgba(0, 0, 0, .15);
+
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(10px);
+
+        transition:
+            opacity .25s ease,
+            visibility .25s ease,
+            transform .25s ease;
+
+        z-index: 10000;
+    }
+
+    .ajks-dropdown .has-sub-dropdown:hover > .ajks-sub-dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0);
+    }
+
+    .ajks-dropdown .has-sub-dropdown > a i {
+        font-size: 11px;
+        margin-left: auto;
+        transition: transform .25s ease;
+    }
+
+    .ajks-dropdown .has-sub-dropdown:hover > a i {
+        transform: translateX(4px);
+    }
+
+    /* prevent overflow on right edge (about menu 2nd item) */
+    .ajks-nav-menu > .has-dropdown:last-child > .ajks-dropdown,
+    .ajks-nav-menu > .has-dropdown:nth-last-child(2) > .ajks-dropdown {
+        left: auto;
+        right: 0;
+    }
+}
+
+
+/* =========================================================
+   MOBILE + TABLET (≤ 991px)
+========================================================= */
+
+@media (max-width: 991px) {
+
+    /* ---- Mobile menu container ---- */
+    .ajks-nav-menu {
+        display: none;
+        position: static;
+        order: 3;
+        flex-basis: 100%;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 10px;
+        margin: 0;
+        background: white;
+        border-top: 1px solid #eee;
+        border-bottom: 1px solid #e7ecea;
+        box-shadow: 0 12px 25px rgba(0, 0, 0, .08);
+        max-height: calc(100vh - 90px);
+        overflow-y: auto;
+    }
+
+    .ajks-nav-menu.active {
+        display: flex;
+    }
+
+    .ajks-nav-menu > li {
+        width: 100%;
+        position: relative;
+    }
+
+    .ajks-nav-menu > li > a {
+        width: 100%;
+        min-height: 46px;
+        padding: 12px 15px;
+        border-radius: 7px;
+        color: var(--ajks-text);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 14px;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    .ajks-nav-menu > li > a:hover,
+    .ajks-nav-menu > li > a.active {
+        color: white;
+        background: var(--ajks-green);
+    }
+
+
+    /* ---- Mobile dropdown ---- */
+    .ajks-dropdown {
+        position: static;
+        display: none;
+        width: 100%;
+        min-width: 0;
+        padding: 5px;
+        margin: 4px 0 5px;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        border: 1px solid #e3e9e6;
+        border-top: 3px solid var(--ajks-gold);
+        border-radius: 7px;
+        background: #f8faf9;
+    }
+
+    .has-dropdown.dropdown-open > .ajks-dropdown {
+        display: block;
+    }
+
+    .has-dropdown.dropdown-open > a i {
+        transform: rotate(180deg);
+    }
+
+    .has-dropdown > a i {
+        transition: transform .25s ease;
+    }
+
+    .ajks-dropdown li {
+        width: 100%;
+        list-style: none;
+    }
+
+    .ajks-dropdown li > a {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        width: 100%;
+        padding: 11px 15px;
+        color: #43524e;
+        font-size: 13px;
+        font-weight: 500;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: .2s;
+    }
+
+    .ajks-dropdown li > a:hover {
+        padding-left: 21px;
+        color: var(--ajks-green);
+        background: rgba(7, 84, 71, .08);
+    }
+
+
+    /* ---- Mobile sub-dropdown ---- */
+    .ajks-sub-dropdown {
+        position: static;
+        display: none;
+        width: 100%;
+        min-width: 0;
+        padding: 5px;
+        margin: 4px 0;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        border: 1px solid #e3e9e6;
+        border-left: 3px solid var(--ajks-gold);
+        border-radius: 6px;
+        background: #ffffff;
+    }
+
+    .has-sub-dropdown.sub-dropdown-open > .ajks-sub-dropdown {
+        display: block;
+    }
+
+    .has-sub-dropdown.sub-dropdown-open > a i {
+        transform: rotate(90deg);
+    }
+
+    .has-sub-dropdown > a i {
+        font-size: 11px;
+        transition: transform .25s ease;
+    }
+
+    .ajks-sub-dropdown li {
+        list-style: none;
+    }
+
+    .ajks-sub-dropdown li > a {
+        display: block;
+        padding: 9px 15px 9px 25px;
+        color: #5a6b66;
+        font-size: 13px;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: .2s;
+    }
+
+    .ajks-sub-dropdown li > a:hover {
+        color: var(--ajks-green);
+        background: rgba(7, 84, 71, .08);
+        padding-left: 30px;
+    }
+}

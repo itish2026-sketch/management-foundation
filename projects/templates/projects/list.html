@@ -1,0 +1,149 @@
+{% extends "base_d.html" %}
+{% load static %}
+
+{% block title %}
+Projects | AJKS Foundation
+{% endblock %}
+
+
+
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'projects/projects.css' %}">
+
+<section class="prj-list-section">
+
+    <!-- Heading -->
+    <div class="prj-heading">
+        <span class="prj-label">OUR PROJECTS</span>
+        <h1>Building Change, Together</h1>
+        {% comment %} <p>
+            AJKS Foundation-এর সব চলমান, সম্পন্ন এবং ভবিষ্যৎ প্রকল্প —
+            একটি জায়গায়।
+            All ongoing, completed, and upcoming projects of AJKS Foundation — all in one place.
+        </p> {% endcomment %}
+    </div>
+
+
+    <!-- Filter Tabs -->
+    <div class="prj-filter">
+
+        <a href="{% url 'projects:list' %}"
+           class="prj-filter-btn {% if not status %}active{% endif %}">
+            All
+        </a>
+
+        {% for value, label in statuses %}
+            <a href="?status={{ value }}"
+               class="prj-filter-btn {% if status == value %}active{% endif %}">
+                {{ label }}
+            </a>
+        {% endfor %}
+
+    </div>
+
+
+    <!-- Grid -->
+    {% if projects %}
+
+        <div class="prj-grid">
+
+            {% for project in projects %}
+
+                <a href="{% url 'projects:detail' project.slug %}"
+                   class="prj-card">
+
+                    <div class="prj-card-image">
+
+                        {% if project.cover_image %}
+                            <img src="{{ project.cover_image.url }}"
+                                 alt="{{ project.project_name }}">
+                        {% else %}
+                            <div class="prj-no-image">
+                                <i class="bi bi-image"></i>
+                            </div>
+                        {% endif %}
+
+                        <span class="prj-status
+                            {% if project.status == 'ongoing' %}status-ongoing
+                            {% elif project.status == 'completed' %}status-completed
+                            {% elif project.status == 'upcoming' %}status-upcoming
+                            {% else %}status-suspended{% endif %}">
+                            {{ project.get_status_display }}
+                        </span>
+
+                        <span class="prj-category">
+                            {{ project.get_category_display }}
+                        </span>
+
+                    </div>
+
+                    <div class="prj-card-body">
+
+                        {% if project.project_code %}
+                            <span class="prj-code">
+                                {{ project.project_code }}
+                            </span>
+                        {% endif %}
+
+                        <h3>{{ project.project_name }}</h3>
+
+                        <p>{{ project.short_description }}</p>
+
+                        <!-- Progress Bar -->
+                        {% if project.status == 'ongoing' %}
+                            <div class="prj-progress">
+                                <div class="prj-progress-head">
+                                    <span>Progress</span>
+                                    <strong>{{ project.overall_progress }}%</strong>
+                                </div>
+                                <div class="prj-progress-bar">
+                                    <span style="width: {{ project.overall_progress }}%;"></span>
+                                </div>
+                            </div>
+                        {% endif %}
+
+                        <div class="prj-meta">
+
+                            {% if project.location %}
+                                <span>
+                                    <i class="bi bi-geo-alt"></i>
+                                    {{ project.location }}
+                                </span>
+                            {% endif %}
+
+                            {% if project.beneficiary_count %}
+                                <span>
+                                    <i class="bi bi-people"></i>
+                                    {{ project.beneficiary_count }} beneficiaries
+                                </span>
+                            {% endif %}
+
+                        </div>
+
+                        <span class="prj-card-link">
+                            View Details
+                            <i class="bi bi-arrow-right"></i>
+                        </span>
+
+                    </div>
+
+                </a>
+
+            {% endfor %}
+
+        </div>
+
+    {% else %}
+
+        <div class="prj-empty">
+            <i class="bi bi-inbox"></i>
+            <h3>No projects found</h3>
+            <p>এই filter-এ এখনো কোনো project যোগ করা হয়নি।</p>
+        </div>
+
+    {% endif %}
+
+</section>
+
+{% endblock %}
