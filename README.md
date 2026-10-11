@@ -13,9 +13,8 @@ Follow these 9 steps to run the project on your local machine.
    - Mac/Linux: `source venv/bin/activate`
 5. **`pip install -r requirements.txt`** — সব package ইনস্টল করুন
 6. **`python manage.py migrate`** — Database setup করুন
-7. **`python manage.py createsuperuser`** — Admin account তৈরি করুন (username/password মনে রাখুন)
-8. **`python manage.py runserver`** — Server চালু করুন
-9. **Browser → http://127.0.0.1:8000/** — Website দেখুন
+7. **`python manage.py runserver`** — Server চালু করুন
+8. **Browser → http://127.0.0.1:8000/** — Website দেখুন
 
 ## 🛠️ Requirements
 
